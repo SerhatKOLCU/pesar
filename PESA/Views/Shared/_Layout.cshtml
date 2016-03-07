@@ -1,0 +1,514 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700'>
+    @*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>*@
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Styles.Render("~/assets/headerfooter")
+    @Styles.Render("~/assets/theme")
+    @Styles.Render("~/assets/plugins.css")
+
+</head>
+
+<body class="header-fixed header-fixed-space-v2">
+    <div class="wrapper">
+        <!--=== Header v8 ===-->
+        <div class="header-v8 header-sticky">
+
+            <!-- Navbar -->
+            <div class="navbar mega-menu" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="res-container">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="navbar-brand">
+                            <a href="~/Home/Index">
+                                <img src="~/assets/img/themes/pesar-logo-nawbar.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div><!--/end responsive container-->
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+                        <div class="res-container">
+                            <ul class="nav navbar-nav">
+                                <!-- ANA SAYFA -->
+                                <li class="dropdown home">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                        ANA SAYFA
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="index.html">Home Default Page</a></li>
+                                        <!-- Post Layouts -->
+                                        <li class="dropdown-submenu active">
+                                            <a href="javascript:void(0);">Blog Page Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_page_layouts1.html">Page Layouts v1</a></li>
+                                                <li><a href="blog_page_layouts2.html">Page Layouts v2</a></li>
+                                                <li class="active"><a href="blog_page_layouts3.html">Page Layouts v3</a></li>
+                                                <li><a href="blog_page_layouts4.html">Page Layouts v4</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Post Layouts -->
+                                        <!-- Post Layouts -->
+                                        <li class="dropdown-submenu">
+                                            <a href="javascript:void(0);">Blog Post Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_post_layouts1.html">Post Layout v1</a></li>
+                                                <li><a href="blog_post_layouts2.html">Post Layout v2</a></li>
+                                                <li><a href="blog_post_layouts3.html">Post Layout v3</a></li>
+                                                <li><a href="blog_post_layouts4.html">Post Layout v4</a></li>
+                                                <li><a href="blog_post_layouts5.html">Post Layout v5</a></li>
+                                                <li><a href="blog_post_layouts6.html">Post Layout v6</a></li>
+                                                <li><a href="blog_post_layouts7.html">Post Layout v7</a></li>
+                                                <li><a href="blog_post_layouts8.html">Post Layout v8</a></li>
+                                                <li><a href="blog_post_layouts9.html">Post Layout v9</a></li>
+                                                <li><a href="blog_post_layouts_ls.html">Left Sidebar Example</a></li>
+                                                <li><a href="blog_post_layouts_fw.html">Full Width Example</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Post Layouts -->
+                                        <!-- Grid Layouts -->
+                                        <li class="dropdown-submenu">
+                                            <a href="javascript:void(0);">Grid Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_grid_1.html">Grid: 1 Col</a></li>
+                                                <li><a href="blog_grid_2.html">Grid: 2 Col</a></li>
+                                                <li><a href="blog_grid_3.html">Grid: 3 Col</a></li>
+                                                <li><a href="blog_grid_4.html">Grid: 4 Col</a></li>
+                                                <li><a href="blog_grid_4_fw.html">Grid: Full Width (4 Col)</a></li>
+                                                <li><a href="blog_grid_2_rs.html">Grid: Right Sidebar (2 Col)</a></li>
+                                                <li><a href="blog_grid_2_ls.html">Grid: Left Sidebar (2 Col)</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Grid Layouts -->
+                                        <li><a href="blog_single.html">Single Page</a></li>
+                                        <li><a href="blog_home_boxed.html">Home Boxed Page</a></li>
+                                        <li><a href="blog_home_boxed_space.html">Home Boxed Space Page</a></li>
+                                    </ul>
+                                </li>
+                                <!-- End ANA SAYFA -->
+                                <!-- YAYINLAR -->
+                                <li class="dropdown mega-menu-fullwidth home">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                        YAYINLAR
+                                    </a>
+                                    <ul class="dropdown-menu home">
+                                        <li>
+                                            <div class="mega-menu-content">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-sm-3 md-margin-bottom-30">
+                                                            <div class="blog-grid">
+                                                                <a href="@Url.Action("Analiz", "Yayinlar")">
+                                                                    <img class="img-responsive" src="@Url.Content("~/assets/img/Nawbar/analiz.png")" />
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3 md-margin-bottom-30">
+                                                            <div class="blog-grid">
+                                                                <a href="@Url.Action("Gorus", "Yayinlar")">
+                                                                    <img class="img-responsive" src="@Url.Content("~/assets/img/Nawbar/gorus.png")" />
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3 md-margin-bottom-30">
+                                                            <div class="blog-grid">
+                                                                <a href="@Url.Action("Rapor", "Yayinlar")">
+                                                                    <img class="img-responsive" src="@Url.Content("~/assets/img/Nawbar/rapor.png")" />
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3 sm-margin-bottom-30">
+                                                            <div class="blog-grid">
+                                                                <a href="@Url.Action("EkonomiBulteni", "Yayinlar")">
+                                                                    <img class="img-responsive" src="@Url.Content("~/assets/img/Nawbar/ekonomi-bulteni.png")" />
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="row">
+                                                        <ul class="tags-v4 margin-bottom-40">
+                                                            <li><a class="rounded-4x" href="#">&nbsp; java &nbsp; </a></li>
+                                                            <li><a class="rounded-4x" href="#"> featured </a></li>
+                                                            <li><a class="rounded-4x" href="#"> pattern </a></li>
+                                                            <li><a class="rounded-4x" href="#">web</a></li>
+                                                            <li><a class="rounded-4x" href="#">fashion</a></li>
+                                                            <li><a class="rounded-4x" href="#">wrapbootstrap</a></li>
+                                                            <li><a class="rounded-4x" href="#">css3</a></li>
+                                                            <li><a class="rounded-4x" href="#">foto</a></li>
+                                                            <li><a class="rounded-4x" href="#">google</a></li>
+                                                            <li><a class="rounded-4x" href="#">html5</a></li>
+                                                        </ul>
+                                                        @*<div class="container tags-v4 margin-bottom-40">
+                                                                <!-- Tag Links v4 -->
+                                                                <a class="rounded-4x" href="#">Eğitim</a>
+                                                                <a class="rounded-4x" href="#">Ekonomi</a>
+                                                                <a class="rounded-4x" href="#">Finans</a>
+                                                                <a class="rounded-4x" href="#">Maliye</a>
+                                                                <a class="rounded-4x" href="#">Politika</a>
+                                                                <a class="rounded-4x" href="#">Tarih</a>
+                                                                <a class="rounded-4x" href="#">Toplum</a>
+                                                                <!-- End Tag Links v4 -->
+                                                            </div>*@
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- End YAYINLAR -->
+                                <!-- PROJELER -->
+                                <li class="dropdown home">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                        PROJELER
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="index.html">Home Default Page</a></li>
+                                        <!-- Post Layouts -->
+                                        <li class="dropdown-submenu active">
+                                            <a href="javascript:void(0);">Blog Page Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_page_layouts1.html">Page Layouts v1</a></li>
+                                                <li><a href="blog_page_layouts2.html">Page Layouts v2</a></li>
+                                                <li class="active"><a href="blog_page_layouts3.html">Page Layouts v3</a></li>
+                                                <li><a href="blog_page_layouts4.html">Page Layouts v4</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Post Layouts -->
+                                        <!-- Post Layouts -->
+                                        <li class="dropdown-submenu">
+                                            <a href="javascript:void(0);">Blog Post Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_post_layouts1.html">Post Layout v1</a></li>
+                                                <li><a href="blog_post_layouts2.html">Post Layout v2</a></li>
+                                                <li><a href="blog_post_layouts3.html">Post Layout v3</a></li>
+                                                <li><a href="blog_post_layouts4.html">Post Layout v4</a></li>
+                                                <li><a href="blog_post_layouts5.html">Post Layout v5</a></li>
+                                                <li><a href="blog_post_layouts6.html">Post Layout v6</a></li>
+                                                <li><a href="blog_post_layouts7.html">Post Layout v7</a></li>
+                                                <li><a href="blog_post_layouts8.html">Post Layout v8</a></li>
+                                                <li><a href="blog_post_layouts9.html">Post Layout v9</a></li>
+                                                <li><a href="blog_post_layouts_ls.html">Left Sidebar Example</a></li>
+                                                <li><a href="blog_post_layouts_fw.html">Full Width Example</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Post Layouts -->
+                                        <!-- Grid Layouts -->
+                                        <li class="dropdown-submenu">
+                                            <a href="javascript:void(0);">Grid Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_grid_1.html">Grid: 1 Col</a></li>
+                                                <li><a href="blog_grid_2.html">Grid: 2 Col</a></li>
+                                                <li><a href="blog_grid_3.html">Grid: 3 Col</a></li>
+                                                <li><a href="blog_grid_4.html">Grid: 4 Col</a></li>
+                                                <li><a href="blog_grid_4_fw.html">Grid: Full Width (4 Col)</a></li>
+                                                <li><a href="blog_grid_2_rs.html">Grid: Right Sidebar (2 Col)</a></li>
+                                                <li><a href="blog_grid_2_ls.html">Grid: Left Sidebar (2 Col)</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Grid Layouts -->
+                                        <li><a href="blog_single.html">Single Page</a></li>
+                                        <li><a href="blog_home_boxed.html">Home Boxed Page</a></li>
+                                        <li><a href="blog_home_boxed_space.html">Home Boxed Space Page</a></li>
+                                    </ul>
+                                </li>
+                                <!-- End PROJELER -->
+                                <!-- KONGRELER -->
+                                <li class="dropdown home">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                        KONGRELER
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="index.html">Home Default Page</a></li>
+                                        <!-- Post Layouts -->
+                                        <li class="dropdown-submenu active">
+                                            <a href="javascript:void(0);">Blog Page Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_page_layouts1.html">Page Layouts v1</a></li>
+                                                <li><a href="blog_page_layouts2.html">Page Layouts v2</a></li>
+                                                <li class="active"><a href="blog_page_layouts3.html">Page Layouts v3</a></li>
+                                                <li><a href="blog_page_layouts4.html">Page Layouts v4</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Post Layouts -->
+                                        <!-- Post Layouts -->
+                                        <li class="dropdown-submenu">
+                                            <a href="javascript:void(0);">Blog Post Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_post_layouts1.html">Post Layout v1</a></li>
+                                                <li><a href="blog_post_layouts2.html">Post Layout v2</a></li>
+                                                <li><a href="blog_post_layouts3.html">Post Layout v3</a></li>
+                                                <li><a href="blog_post_layouts4.html">Post Layout v4</a></li>
+                                                <li><a href="blog_post_layouts5.html">Post Layout v5</a></li>
+                                                <li><a href="blog_post_layouts6.html">Post Layout v6</a></li>
+                                                <li><a href="blog_post_layouts7.html">Post Layout v7</a></li>
+                                                <li><a href="blog_post_layouts8.html">Post Layout v8</a></li>
+                                                <li><a href="blog_post_layouts9.html">Post Layout v9</a></li>
+                                                <li><a href="blog_post_layouts_ls.html">Left Sidebar Example</a></li>
+                                                <li><a href="blog_post_layouts_fw.html">Full Width Example</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Post Layouts -->
+                                        <!-- Grid Layouts -->
+                                        <li class="dropdown-submenu">
+                                            <a href="javascript:void(0);">Grid Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_grid_1.html">Grid: 1 Col</a></li>
+                                                <li><a href="blog_grid_2.html">Grid: 2 Col</a></li>
+                                                <li><a href="blog_grid_3.html">Grid: 3 Col</a></li>
+                                                <li><a href="blog_grid_4.html">Grid: 4 Col</a></li>
+                                                <li><a href="blog_grid_4_fw.html">Grid: Full Width (4 Col)</a></li>
+                                                <li><a href="blog_grid_2_rs.html">Grid: Right Sidebar (2 Col)</a></li>
+                                                <li><a href="blog_grid_2_ls.html">Grid: Left Sidebar (2 Col)</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Grid Layouts -->
+                                        <li><a href="blog_single.html">Single Page</a></li>
+                                        <li><a href="blog_home_boxed.html">Home Boxed Page</a></li>
+                                        <li><a href="blog_home_boxed_space.html">Home Boxed Space Page</a></li>
+                                    </ul>
+                                </li>
+                                <!-- End KONGRELER -->
+                                <!-- DERGİLER -->
+                                <li class="dropdown home">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                        DERGİLER
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="index.html">Home Default Page</a></li>
+                                        <!-- Post Layouts -->
+                                        <li class="dropdown-submenu active">
+                                            <a href="javascript:void(0);">Blog Page Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_page_layouts1.html">Page Layouts v1</a></li>
+                                                <li><a href="blog_page_layouts2.html">Page Layouts v2</a></li>
+                                                <li class="active"><a href="blog_page_layouts3.html">Page Layouts v3</a></li>
+                                                <li><a href="blog_page_layouts4.html">Page Layouts v4</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Post Layouts -->
+                                        <!-- Post Layouts -->
+                                        <li class="dropdown-submenu">
+                                            <a href="javascript:void(0);">Blog Post Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_post_layouts1.html">Post Layout v1</a></li>
+                                                <li><a href="blog_post_layouts2.html">Post Layout v2</a></li>
+                                                <li><a href="blog_post_layouts3.html">Post Layout v3</a></li>
+                                                <li><a href="blog_post_layouts4.html">Post Layout v4</a></li>
+                                                <li><a href="blog_post_layouts5.html">Post Layout v5</a></li>
+                                                <li><a href="blog_post_layouts6.html">Post Layout v6</a></li>
+                                                <li><a href="blog_post_layouts7.html">Post Layout v7</a></li>
+                                                <li><a href="blog_post_layouts8.html">Post Layout v8</a></li>
+                                                <li><a href="blog_post_layouts9.html">Post Layout v9</a></li>
+                                                <li><a href="blog_post_layouts_ls.html">Left Sidebar Example</a></li>
+                                                <li><a href="blog_post_layouts_fw.html">Full Width Example</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Post Layouts -->
+                                        <!-- Grid Layouts -->
+                                        <li class="dropdown-submenu">
+                                            <a href="javascript:void(0);">Grid Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_grid_1.html">Grid: 1 Col</a></li>
+                                                <li><a href="blog_grid_2.html">Grid: 2 Col</a></li>
+                                                <li><a href="blog_grid_3.html">Grid: 3 Col</a></li>
+                                                <li><a href="blog_grid_4.html">Grid: 4 Col</a></li>
+                                                <li><a href="blog_grid_4_fw.html">Grid: Full Width (4 Col)</a></li>
+                                                <li><a href="blog_grid_2_rs.html">Grid: Right Sidebar (2 Col)</a></li>
+                                                <li><a href="blog_grid_2_ls.html">Grid: Left Sidebar (2 Col)</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Grid Layouts -->
+                                        <li><a href="blog_single.html">Single Page</a></li>
+                                        <li><a href="blog_home_boxed.html">Home Boxed Page</a></li>
+                                        <li><a href="blog_home_boxed_space.html">Home Boxed Space Page</a></li>
+                                    </ul>
+                                </li>
+                                <!-- End DERGİLER -->
+                                <!-- HABERLER -->
+                                <li class="dropdown home">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                        HABERLER
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="index.html">Home Default Page</a></li>
+                                        <!-- Post Layouts -->
+                                        <li class="dropdown-submenu active">
+                                            <a href="javascript:void(0);">Blog Page Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_page_layouts1.html">Page Layouts v1</a></li>
+                                                <li><a href="blog_page_layouts2.html">Page Layouts v2</a></li>
+                                                <li class="active"><a href="blog_page_layouts3.html">Page Layouts v3</a></li>
+                                                <li><a href="blog_page_layouts4.html">Page Layouts v4</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Post Layouts -->
+                                        <!-- Post Layouts -->
+                                        <li class="dropdown-submenu">
+                                            <a href="javascript:void(0);">Blog Post Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_post_layouts1.html">Post Layout v1</a></li>
+                                                <li><a href="blog_post_layouts2.html">Post Layout v2</a></li>
+                                                <li><a href="blog_post_layouts3.html">Post Layout v3</a></li>
+                                                <li><a href="blog_post_layouts4.html">Post Layout v4</a></li>
+                                                <li><a href="blog_post_layouts5.html">Post Layout v5</a></li>
+                                                <li><a href="blog_post_layouts6.html">Post Layout v6</a></li>
+                                                <li><a href="blog_post_layouts7.html">Post Layout v7</a></li>
+                                                <li><a href="blog_post_layouts8.html">Post Layout v8</a></li>
+                                                <li><a href="blog_post_layouts9.html">Post Layout v9</a></li>
+                                                <li><a href="blog_post_layouts_ls.html">Left Sidebar Example</a></li>
+                                                <li><a href="blog_post_layouts_fw.html">Full Width Example</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Post Layouts -->
+                                        <!-- Grid Layouts -->
+                                        <li class="dropdown-submenu">
+                                            <a href="javascript:void(0);">Grid Layouts</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog_grid_1.html">Grid: 1 Col</a></li>
+                                                <li><a href="blog_grid_2.html">Grid: 2 Col</a></li>
+                                                <li><a href="blog_grid_3.html">Grid: 3 Col</a></li>
+                                                <li><a href="blog_grid_4.html">Grid: 4 Col</a></li>
+                                                <li><a href="blog_grid_4_fw.html">Grid: Full Width (4 Col)</a></li>
+                                                <li><a href="blog_grid_2_rs.html">Grid: Right Sidebar (2 Col)</a></li>
+                                                <li><a href="blog_grid_2_ls.html">Grid: Left Sidebar (2 Col)</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Grid Layouts -->
+                                        <li><a href="blog_single.html">Single Page</a></li>
+                                        <li><a href="blog_home_boxed.html">Home Boxed Page</a></li>
+                                        <li><a href="blog_home_boxed_space.html">Home Boxed Space Page</a></li>
+                                    </ul>
+                                </li>
+                                <!-- End HABERLER -->
+                                <!-- KADROMUZ -->
+                                <li class="home"><a href="~/Home/Index">KADROMUZ</a></li>
+                                <!-- KADROMUZ -->         
+                                <!-- HAKKIMIZDA -->       
+                                <li class="home"><a href="~/Home/Index">HAKKIMIZDA</a></li>
+                                <!-- End HAKKIMIZDA -->   
+                                <!-- İLETİŞİM -->         
+                                <li class="home"><a href="~/Home/Index">İLETİŞİM</a></li>
+                                <!-- End İLETİŞİM -->
+                            </ul>
+                        </div><!--/responsive container-->
+                    </div><!--/navbar-collapse-->
+                </div><!--/end contaoner-->
+            </div>
+            <!-- End Navbar -->
+        </div>
+        <!--=== End Header v8 ===-->
+
+
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+
+        <!--=== Footer v8 ===-->
+        <div class="footer-v8">
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 column-one md-margin-bottom-50">
+                            <a href="index.html"><img class="footer-logo" src="~/assets/img/themes/pesar-logo-nawbar.png" alt=""></a>
+                            <h2>Sosyal Medya</h2>
+                            <!-- Social Icons -->
+                            <div>
+                                <a href="https://www.facebook.com/pesaarastirma" target="_blank">
+                                    <div class="socialsy bgfc">
+                                        <div>
+                                            <i class="fa fa-facebook"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://twitter.com/pesaarastirma" target="_blank">
+                                    <div class="socialsy bgtw">
+                                        <div>
+                                            <i class="fa fa-twitter"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 md-margin-bottom-50">
+                            <h2>Adres</h2>
+                            <p>Arabacı Alanı Mahallesi Mustafa Ocak Sokak No:9 D:2 <b>Serdivan / SAKARYA</b></p>
+
+                            <h2>Telefon</h2>
+                            <p>(506) 612 8525 &nbsp; (506) 277 7741</p>
+
+                            <h2>Email</h2>
+                            <a href="#">support@pesar.org</a>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <!-- Google Map -->
+                            <div id="map" class="map map-box map-box-space1 margin-bottom-40">
+                            </div><!---/map-->
+                            <!-- End Google Map -->
+                            <!-- End Social Icons -->
+                        </div>
+                    </div><!--/end row-->
+                </div><!--/end container-->
+            </footer>
+
+            <footer class="copyright">
+                <div class="container">
+                    <ul class="list-inline terms-menu">
+                        <li class="home">@DateTime.Now.Year &copy; Tüm hakları saklıdır.</li>
+                        <li class="home"><a href="#"></a></li>
+                        <li class="home"><a href="#"></a></li>
+                    </ul>
+                </div><!--/end container-->
+            </footer>
+        </div>
+        <!--=== End Footer v8 ===-->
+    </div><!--/wrapper-->
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    @Scripts.Render("~/assets/plugins.js")
+    @Scripts.Render("~/assets/pagejs")
+
+</body>
+</html>
+
+
+
+
+@*
+    <div class="col-md-4 col-sm-6 md-margin-bottom-50">
+                                <h2>Tags</h2>
+                                <!-- Tag Links v4 -->
+                                <ul class="tags-v4 margin-bottom-40">
+                                    <li><a class="rounded-4x" href="#">java</a></li>
+                                    <li><a class="rounded-4x" href="#">featured</a></li>
+                                    <li><a class="rounded-4x" href="#">pattern</a></li>
+                                    <li><a class="rounded-4x" href="#">web</a></li>
+                                    <li><a class="rounded-4x" href="#">fashion</a></li>
+                                    <li><a class="rounded-4x" href="#">wrapbootstrap</a></li>
+                                    <li><a class="rounded-4x" href="#">css3</a></li>
+                                    <li><a class="rounded-4x" href="#">foto</a></li>
+                                    <li><a class="rounded-4x" href="#">google</a></li>
+                                    <li><a class="rounded-4x" href="#">html5</a></li>
+                                </ul>
+                                <!-- End Tag Links v4 -->
+                            </div>
+*@

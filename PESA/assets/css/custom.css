@@ -1,0 +1,70 @@
+.socialsy {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 40px;
+  height: 40px;
+  margin: 3px 0 0 30px;
+  border: none;
+  font: normal 100%/normal Arial, Helvetica, sans-serif;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  transform: rotateZ(-45deg)   ;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  float:left;
+  cursor:pointer;
+  align-content:center;
+}
+.socialsy div{
+  width: 40px;
+  height: 40px;
+  transform: rotateZ(45deg);
+  font-size:40px;
+  text-align:center;
+  line-height:45px;
+  color:#3a5795;
+  font-weight:bold;
+}
+
+/*Facebook Button*/
+.bgfc{
+  border:3px solid #3a5795;
+  background-color: rgba(58, 87, 149, .3);
+  transition:all .7s;
+}
+.bgfc div{
+  color:#3a5795;
+  transition:all .7s;
+}
+
+.bgfc:hover{
+  border:3px solid #3a5795;
+  background-color: rgba(58, 87, 149, .8);
+    transition:all .7s;
+}
+.bgfc:hover div{
+  color:#fff;
+  transition:all .7s;
+}
+
+/*Twitter Button*/
+.bgtw{
+  border:3px solid #55acee;
+  background-color: rgba(85, 172, 238, .3);
+  transition:all .7s;
+}
+.bgtw div{
+  color:#55acee;
+  transition:all .7s;
+}
+
+.bgtw:hover{
+  border:3px solid #55acee;
+  background-color: rgba(85, 172, 238, .8);
+    transition:all .7s;
+}
+.bgtw:hover div{
+  color:#fff;
+  transition:all .7s;
+}
