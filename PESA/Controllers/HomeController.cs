@@ -13,6 +13,20 @@ namespace PESA.Controllers
             return View();
         }
 
+        public ActionResult News()
+        {
+            ViewBag.Message = "Haberler";
+
+            return View();
+        }
+
+        public ActionResult Staff()
+        {
+            ViewBag.Message = "Kadromuz";
+
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

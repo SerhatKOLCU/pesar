@@ -47,8 +47,7 @@ namespace PESA
                     "~/assets/plugins/fancybox/source/jquery.fancybox.css",
                     "~/assets/plugins/font-awesome/css/font-awesome.min.css",
                     "~/assets/plugins/master-slider/masterslider/style/masterslider.css",
-                    "~/assets/plugins/master-slider/masterslider/skins/black-2/style.css",
-                    "~/assets/plugins/login-signup-modal-window/css/style.css"
+                    "~/assets/plugins/master-slider/masterslider/skins/black-2/style.css"
                     ));
 
             //////////////////////////////////////////////////////////////
@@ -61,20 +60,29 @@ namespace PESA
                     "~/assets/plugins/counter/jquery.counterup.min.js",
                     "~/assets/plugins/master-slider/masterslider/masterslider.js",
                     "~/assets/plugins/master-slider/masterslider/jquery.easing.min.js",
-                    "~/assets/plugins/login-signup-modal-window/js/main.js"
+                    "~/assets/plugins/jquery.scrollbox.js"
                     ));
 
                     //JS Page Level
             bundles.Add(new ScriptBundle("~/assets/pagejs").Include(
                     "~/assets/js/app.js",
+                    "~/assets/js/custom.js",
                     "~/assets/js/plugins/fancy-box.js",
                     "~/assets/js/plugins/owl-carousel.js",
                     "~/assets/js/plugins/master-slider-showcase4.js",
                     "~/assets/js/plugins/style-switcher.js",
-                    "~/assets/js/plugins/jquery.slimscroll.min.js",
-                    "~/assets/js/plugins/sly.min.js"
+                    "~/assets/js/plugins/jquery.slimscroll.min.js"
                     ));
 
+
+            ////////////////// carousel ////////////////
+            bundles.Add(new ScriptBundle("~/assets/plugins/owl-carousel.js").Include(
+                    "~/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"
+                ));
+            bundles.Add(new StyleBundle("~/assets/plugins/owl-carousel.css").Include(
+                    "~/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css",
+                    "~/assets/plugins/owl-carousel/owl-carousel/owl.theme.css"
+                ));
         }
     }
 }
