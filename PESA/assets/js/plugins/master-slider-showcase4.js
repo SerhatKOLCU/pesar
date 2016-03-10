@@ -14,8 +14,10 @@ var MasterSliderShowcase4 = function () {
 		        width:890,
 		        height:500,
 		        space:0,
-		        speed: 50,
-		        view:'basic'
+		        speed: 20,
+		        view: 'basic',
+		        autoplay: 1,
+                loop: 1
 		    });
         }
         

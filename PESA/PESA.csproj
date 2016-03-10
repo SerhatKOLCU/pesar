@@ -49,6 +49,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -208,6 +216,7 @@
     <Content Include="assets\css\theme-colors\purple.css" />
     <Content Include="assets\css\theme-colors\teal.css" />
     <Content Include="assets\css\theme-skins\dark.css" />
+    <Content Include="assets\img\blog\guneydogu_pesa.png" />
     <Content Include="assets\img\blog\img1.jpg" />
     <Content Include="assets\img\blog\img10.jpg" />
     <Content Include="assets\img\blog\img11.jpg" />
@@ -263,6 +272,7 @@
     <Content Include="assets\img\blog\img7.jpg" />
     <Content Include="assets\img\blog\img8.jpg" />
     <Content Include="assets\img\blog\img9.jpg" />
+    <Content Include="assets\img\blog\jjhg.png" />
     <Content Include="assets\img\clients2\emirates.png" />
     <Content Include="assets\img\icons\video-play.png" />
     <Content Include="assets\img\logo3-dark.png" />
@@ -319,6 +329,16 @@
     <Content Include="assets\img\slider\img2.jpg" />
     <Content Include="assets\img\slider\img3.jpg" />
     <Content Include="assets\img\slider\img4.jpg" />
+    <Content Include="assets\img\Staff\fatihsavasan.jpg" />
+    <Content Include="assets\img\Staff\kabasakal.jpg" />
+    <Content Include="assets\img\Staff\sakirgormus.jpg" />
+    <Content Include="assets\img\Staff\mehmetsarac.jpg" />
+    <Content Include="assets\img\Staff\ozkanpinar.jpg" />
+    <Content Include="assets\img\Staff\temelgurdal.jpg" />
+    <Content Include="assets\img\Staff\cahitsanver.jpg" />
+    <Content Include="assets\img\Staff\fatihyardimcioglu.jpg" />
+    <Content Include="assets\img\Staff\mehmeteminaltundemir.jpg" />
+    <Content Include="assets\img\Staff\ismailgulec.jpg" />
     <Content Include="assets\img\team\img1.jpg" />
     <Content Include="assets\img\team\img2.jpg" />
     <Content Include="assets\img\team\img3.jpg" />
@@ -708,6 +728,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome\font-awesome.css" />
     <Content Include="Content\font-awesome\font-awesome.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -882,6 +903,7 @@
     <Content Include="Views\Yayinlar\EkonomiBulteni.cshtml" />
     <Content Include="Views\Home\Staff.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Yayinlar\YayinPostLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -14,6 +14,11 @@ namespace PESA.Controllers
             return View();
         }
 
+        public ActionResult YayinPostLayout()
+        {
+            return View();
+        }
+
         // GET: Analiz
         public ActionResult Analiz()
         {
