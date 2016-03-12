@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - PESA</title>
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700'>
     @*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>*@
     @Scripts.Render("~/bundles/jquery")
@@ -35,7 +35,7 @@
                         </button>
                         <div class="navbar-brand">
                             <a href="~/Home/Index">
-                                <img src="~/assets/img/Nawbar/pesda_logo.png" alt="Logo">
+                                <img src="~/assets/img/Nawbar/pesa_logo.png" alt="Logo">
                             </a>
                         </div>
                     </div><!--/end responsive container-->
@@ -147,14 +147,6 @@
                                     </ul>
                                 </li>
                                 <!-- End DERGİLER -->
-                                <!-- HABERLER -->
-                                <li class="home">
-                                @*@Html.ActionLink("HABERLER", "News", "Home")*@
-                                </li>
-                                <!-- End HABERLER -->
-                                <!-- KADROMUZ -->
-                                @*<li class="home">@Html.ActionLink("KADROMUZ", "Staff", "Home")</li>*@
-                                <!-- KADROMUZ -->
                                 <!-- HAKKIMIZDA -->
                                 <li class="dropdown home">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
@@ -165,12 +157,7 @@
                                         <li class="home">@Html.ActionLink("KADROMUZ", "Staff", "Home")</li>
                                     </ul>
                                 </li>
-
-                                
                                 <!-- End HAKKIMIZDA -->
-                                <!-- İLETİŞİM -->
-                                @*<li class="home">@Html.ActionLink("İLETİŞİM", "Contact", "Home")</li>*@
-                                <!-- End İLETİŞİM -->
                             </ul>
                         </div><!--/responsive container-->
                     </div><!--/navbar-collapse-->
@@ -191,7 +178,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 col-sm-6 column-one md-margin-bottom-50">
-                            <a href="index.html"><img class="footer-logo" src="~/assets/img/themes/pesar-logo-nawbar.png" alt=""></a>
+                            <a href="Home/Index"><img class="img-responsive footer-logo" src="~/assets/img/Nawbar/pesa_logo.png" alt=""></a>
                             <h2>Sosyal Medya</h2>
                             <!-- Social Icons -->
                             <div>
@@ -258,26 +245,3 @@
 
 </body>
 </html>
-
-
-
-
-@*
-    <div class="col-md-4 col-sm-6 md-margin-bottom-50">
-                                <h2>Tags</h2>
-                                <!-- Tag Links v4 -->
-                                <ul class="tags-v4 margin-bottom-40">
-                                    <li><a class="rounded-4x" href="#">java</a></li>
-                                    <li><a class="rounded-4x" href="#">featured</a></li>
-                                    <li><a class="rounded-4x" href="#">pattern</a></li>
-                                    <li><a class="rounded-4x" href="#">web</a></li>
-                                    <li><a class="rounded-4x" href="#">fashion</a></li>
-                                    <li><a class="rounded-4x" href="#">wrapbootstrap</a></li>
-                                    <li><a class="rounded-4x" href="#">css3</a></li>
-                                    <li><a class="rounded-4x" href="#">foto</a></li>
-                                    <li><a class="rounded-4x" href="#">google</a></li>
-                                    <li><a class="rounded-4x" href="#">html5</a></li>
-                                </ul>
-                                <!-- End Tag Links v4 -->
-                            </div>
-*@
