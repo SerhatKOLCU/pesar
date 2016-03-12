@@ -1,7 +1,11 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Analiz";
 }
+@Styles.Render("~/assets/headerfooter")
+@Styles.Render("~/assets/theme")
+@Styles.Render("~/assets/plugins.css")
+
+
 <div class="row">
     <!-- Blog Grid -->
     <div class="row margin-bottom-50">
@@ -140,3 +144,8 @@
     </ul>
     <!-- End Pager v4 -->
 </div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+@Scripts.Render("~/assets/plugins.js")
+@Scripts.Render("~/assets/pagejs")

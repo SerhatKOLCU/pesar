@@ -309,6 +309,7 @@
     <Content Include="assets\img\Nawbar\announcements.ico" />
     <Content Include="assets\img\Nawbar\ekonomi-bulteni.png" />
     <Content Include="assets\img\Nawbar\gorus.png" />
+    <Content Include="assets\img\Nawbar\logo1.png" />
     <Content Include="assets\img\Nawbar\rapor.png" />
     <Content Include="assets\img\newscarousel\newscarousel1-100x50.jpg" />
     <Content Include="assets\img\newscarousel\newscarousel1.jpg" />
@@ -366,7 +367,7 @@
     <Content Include="assets\img\themes\logo-news-light-orange.png" />
     <Content Include="assets\img\themes\logo-news-light-purple.png" />
     <Content Include="assets\img\themes\logo-news-light-teal.png" />
-    <Content Include="assets\img\themes\pesar-logo-nawbar.png" />
+    <Content Include="assets\img\Nawbar\pesar-logo-nawbar.png" />
     <Content Include="assets\img\thumb\img-thumb1.jpg" />
     <Content Include="assets\img\thumb\img-thumb2.jpg" />
     <Content Include="assets\img\thumb\img-thumb3.jpg" />
@@ -402,6 +403,7 @@
     <Content Include="assets\js\plugins\sly.min.js" />
     <Content Include="assets\js\plugins\style-switcher-rtl.js" />
     <Content Include="assets\js\plugins\style-switcher.js" />
+    <Content Include="assets\img\Nawbar\pesda_logo.png" />
     <Content Include="assets\plugins\animate.css" />
     <Content Include="assets\plugins\back-to-top.js" />
     <Content Include="assets\plugins\bootstrap\css\bootstrap-rtl.min.css" />
