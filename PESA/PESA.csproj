@@ -178,6 +178,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TempController.cs" />
     <Compile Include="Controllers\YayinlarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -729,6 +730,7 @@
     <Content Include="Content\font-awesome\font-awesome.css" />
     <Content Include="Content\font-awesome\font-awesome.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\TempImages\analiz\analiz23.PNG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -903,9 +905,13 @@
     <Content Include="Views\Home\Staff.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Yayinlar\YayinPostLayout.cshtml" />
+    <Content Include="Views\Temp\Analiz23.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\TempImages\bulten\" />
+    <Folder Include="Content\TempImages\gorus\" />
+    <Folder Include="Content\TempImages\rapor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -926,7 +932,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56508</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
