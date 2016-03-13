@@ -730,9 +730,24 @@
     <Content Include="Content\font-awesome\font-awesome.css" />
     <Content Include="Content\font-awesome\font-awesome.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\TempImages\gorus\gorus34.png" />
+    <Content Include="Content\TempImages\gorus\gorus35.png" />
+    <Content Include="Content\TempImages\gorus\gorus36.png" />
+    <Content Include="Content\TempImages\gorus\gorus37.png" />
+    <Content Include="Content\TempImages\gorus\gorus38.png" />
+    <Content Include="Content\TempImages\gorus\gorus39.png" />
+    <Content Include="Content\TempImages\gorus\gorus40.png" />
+    <Content Include="Content\TempImages\gorus\gorus41.png" />
     <Content Include="Content\TempImages\gorus\gorus42.png" />
     <Content Include="Content\TempImages\gorus\gorus43.PNG" />
     <Content Include="Content\TempImages\analiz\analiz22.PNG" />
+    <Content Include="Content\TempImages\rapor\rapor10.PNG" />
+    <Content Include="Content\TempImages\rapor\rapor4.PNG" />
+    <Content Include="Content\TempImages\rapor\rapor5.PNG" />
+    <Content Include="Content\TempImages\rapor\rapor6.PNG" />
+    <Content Include="Content\TempImages\rapor\rapor7.PNG" />
+    <Content Include="Content\TempImages\rapor\rapor8.PNG" />
+    <Content Include="Content\TempImages\rapor\rapor9.PNG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -907,7 +922,6 @@
     <Content Include="Views\Home\Staff.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Yayinlar\YayinPostLayout.cshtml" />
-    <Content Include="Views\Temp\Analiz23.cshtml" />
     <Content Include="Views\Temp\Gorus43.cshtml" />
     <Content Include="Views\Temp\Gorus42.cshtml" />
     <Content Include="Views\Temp\Gorus41.cshtml" />
@@ -932,12 +946,28 @@
     <Content Include="Views\Temp\Analiz5.cshtml" />
     <Content Include="Views\Temp\Analiz4.cshtml" />
     <Content Include="Views\Temp\Analiz3.cshtml" />
+    <Content Include="Views\Temp\Analizler.cshtml" />
     <None Include="Views\Temp\Analiz1.cshtml" />
+    <Content Include="Views\Temp\Gorus40.cshtml" />
+    <Content Include="Views\Temp\Gorus39.cshtml" />
+    <Content Include="Views\Temp\Gorus38.cshtml" />
+    <Content Include="Views\Temp\Gorus34.cshtml" />
+    <Content Include="Views\Temp\Gorus37.cshtml" />
+    <Content Include="Views\Temp\Gorus36.cshtml" />
+    <Content Include="Views\Temp\Gorus35.cshtml" />
+    <Content Include="Views\Temp\Rapor10.cshtml" />
+    <Content Include="Views\Temp\Rapor8.cshtml" />
+    <Content Include="Views\Temp\Rapor9.cshtml" />
+    <Content Include="Views\Temp\Rapor4.cshtml" />
+    <Content Include="Views\Temp\Rapor5.cshtml" />
+    <Content Include="Views\Temp\Rapor6.cshtml" />
+    <Content Include="Views\Temp\Rapor7.cshtml" />
+    <Content Include="Views\Temp\Gorusler.cshtml" />
+    <None Include="Views\Temp\Raporlar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\TempImages\bulten\" />
-    <Folder Include="Content\TempImages\rapor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

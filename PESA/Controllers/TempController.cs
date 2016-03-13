@@ -13,7 +13,18 @@ namespace PESA.Controllers
         {
             return View();
         }
-
+        public ActionResult Analizler()
+        {
+            return View();
+        }
+        public ActionResult Gorusler()
+        {
+            return View();
+        }
+        public ActionResult Raporlar()
+        {
+            return View();
+        }
         public ActionResult Analiz22()
         {
             return View();
@@ -293,6 +304,41 @@ namespace PESA.Controllers
             return View();
         }
         public ActionResult Gorus1()
+        {
+            return View();
+        }
+
+        public ActionResult Rapor10()
+        {
+            return View();
+        }
+
+        public ActionResult Rapor9()
+        {
+            return View();
+        }
+
+        public ActionResult Rapor8()
+        {
+            return View();
+        }
+
+        public ActionResult Rapor7()
+        {
+            return View();
+        }
+
+        public ActionResult Rapor6()
+        {
+            return View();
+        }
+
+        public ActionResult Rapor5()
+        {
+            return View();
+        }
+
+        public ActionResult Rapor4()
         {
             return View();
         }
