@@ -68,3 +68,8 @@
   color:#fff;
   transition:all .7s;
 }
+
+/*Header Dropdown*/
+.header-v8 .mega-menu .dropdown-menu.last {
+    right: 1px;
+}

@@ -731,6 +731,8 @@
     <Content Include="Content\font-awesome\font-awesome.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\TempImages\analiz\analiz23.PNG" />
+    <Content Include="Content\TempImages\gorus\gorus42.png" />
+    <Content Include="Content\TempImages\gorus\gorus43.PNG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -906,11 +908,13 @@
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Yayinlar\YayinPostLayout.cshtml" />
     <Content Include="Views\Temp\Analiz23.cshtml" />
+    <Content Include="Views\Temp\Gorus43.cshtml" />
+    <Content Include="Views\Temp\Gorus42.cshtml" />
+    <Content Include="Views\Temp\Gorus41.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\TempImages\bulten\" />
-    <Folder Include="Content\TempImages\gorus\" />
     <Folder Include="Content\TempImages\rapor\" />
   </ItemGroup>
   <ItemGroup>
