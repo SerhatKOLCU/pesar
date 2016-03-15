@@ -60,6 +60,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -185,8 +187,41 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Duyuru.cs">
+      <DependentUpon>PesaDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Etiket.cs">
+      <DependentUpon>PesaDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Kullanici.cs">
+      <DependentUpon>PesaDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PesaDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PesaDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PesaDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PesaDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PesaDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PesaDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Yayin.cs">
+      <DependentUpon>PesaDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\YayinTip.cs">
+      <DependentUpon>PesaDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Yazar.cs">
+      <DependentUpon>PesaDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -757,6 +792,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\PesaDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PesaDb.edmx</DependentUpon>
+      <LastGenOutput>PesaDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PesaDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PesaDb.edmx</DependentUpon>
+      <LastGenOutput>PesaDb.cs</LastGenOutput>
+    </Content>
     <Content Include="ModernAdmin\css\bootstrap.min.css" />
     <Content Include="ModernAdmin\css\clndr.css" />
     <Content Include="ModernAdmin\css\custom.css" />
@@ -917,6 +962,13 @@
     <Content Include="ModernAdmin\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="ModernAdmin\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="ModernAdmin\fonts\glyphicons-halflings-regular.woff2" />
+    <EntityDeploy Include="Models\PesaDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PesaDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PesaDb.edmx.diagram">
+      <DependentUpon>PesaDb.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1022,6 +1074,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

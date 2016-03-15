@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PesaDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Duyuru">
+          <Key>
+            <PropertyRef Name="Duyuru_ID" />
+          </Key>
+          <Property Name="Duyuru_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Duyuru_Baslik" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Duyuru_Icerik" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Duyuru_Foto" Type="image" Nullable="false" />
+          <Property Name="Duyuru_Dosya" Type="varbinary(max)" />
+          <Property Name="Duyuru_Tarih" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Etiket">
+          <Key>
+            <PropertyRef Name="Etiket_ID" />
+          </Key>
+          <Property Name="Etiket_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Etiket_Adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="Kullanici_ID" />
+          </Key>
+          <Property Name="Kullanici_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kullanici_Adli" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kullanici_Parola" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Yayin">
+          <Key>
+            <PropertyRef Name="Yayin_ID" />
+          </Key>
+          <Property Name="Yayin_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YayinTip_ID" Type="int" Nullable="false" />
+          <Property Name="Yayin_Baslik" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Yayin_Foto" Type="image" Nullable="false" />
+          <Property Name="Yayin_Icerik" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Yayin_Ozet" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Yazar_ID" Type="int" Nullable="false" />
+          <Property Name="Etiket_ID" Type="int" Nullable="false" />
+          <Property Name="Yayin_Dosya" Type="varbinary(max)" Nullable="false" />
+          <Property Name="Yayin_Tarih" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Slider_Baslik" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Slider_Ozet" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PesaDb.dbo.YayinEtiket' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="YayinEtiket">
+          <Key>
+            <PropertyRef Name="Yayın_ID" />
+            <PropertyRef Name="Etiket_ID" />
+          </Key>
+          <Property Name="Yayın_ID" Type="int" Nullable="false" />
+          <Property Name="Etiket_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="YayinTip">
+          <Key>
+            <PropertyRef Name="YayinTip_ID" />
+          </Key>
+          <Property Name="YayinTip_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YayinTip_Adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Yazar">
+          <Key>
+            <PropertyRef Name="Yazar_ID" />
+          </Key>
+          <Property Name="Yazar_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Yazar_Adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Yayin_YayinTip">
+          <End Role="YayinTip" Type="Self.YayinTip" Multiplicity="1" />
+          <End Role="Yayin" Type="Self.Yayin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YayinTip">
+              <PropertyRef Name="YayinTip_ID" />
+            </Principal>
+            <Dependent Role="Yayin">
+              <PropertyRef Name="YayinTip_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yayin_Yazar">
+          <End Role="Yazar" Type="Self.Yazar" Multiplicity="1" />
+          <End Role="Yayin" Type="Self.Yayin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Yazar">
+              <PropertyRef Name="Yazar_ID" />
+            </Principal>
+            <Dependent Role="Yayin">
+              <PropertyRef Name="Yazar_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_YayinEtiket_Etiket">
+          <End Role="Etiket" Type="Self.Etiket" Multiplicity="1" />
+          <End Role="YayinEtiket" Type="Self.YayinEtiket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Etiket">
+              <PropertyRef Name="Etiket_ID" />
+            </Principal>
+            <Dependent Role="YayinEtiket">
+              <PropertyRef Name="Etiket_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_YayinEtiket_Yayin">
+          <End Role="Yayin" Type="Self.Yayin" Multiplicity="1" />
+          <End Role="YayinEtiket" Type="Self.YayinEtiket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Yayin">
+              <PropertyRef Name="Yayin_ID" />
+            </Principal>
+            <Dependent Role="YayinEtiket">
+              <PropertyRef Name="Yayın_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PesaDbModelStoreContainer">
+          <EntitySet Name="Duyuru" EntityType="Self.Duyuru" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Etiket" EntityType="Self.Etiket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Yayin" EntityType="Self.Yayin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YayinTip" EntityType="Self.YayinTip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Yazar" EntityType="Self.Yazar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YayinEtiket" EntityType="Self.YayinEtiket" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [YayinEtiket].[Yayın_ID] AS [Yayın_ID], 
+    [YayinEtiket].[Etiket_ID] AS [Etiket_ID]
+    FROM [dbo].[YayinEtiket] AS [YayinEtiket]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Yayin_YayinTip" Association="Self.FK_Yayin_YayinTip">
+            <End Role="YayinTip" EntitySet="YayinTip" />
+            <End Role="Yayin" EntitySet="Yayin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yayin_Yazar" Association="Self.FK_Yayin_Yazar">
+            <End Role="Yazar" EntitySet="Yazar" />
+            <End Role="Yayin" EntitySet="Yayin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_YayinEtiket_Etiket" Association="Self.FK_YayinEtiket_Etiket">
+            <End Role="Etiket" EntitySet="Etiket" />
+            <End Role="YayinEtiket" EntitySet="YayinEtiket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_YayinEtiket_Yayin" Association="Self.FK_YayinEtiket_Yayin">
+            <End Role="Yayin" EntitySet="Yayin" />
+            <End Role="YayinEtiket" EntitySet="YayinEtiket" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PesaDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Duyuru">
+          <Key>
+            <PropertyRef Name="Duyuru_ID" />
+          </Key>
+          <Property Name="Duyuru_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Duyuru_Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Duyuru_Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Duyuru_Foto" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Duyuru_Dosya" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Duyuru_Tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Etiket">
+          <Key>
+            <PropertyRef Name="Etiket_ID" />
+          </Key>
+          <Property Name="Etiket_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Etiket_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Yayin" Relationship="Self.YayinEtiket" FromRole="Etiket" ToRole="Yayin" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="Kullanici_ID" />
+          </Key>
+          <Property Name="Kullanici_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kullanici_Adli" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Kullanici_Parola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Yayin">
+          <Key>
+            <PropertyRef Name="Yayin_ID" />
+          </Key>
+          <Property Name="Yayin_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YayinTip_ID" Type="Int32" Nullable="false" />
+          <Property Name="Yayin_Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Yayin_Foto" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Yayin_Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Yayin_Ozet" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Yazar_ID" Type="Int32" Nullable="false" />
+          <Property Name="Etiket_ID" Type="Int32" Nullable="false" />
+          <Property Name="Yayin_Dosya" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Yayin_Tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Slider_Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Slider_Ozet" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="YayinTip" Relationship="Self.FK_Yayin_YayinTip" FromRole="Yayin" ToRole="YayinTip" />
+          <NavigationProperty Name="Yazar" Relationship="Self.FK_Yayin_Yazar" FromRole="Yayin" ToRole="Yazar" />
+          <NavigationProperty Name="Etiket" Relationship="Self.YayinEtiket" FromRole="Yayin" ToRole="Etiket" />
+        </EntityType>
+        <EntityType Name="YayinTip">
+          <Key>
+            <PropertyRef Name="YayinTip_ID" />
+          </Key>
+          <Property Name="YayinTip_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YayinTip_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Yayin" Relationship="Self.FK_Yayin_YayinTip" FromRole="YayinTip" ToRole="Yayin" />
+        </EntityType>
+        <EntityType Name="Yazar">
+          <Key>
+            <PropertyRef Name="Yazar_ID" />
+          </Key>
+          <Property Name="Yazar_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Yazar_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Yayin" Relationship="Self.FK_Yayin_Yazar" FromRole="Yazar" ToRole="Yayin" />
+        </EntityType>
+        <Association Name="FK_Yayin_YayinTip">
+          <End Role="YayinTip" Type="Self.YayinTip" Multiplicity="1" />
+          <End Role="Yayin" Type="Self.Yayin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YayinTip">
+              <PropertyRef Name="YayinTip_ID" />
+            </Principal>
+            <Dependent Role="Yayin">
+              <PropertyRef Name="YayinTip_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yayin_Yazar">
+          <End Role="Yazar" Type="Self.Yazar" Multiplicity="1" />
+          <End Role="Yayin" Type="Self.Yayin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Yazar">
+              <PropertyRef Name="Yazar_ID" />
+            </Principal>
+            <Dependent Role="Yayin">
+              <PropertyRef Name="Yazar_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="YayinEtiket">
+          <End Role="Etiket" Type="Self.Etiket" Multiplicity="*" />
+          <End Role="Yayin" Type="Self.Yayin" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="PesaDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Duyuru" EntityType="Self.Duyuru" />
+          <EntitySet Name="Etiket" EntityType="Self.Etiket" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+          <EntitySet Name="Yayin" EntityType="Self.Yayin" />
+          <EntitySet Name="YayinTip" EntityType="Self.YayinTip" />
+          <EntitySet Name="Yazar" EntityType="Self.Yazar" />
+          <AssociationSet Name="FK_Yayin_YayinTip" Association="Self.FK_Yayin_YayinTip">
+            <End Role="YayinTip" EntitySet="YayinTip" />
+            <End Role="Yayin" EntitySet="Yayin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yayin_Yazar" Association="Self.FK_Yayin_Yazar">
+            <End Role="Yazar" EntitySet="Yazar" />
+            <End Role="Yayin" EntitySet="Yayin" />
+          </AssociationSet>
+          <AssociationSet Name="YayinEtiket" Association="Self.YayinEtiket">
+            <End Role="Etiket" EntitySet="Etiket" />
+            <End Role="Yayin" EntitySet="Yayin" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PesaDbModelStoreContainer" CdmEntityContainer="PesaDbEntities">
+          <EntitySetMapping Name="Duyuru">
+            <EntityTypeMapping TypeName="PesaDbModel.Duyuru">
+              <MappingFragment StoreEntitySet="Duyuru">
+                <ScalarProperty Name="Duyuru_ID" ColumnName="Duyuru_ID" />
+                <ScalarProperty Name="Duyuru_Baslik" ColumnName="Duyuru_Baslik" />
+                <ScalarProperty Name="Duyuru_Icerik" ColumnName="Duyuru_Icerik" />
+                <ScalarProperty Name="Duyuru_Foto" ColumnName="Duyuru_Foto" />
+                <ScalarProperty Name="Duyuru_Dosya" ColumnName="Duyuru_Dosya" />
+                <ScalarProperty Name="Duyuru_Tarih" ColumnName="Duyuru_Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Etiket">
+            <EntityTypeMapping TypeName="PesaDbModel.Etiket">
+              <MappingFragment StoreEntitySet="Etiket">
+                <ScalarProperty Name="Etiket_ID" ColumnName="Etiket_ID" />
+                <ScalarProperty Name="Etiket_Adi" ColumnName="Etiket_Adi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanici">
+            <EntityTypeMapping TypeName="PesaDbModel.Kullanici">
+              <MappingFragment StoreEntitySet="Kullanici">
+                <ScalarProperty Name="Kullanici_ID" ColumnName="Kullanici_ID" />
+                <ScalarProperty Name="Kullanici_Adli" ColumnName="Kullanici_Adli" />
+                <ScalarProperty Name="Kullanici_Parola" ColumnName="Kullanici_Parola" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Yayin">
+            <EntityTypeMapping TypeName="PesaDbModel.Yayin">
+              <MappingFragment StoreEntitySet="Yayin">
+                <ScalarProperty Name="Yayin_ID" ColumnName="Yayin_ID" />
+                <ScalarProperty Name="YayinTip_ID" ColumnName="YayinTip_ID" />
+                <ScalarProperty Name="Yayin_Baslik" ColumnName="Yayin_Baslik" />
+                <ScalarProperty Name="Yayin_Foto" ColumnName="Yayin_Foto" />
+                <ScalarProperty Name="Yayin_Icerik" ColumnName="Yayin_Icerik" />
+                <ScalarProperty Name="Yayin_Ozet" ColumnName="Yayin_Ozet" />
+                <ScalarProperty Name="Yazar_ID" ColumnName="Yazar_ID" />
+                <ScalarProperty Name="Etiket_ID" ColumnName="Etiket_ID" />
+                <ScalarProperty Name="Yayin_Dosya" ColumnName="Yayin_Dosya" />
+                <ScalarProperty Name="Yayin_Tarih" ColumnName="Yayin_Tarih" />
+                <ScalarProperty Name="Slider_Baslik" ColumnName="Slider_Baslik" />
+                <ScalarProperty Name="Slider_Ozet" ColumnName="Slider_Ozet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YayinTip">
+            <EntityTypeMapping TypeName="PesaDbModel.YayinTip">
+              <MappingFragment StoreEntitySet="YayinTip">
+                <ScalarProperty Name="YayinTip_ID" ColumnName="YayinTip_ID" />
+                <ScalarProperty Name="YayinTip_Adi" ColumnName="YayinTip_Adi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Yazar">
+            <EntityTypeMapping TypeName="PesaDbModel.Yazar">
+              <MappingFragment StoreEntitySet="Yazar">
+                <ScalarProperty Name="Yazar_ID" ColumnName="Yazar_ID" />
+                <ScalarProperty Name="Yazar_Adi" ColumnName="Yazar_Adi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="YayinEtiket" TypeName="PesaDbModel.YayinEtiket" StoreEntitySet="YayinEtiket">
+            <EndProperty Name="Etiket">
+              <ScalarProperty Name="Etiket_ID" ColumnName="Etiket_ID" />
+            </EndProperty>
+            <EndProperty Name="Yayin">
+              <ScalarProperty Name="Yayin_ID" ColumnName="Yayın_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
