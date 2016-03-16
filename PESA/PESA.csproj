@@ -1000,6 +1000,7 @@
     <Content Include="Models\PesaDb.edmx.diagram">
       <DependentUpon>PesaDb.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\pup.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
