@@ -25,6 +25,12 @@ namespace PESA.Controllers
         {
             return View();
         }
+
+        public ActionResult Bultenler()
+        {
+            return View();
+        }
+
         public ActionResult Analiz22()
         {
             return View();
@@ -339,6 +345,111 @@ namespace PESA.Controllers
         }
 
         public ActionResult Rapor4()
+        {
+            return View();
+        }
+
+        public ActionResult Duyuru11()
+        {
+            return View();
+        }
+
+        public ActionResult Duyuru10()
+        {
+            return View();
+        }
+
+        public ActionResult Duyuru9()
+        {
+            return View();
+        }
+
+        public ActionResult Duyuru8()
+        {
+            return View();
+        }
+
+        public ActionResult Duyuru7()
+        {
+            return View();
+        }
+
+        public ActionResult Duyuru6()
+        {
+            return View();
+        }
+
+        public ActionResult Duyuru5()
+        {
+            return View();
+        }
+
+        public ActionResult Duyuru4()
+        {
+            return View();
+        }
+
+        public ActionResult Duyuru3()
+        {
+            return View();
+        }
+
+        public ActionResult Duyuru2()
+        {
+            return View();
+        }
+
+        public ActionResult Duyuru1()
+        {
+            return View();
+        }
+
+        public ActionResult Bulten10()
+        {
+            return View();
+        }
+
+        public ActionResult Bulten9()
+        {
+            return View();
+        }
+
+        public ActionResult Bulten8()
+        {
+            return View();
+        }
+
+        public ActionResult Bulten7()
+        {
+            return View();
+        }
+
+        public ActionResult Bulten6()
+        {
+            return View();
+        }
+
+        public ActionResult Bulten5()
+        {
+            return View();
+        }
+
+        public ActionResult Bulten4()
+        {
+            return View();
+        }
+
+        public ActionResult Bulten3()
+        {
+            return View();
+        }
+
+        public ActionResult Bulten2()
+        {
+            return View();
+        }
+
+        public ActionResult Bulten1()
         {
             return View();
         }
