@@ -256,7 +256,6 @@
     <Content Include="assets\css\theme-colors\purple.css" />
     <Content Include="assets\css\theme-colors\teal.css" />
     <Content Include="assets\css\theme-skins\dark.css" />
-    <Content Include="assets\img\Nawbar\pesa_logo.png" />
     <Content Include="assets\img\blog\guneydogu_pesa.png" />
     <Content Include="assets\img\blog\img1.jpg" />
     <Content Include="assets\img\blog\img10.jpg" />
@@ -350,6 +349,7 @@
     <Content Include="assets\img\Nawbar\announcements.ico" />
     <Content Include="assets\img\Nawbar\ekonomi-bulteni.png" />
     <Content Include="assets\img\Nawbar\gorus.png" />
+    <Content Include="assets\img\Nawbar\pesa_logo.png" />
     <Content Include="assets\img\Nawbar\rapor.png" />
     <Content Include="assets\img\newscarousel\newscarousel1-100x50.jpg" />
     <Content Include="assets\img\newscarousel\newscarousel1.jpg" />
