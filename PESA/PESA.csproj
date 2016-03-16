@@ -786,6 +786,14 @@
     <Content Include="Content\TempImages\analiz\analiz6.png" />
     <Content Include="Content\TempImages\analiz\analiz7.png" />
     <Content Include="Content\TempImages\analiz\analiz8.png" />
+    <Content Include="Content\TempImages\bulten\bulten.png" />
+    <Content Include="Content\TempImages\bulten\duyuru.png" />
+    <Content Include="Content\TempImages\bulten\duyuru10.png" />
+    <Content Include="Content\TempImages\bulten\duyuru11.png" />
+    <Content Include="Content\TempImages\bulten\duyuru7.png" />
+    <Content Include="Content\TempImages\bulten\duyuru8.png" />
+    <Content Include="Content\TempImages\bulten\duyuru9.jpg" />
+    <Content Include="Content\TempImages\bulten\duyuru9.png" />
     <Content Include="Content\TempImages\gorus\gorus34.png" />
     <Content Include="Content\TempImages\gorus\gorus35.png" />
     <Content Include="Content\TempImages\gorus\gorus36.png" />
@@ -1110,7 +1118,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\TempImages\bulten\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
