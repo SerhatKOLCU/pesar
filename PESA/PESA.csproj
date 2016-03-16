@@ -213,6 +213,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PesaDb.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>PesaDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Yayin.cs">
       <DependentUpon>PesaDb.tt</DependentUpon>
     </Compile>
@@ -1048,6 +1051,10 @@
     <Content Include="Views\Temp\Analizler.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\AnalizEkle.cshtml" />
+    <Content Include="Views\Admin\Duyuru.cshtml" />
+    <Content Include="Views\Admin\DuyuruEkle.cshtml" />
+    <Content Include="Views\Admin\DuyuruDuzenle.cshtml" />
     <None Include="Views\Temp\Analiz1.cshtml" />
     <Content Include="Views\Temp\Gorus40.cshtml" />
     <Content Include="Views\Temp\Gorus39.cshtml" />

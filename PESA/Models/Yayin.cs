@@ -29,7 +29,7 @@ namespace PESA.Models
         public int Yazar_ID { get; set; }
         public int Etiket_ID { get; set; }
         public byte[] Yayin_Dosya { get; set; }
-        public string Yayin_Tarih { get; set; }
+        public System.DateTime Yayin_Tarih { get; set; }
         public string Slider_Baslik { get; set; }
         public string Slider_Ozet { get; set; }
     

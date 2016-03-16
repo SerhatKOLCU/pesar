@@ -12,13 +12,12 @@ namespace PESA.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Duyuru
+    public partial class sysdiagrams
     {
-        public int Duyuru_ID { get; set; }
-        public string Duyuru_Baslik { get; set; }
-        public string Duyuru_Icerik { get; set; }
-        public byte[] Duyuru_Foto { get; set; }
-        public byte[] Duyuru_Dosya { get; set; }
-        public System.DateTime Duyuru_Tarih { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

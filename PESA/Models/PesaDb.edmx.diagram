@@ -4,10 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="056ad65dc6944d85867fea1467b202f0" Name="Diagram1">
+      <Diagram DiagramId="758a293787ac495c9532b0b6adb3dd34" Name="Diagram1">
         <EntityTypeShape EntityType="PesaDbModel.Duyuru" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="PesaDbModel.Etiket" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PesaDbModel.Kullanici" Width="1.5" PointX="2.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PesaDbModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="PesaDbModel.Yayin" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PesaDbModel.YayinTip" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PesaDbModel.Yazar" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
