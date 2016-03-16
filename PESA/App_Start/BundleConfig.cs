@@ -28,19 +28,19 @@ namespace PESA
                       "~/Content/site.css",
                       "~/Content/font-awesome/font-awesome.min.css"));
 
-                      // Header & Footer
+            // Header & Footer
             bundles.Add(new StyleBundle("~/assets/headerfooter").Include(
                       "~/assets/css/headers/header-v8.css",
                       "~/assets/css/footers/footer-v8.css"));
 
-                    // CSS Theme
+            // CSS Theme
             bundles.Add(new StyleBundle("~/assets/theme").Include(
                     "~/assets/css/theme-colors/green.css",
                     "~/assets/css/blog.style.css",
                     "~/assets/css/theme-skins/dark.css",
                     "~/assets/css/custom.css"));
 
-                    //  < !--CSS Implementing Plugins -->
+            //  < !--CSS Implementing Plugins -->
             bundles.Add(new StyleBundle("~/assets/plugins.css").Include(
                     "~/assets/plugins/animate.css",
                     "~/assets/plugins/line-icons/line-icons.css",
@@ -52,7 +52,7 @@ namespace PESA
 
             //////////////////////////////////////////////////////////////
 
-                    // JS Implementing Plugins
+            // JS Implementing Plugins
             bundles.Add(new ScriptBundle("~/assets/plugins.js").Include(
                     "~/assets/plugins/back-to-top.js",
                     "~/assets/plugins/smoothScroll.js",
@@ -63,7 +63,7 @@ namespace PESA
                     "~/assets/plugins/jquery.scrollbox.js"
                     ));
 
-                    //JS Page Level
+            //JS Page Level
             bundles.Add(new ScriptBundle("~/assets/pagejs").Include(
                     "~/assets/js/app.js",
                     "~/assets/js/custom.js",
@@ -74,14 +74,25 @@ namespace PESA
                     "~/assets/js/plugins/jquery.slimscroll.min.js"
                     ));
 
-
-            ////////////////// carousel ////////////////
-            bundles.Add(new ScriptBundle("~/assets/plugins/owl-carousel.js").Include(
-                    "~/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"
+            /******      ADMIN      *******/
+            ////// CSS //////
+            bundles.Add(new StyleBundle("~/before/css").Include(
+                    "~/ModernAdmin/css/bootstrap.min.css",
+                    "~/ModernAdmin/css/style.css",
+                    "~/ModernAdmin/css/lines.css",
+                    "~/ModernAdmin/css/fontawesome.css",
+                    "~/ModernAdmin/css/custom.css"
                 ));
-            bundles.Add(new StyleBundle("~/assets/plugins/owl-carousel.css").Include(
-                    "~/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css",
-                    "~/assets/plugins/owl-carousel/owl-carousel/owl.theme.css"
+            ////// JavaScript /////
+            bundles.Add(new ScriptBundle("~/before/js").Include(
+                    "~/ModernAdmin/js/jquery.min.js",
+                    "~/ModernAdmin/js/metisMenu.min.js",
+                    "~/ModernAdmin/js/custom.js",
+                    "~/ModernAdmin/js/d3.v3.js",
+                    "~/ModernAdmin/js/rickshaw.js"
+                ));
+            bundles.Add(new ScriptBundle("~/after/js").Include(
+                    "~/ModernAdmin/js/bootstrap.min.js"
                 ));
         }
     }
