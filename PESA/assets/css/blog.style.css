@@ -41,7 +41,7 @@ body {
 
 body.header-fixed-space-v2 {
 	padding-top: 135px;
-    background-color: #ededed;
+	background-image: url(/Content/bg.jpg); 
 }
 
 @media (max-width: 991px) {
@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 ----------------------------------------------------*/
 
 .wrapper {
-	background: #ededed;
+	background-image: url(/Content/bg.jpg); 
 }
 
 .boxed-layout {
