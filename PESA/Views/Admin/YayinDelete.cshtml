@@ -1,0 +1,113 @@
+﻿@model PESA.Models.Yayin
+
+@{
+    ViewBag.Title = "YayinDelete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>YayinDelete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Yayin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Yayin_Baslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yayin_Baslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yayin_Foto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yayin_Foto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yayin_Icerik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yayin_Icerik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yayin_Ozet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yayin_Ozet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Etiket_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Etiket_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yayin_Dosya)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yayin_Dosya)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yayin_Tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yayin_Tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Slider_Baslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Slider_Baslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Slider_Ozet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Slider_Ozet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YayinTip.YayinTip_Adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YayinTip.YayinTip_Adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yazar.Yazar_Adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yazar.Yazar_Adi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

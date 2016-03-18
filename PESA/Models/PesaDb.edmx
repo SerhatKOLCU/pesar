@@ -12,16 +12,9 @@
           <Property Name="Duyuru_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Duyuru_Baslik" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Duyuru_Icerik" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Duyuru_Foto" Type="image" Nullable="false" />
-          <Property Name="Duyuru_Dosya" Type="varbinary(max)" />
-          <Property Name="Duyuru_Tarih" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Etiket">
-          <Key>
-            <PropertyRef Name="Etiket_ID" />
-          </Key>
-          <Property Name="Etiket_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Etiket_Adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Duyuru_Foto" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Duyuru_Dosya" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Duyuru_Tarih" Type="nvarchar" MaxLength="11" Nullable="false" />
         </EntityType>
         <EntityType Name="Kullanici">
           <Key>
@@ -52,21 +45,11 @@
           <Property Name="Yayin_Icerik" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Yayin_Ozet" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Yazar_ID" Type="int" Nullable="false" />
-          <Property Name="Etiket_ID" Type="int" Nullable="false" />
-          <Property Name="Yayin_Dosya" Type="varbinary(max)" Nullable="false" />
-          <Property Name="Yayin_Tarih" Type="datetime" Nullable="false" />
+          <Property Name="YayinEtiket_ID" Type="int" Nullable="false" />
+          <Property Name="Yayin_Dosya" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Yayin_Tarih" Type="nvarchar" MaxLength="11" Nullable="false" />
           <Property Name="Slider_Baslik" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Slider_Ozet" Type="nvarchar" MaxLength="100" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PesaDb.dbo.YayinEtiket' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="YayinEtiket">
-          <Key>
-            <PropertyRef Name="Yayın_ID" />
-            <PropertyRef Name="Etiket_ID" />
-          </Key>
-          <Property Name="Yayın_ID" Type="int" Nullable="false" />
-          <Property Name="Etiket_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="YayinTip">
           <Key>
@@ -106,44 +89,13 @@ warning 6002: The table/view 'PesaDb.dbo.YayinEtiket' does not have a primary ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_YayinEtiket_Etiket">
-          <End Role="Etiket" Type="Self.Etiket" Multiplicity="1" />
-          <End Role="YayinEtiket" Type="Self.YayinEtiket" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Etiket">
-              <PropertyRef Name="Etiket_ID" />
-            </Principal>
-            <Dependent Role="YayinEtiket">
-              <PropertyRef Name="Etiket_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_YayinEtiket_Yayin">
-          <End Role="Yayin" Type="Self.Yayin" Multiplicity="1" />
-          <End Role="YayinEtiket" Type="Self.YayinEtiket" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Yayin">
-              <PropertyRef Name="Yayin_ID" />
-            </Principal>
-            <Dependent Role="YayinEtiket">
-              <PropertyRef Name="Yayın_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="PesaDbModelStoreContainer">
           <EntitySet Name="Duyuru" EntityType="Self.Duyuru" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Etiket" EntityType="Self.Etiket" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Yayin" EntityType="Self.Yayin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="YayinTip" EntityType="Self.YayinTip" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Yazar" EntityType="Self.Yazar" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="YayinEtiket" EntityType="Self.YayinEtiket" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [YayinEtiket].[Yayın_ID] AS [Yayın_ID], 
-    [YayinEtiket].[Etiket_ID] AS [Etiket_ID]
-    FROM [dbo].[YayinEtiket] AS [YayinEtiket]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Yayin_YayinTip" Association="Self.FK_Yayin_YayinTip">
             <End Role="YayinTip" EntitySet="YayinTip" />
             <End Role="Yayin" EntitySet="Yayin" />
@@ -151,14 +103,6 @@ warning 6002: The table/view 'PesaDb.dbo.YayinEtiket' does not have a primary ke
           <AssociationSet Name="FK_Yayin_Yazar" Association="Self.FK_Yayin_Yazar">
             <End Role="Yazar" EntitySet="Yazar" />
             <End Role="Yayin" EntitySet="Yayin" />
-          </AssociationSet>
-          <AssociationSet Name="FK_YayinEtiket_Etiket" Association="Self.FK_YayinEtiket_Etiket">
-            <End Role="Etiket" EntitySet="Etiket" />
-            <End Role="YayinEtiket" EntitySet="YayinEtiket" />
-          </AssociationSet>
-          <AssociationSet Name="FK_YayinEtiket_Yayin" Association="Self.FK_YayinEtiket_Yayin">
-            <End Role="Yayin" EntitySet="Yayin" />
-            <End Role="YayinEtiket" EntitySet="YayinEtiket" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -173,17 +117,9 @@ warning 6002: The table/view 'PesaDb.dbo.YayinEtiket' does not have a primary ke
           <Property Name="Duyuru_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Duyuru_Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Duyuru_Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Duyuru_Foto" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <Property Name="Duyuru_Dosya" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="Duyuru_Tarih" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="Etiket">
-          <Key>
-            <PropertyRef Name="Etiket_ID" />
-          </Key>
-          <Property Name="Etiket_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Etiket_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Yayin" Relationship="Self.YayinEtiket" FromRole="Etiket" ToRole="Yayin" />
+          <Property Name="Duyuru_Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Duyuru_Dosya" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Duyuru_Tarih" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Kullanici">
           <Key>
@@ -214,14 +150,13 @@ warning 6002: The table/view 'PesaDb.dbo.YayinEtiket' does not have a primary ke
           <Property Name="Yayin_Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Yayin_Ozet" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Yazar_ID" Type="Int32" Nullable="false" />
-          <Property Name="Etiket_ID" Type="Int32" Nullable="false" />
-          <Property Name="Yayin_Dosya" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <Property Name="Yayin_Tarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="YayinEtiket_ID" Type="Int32" Nullable="false" />
+          <Property Name="Yayin_Dosya" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Yayin_Tarih" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Slider_Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Slider_Ozet" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="YayinTip" Relationship="Self.FK_Yayin_YayinTip" FromRole="Yayin" ToRole="YayinTip" />
           <NavigationProperty Name="Yazar" Relationship="Self.FK_Yayin_Yazar" FromRole="Yayin" ToRole="Yazar" />
-          <NavigationProperty Name="Etiket" Relationship="Self.YayinEtiket" FromRole="Yayin" ToRole="Etiket" />
         </EntityType>
         <EntityType Name="YayinTip">
           <Key>
@@ -263,13 +198,8 @@ warning 6002: The table/view 'PesaDb.dbo.YayinEtiket' does not have a primary ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="YayinEtiket">
-          <End Role="Etiket" Type="Self.Etiket" Multiplicity="*" />
-          <End Role="Yayin" Type="Self.Yayin" Multiplicity="*" />
-        </Association>
-        <EntityContainer Name="PesaDbEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PesaDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Duyuru" EntityType="Self.Duyuru" />
-          <EntitySet Name="Etiket" EntityType="Self.Etiket" />
           <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Yayin" EntityType="Self.Yayin" />
@@ -283,17 +213,13 @@ warning 6002: The table/view 'PesaDb.dbo.YayinEtiket' does not have a primary ke
             <End Role="Yazar" EntitySet="Yazar" />
             <End Role="Yayin" EntitySet="Yayin" />
           </AssociationSet>
-          <AssociationSet Name="YayinEtiket" Association="Self.YayinEtiket">
-            <End Role="Etiket" EntitySet="Etiket" />
-            <End Role="Yayin" EntitySet="Yayin" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PesaDbModelStoreContainer" CdmEntityContainer="PesaDbEntities1">
+        <EntityContainerMapping StorageEntityContainer="PesaDbModelStoreContainer" CdmEntityContainer="PesaDbEntities">
           <EntitySetMapping Name="Duyuru">
             <EntityTypeMapping TypeName="PesaDbModel.Duyuru">
               <MappingFragment StoreEntitySet="Duyuru">
@@ -303,14 +229,6 @@ warning 6002: The table/view 'PesaDb.dbo.YayinEtiket' does not have a primary ke
                 <ScalarProperty Name="Duyuru_Foto" ColumnName="Duyuru_Foto" />
                 <ScalarProperty Name="Duyuru_Dosya" ColumnName="Duyuru_Dosya" />
                 <ScalarProperty Name="Duyuru_Tarih" ColumnName="Duyuru_Tarih" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Etiket">
-            <EntityTypeMapping TypeName="PesaDbModel.Etiket">
-              <MappingFragment StoreEntitySet="Etiket">
-                <ScalarProperty Name="Etiket_ID" ColumnName="Etiket_ID" />
-                <ScalarProperty Name="Etiket_Adi" ColumnName="Etiket_Adi" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -344,7 +262,7 @@ warning 6002: The table/view 'PesaDb.dbo.YayinEtiket' does not have a primary ke
                 <ScalarProperty Name="Yayin_Icerik" ColumnName="Yayin_Icerik" />
                 <ScalarProperty Name="Yayin_Ozet" ColumnName="Yayin_Ozet" />
                 <ScalarProperty Name="Yazar_ID" ColumnName="Yazar_ID" />
-                <ScalarProperty Name="Etiket_ID" ColumnName="Etiket_ID" />
+                <ScalarProperty Name="YayinEtiket_ID" ColumnName="YayinEtiket_ID" />
                 <ScalarProperty Name="Yayin_Dosya" ColumnName="Yayin_Dosya" />
                 <ScalarProperty Name="Yayin_Tarih" ColumnName="Yayin_Tarih" />
                 <ScalarProperty Name="Slider_Baslik" ColumnName="Slider_Baslik" />
@@ -368,14 +286,6 @@ warning 6002: The table/view 'PesaDb.dbo.YayinEtiket' does not have a primary ke
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="YayinEtiket" TypeName="PesaDbModel.YayinEtiket" StoreEntitySet="YayinEtiket">
-            <EndProperty Name="Etiket">
-              <ScalarProperty Name="Etiket_ID" ColumnName="Etiket_ID" />
-            </EndProperty>
-            <EndProperty Name="Yayin">
-              <ScalarProperty Name="Yayin_ID" ColumnName="Yayın_ID" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

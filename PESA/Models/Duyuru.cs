@@ -17,8 +17,8 @@ namespace PESA.Models
         public int Duyuru_ID { get; set; }
         public string Duyuru_Baslik { get; set; }
         public string Duyuru_Icerik { get; set; }
-        public byte[] Duyuru_Foto { get; set; }
-        public byte[] Duyuru_Dosya { get; set; }
-        public System.DateTime Duyuru_Tarih { get; set; }
+        public string Duyuru_Foto { get; set; }
+        public string Duyuru_Dosya { get; set; }
+        public string Duyuru_Tarih { get; set; }
     }
 }

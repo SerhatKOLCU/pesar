@@ -14,12 +14,6 @@ namespace PESA.Models
     
     public partial class Yayin
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Yayin()
-        {
-            this.Etiket = new HashSet<Etiket>();
-        }
-    
         public int Yayin_ID { get; set; }
         public int YayinTip_ID { get; set; }
         public string Yayin_Baslik { get; set; }
@@ -27,15 +21,13 @@ namespace PESA.Models
         public string Yayin_Icerik { get; set; }
         public string Yayin_Ozet { get; set; }
         public int Yazar_ID { get; set; }
-        public int Etiket_ID { get; set; }
-        public byte[] Yayin_Dosya { get; set; }
-        public System.DateTime Yayin_Tarih { get; set; }
+        public int YayinEtiket_ID { get; set; }
+        public string Yayin_Dosya { get; set; }
+        public string Yayin_Tarih { get; set; }
         public string Slider_Baslik { get; set; }
         public string Slider_Ozet { get; set; }
     
         public virtual YayinTip YayinTip { get; set; }
         public virtual Yazar Yazar { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Etiket> Etiket { get; set; }
     }
 }

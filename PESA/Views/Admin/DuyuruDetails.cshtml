@@ -1,0 +1,59 @@
+﻿@model PESA.Models.Duyuru
+
+@{
+    ViewBag.Title = "DuyuruDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>DuyuruDetails</h2>
+
+<div>
+    <h4>Duyuru</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Duyuru_Baslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duyuru_Baslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duyuru_Icerik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duyuru_Icerik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duyuru_Foto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duyuru_Foto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duyuru_Dosya)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duyuru_Dosya)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duyuru_Tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duyuru_Tarih)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Duyuru_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

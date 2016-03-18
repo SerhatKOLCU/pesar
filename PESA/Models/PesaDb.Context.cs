@@ -13,10 +13,10 @@ namespace PESA.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PesaDbEntities1 : DbContext
+    public partial class PesaDbEntities : DbContext
     {
-        public PesaDbEntities1()
-            : base("name=PesaDbEntities1")
+        public PesaDbEntities()
+            : base("name=PesaDbEntities")
         {
         }
     
@@ -26,7 +26,6 @@ namespace PESA.Models
         }
     
         public virtual DbSet<Duyuru> Duyuru { get; set; }
-        public virtual DbSet<Etiket> Etiket { get; set; }
         public virtual DbSet<Kullanici> Kullanici { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Yayin> Yayin { get; set; }
