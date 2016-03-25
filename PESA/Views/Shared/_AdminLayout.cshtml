@@ -4,9 +4,7 @@
     <title>@ViewBag.Title - Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
-
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     @Styles.Render("~/before/css")
     @Scripts.Render("~/before/js")
     <!----webfonts--->
@@ -14,116 +12,124 @@
 </head>
 <body>
     <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="~/Admin/Index">PESA Admin</a>
+                <a class="navbar-brand" href="@Url.Action("Index", "Admin")">PESA ADMIN</a>
             </div>
-            <!-- /.navbar-header -->
-            <ul class="nav navbar-nav navbar-right">
 
-                
-            </ul>
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
                         <li>
-                            <a href="#">YAYIN YÖNETİMİ</a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Analiz</a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            @Html.ActionLink("Analiz Listesi", "AnalizListele", "Admin")
-                                        </li>
-                                        <li>
-                                            @Html.ActionLink("Yeni Analiz Ekle", "AnalizEkle", "Admin")
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Görüş</a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            @Html.ActionLink("Görüş Listesi", "GorusListele", "Admin")
-                                        </li>
-                                        <li>
-                                            @Html.ActionLink("Yeni Görüş Ekle", "GorusEkle", "Admin")
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Rapor</a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            @Html.ActionLink("Rapor Listesi", "RaporListele", "Admin")
-                                        </li>
-                                        <li>
-                                            @Html.ActionLink("Yeni Rapor Ekle", "RaporEkle", "Admin")
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Ekonomi Bülteni</a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            @Html.ActionLink("Bülten Listesi", "BultenListele", "Admin")
-                                        </li>
-                                        <li>
-                                            @Html.ActionLink("Yeni Bülten Ekle", "BultenEkle", "Admin")
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
-                        @*   End of YAYIN YÖNETİMİ   *@
-                        <li>
-                            <a href="#">SLIDER YÖNETİMİ</a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    @Html.ActionLink("Slider Listesi", "SliderListele", "Admin")
-                                </li>
-                                <li>
-                                    @Html.ActionLink("Yeni Slide Ekle", "SlideEkle", "Admin")
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">DUYURU YÖNETİMİ</a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    @Html.ActionLink("Duyuru Listesi", "Duyuru", "Admin")
-                                </li>
-                                <li>
-                                    @Html.ActionLink("Yeni Duyuru Ekle", "DuyuruEkle", "Admin")
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            Oturumu Kapat
-                        </li>
-                        
                     </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
         </nav>
-        <div id="page-wrapper">
-            <div class="container body-content">
-                @RenderBody()
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a class="active-menu" href="@Url.Action("Index", "Admin")"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap"></i> Yayın Yönetimi<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">Analiz Yönetimi<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#">Analiz Listesi</a>
+                                    </li>
+                                    <li>
+                                        @*@Html.ActionLink("Yeni Analiz Ekle", "YayinCreate", "Admin", new { YayinTip_ID=3 }, null)*@
+                                        <a href="@Url.Action("YayinCreate", "Admin", new { YayinTip_ID=2})">Yeni Analiz Ekle</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Görüş Yönetimi<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#">Görüş Listesi</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Yeni Görüş Ekle</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Rapor Yönetimi<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#">Rapor Listesi</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Yeni Rapor Ekle</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Bülten Yönetimi<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#">Bülten Listesi</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Yeni Ekonomi Bülteni Ekle</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-bullhorn"></i> Duyuru Yönetimi<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="@Url.Action("DuyuruIndex", "Admin")">Duyuru Listesi</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("DuyuruCreate", "Admin")">Yeni Duyuru Ekle</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                    </li>
+                </ul>
+
             </div>
-            
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+
+
+                <div class="container body-content">
+                    @RenderBody()
+                </div>
+
+                <!-- /. ROW  -->
+                <footer class="pull-right"><p>All rights reserved. SEROZAN</a></p></footer>
+            </div>
+            <!-- /. PAGE INNER  -->
         </div>
-        <!-- /#page-wrapper -->
-        PESA Research<span class="pull-right">SEROZAN</span>
+        <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /#wrapper -->
     <!-- Bootstrap Core JavaScript -->
@@ -136,7 +142,6 @@
 
 
 </html>
-
 
 
 

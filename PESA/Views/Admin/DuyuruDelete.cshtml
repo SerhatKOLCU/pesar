@@ -58,8 +58,9 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Duyurulara Geri Dön", "DuyuruIndex", null, new { @class = "btn btn-default" })
+            <input type="submit" value="Sil" class="btn btn-danger" />
+            
         </div>
     }
 </div>

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<PESA.Models.Yayin>
 
 @{
-    ViewBag.Title = "YayinIndex";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>YayinIndex</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,19 +13,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Yayin_Baslik)
+            Yayın Başlığı
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Yayin_Foto)
+            Yayın Fotoğrafı
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Yayin_Icerik)
+            Yayın İçeriği
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Yayin_Ozet)
+            Yayın Özeti
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Etiket_ID)
+            @Html.DisplayNameFor(model => model.YayinEtiket_ID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Yayin_Dosya)
@@ -48,47 +48,48 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Yayin_Baslik)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Yayin_Foto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Yayin_Icerik)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Yayin_Ozet)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Etiket_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Yayin_Dosya)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Yayin_Tarih)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Slider_Baslik)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Slider_Ozet)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.YayinTip.YayinTip_Adi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Yazar.Yazar_Adi)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Yayin_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Yayin_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Yayin_ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yayin_Baslik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yayin_Foto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yayin_Icerik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yayin_Ozet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YayinEtiket_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yayin_Dosya)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yayin_Tarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Slider_Baslik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Slider_Ozet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YayinTip.YayinTip_Adi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yazar.Yazar_Adi)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Yayin_ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Yayin_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Yayin_ID })
+            </td>
+        </tr>
+    }
 
 </table>

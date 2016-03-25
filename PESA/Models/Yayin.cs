@@ -17,7 +17,7 @@ namespace PESA.Models
         public int Yayin_ID { get; set; }
         public int YayinTip_ID { get; set; }
         public string Yayin_Baslik { get; set; }
-        public byte[] Yayin_Foto { get; set; }
+        public string Yayin_Foto { get; set; }
         public string Yayin_Icerik { get; set; }
         public string Yayin_Ozet { get; set; }
         public int Yazar_ID { get; set; }

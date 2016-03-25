@@ -58,13 +58,34 @@ namespace PESA.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult YayinCreate([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,Yazar_ID,Etiket_ID,Yayin_Dosya,Yayin_Tarih,Slider_Baslik,Slider_Ozet")] Yayin yayin)
+        [ValidateInput(false)]
+        public ActionResult YayinCreate([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,Yazar_ID,YayinEtiket_ID,Yayin_Dosya,Yayin_Tarih,Slider_Baslik,Slider_Ozet")] Yayin yayin, HttpPostedFileBase YayinFoto, HttpPostedFileBase YayinDosya)
         {
             if (ModelState.IsValid)
             {
-                db.Yayin.Add(yayin);
-                db.SaveChanges();
-                return RedirectToAction("YayinIndex");
+                if (YayinFoto.FileName != null && YayinDosya.FileName != null)
+                {
+                    FileInfo fotoBilgisi = new FileInfo(YayinFoto.FileName);
+                    string yeniFotoBilgisi = Guid.NewGuid().ToString("N") + fotoBilgisi.Extension;
+
+                    FileInfo dosyaBilgisi = new FileInfo(YayinDosya.FileName);
+                    string yeniDosyaBilgisi = Guid.NewGuid().ToString("N") + dosyaBilgisi.Extension;
+
+                    YayinFoto.SaveAs(Server.MapPath("~/Content/Upload/Yayin/Foto/" + yeniFotoBilgisi));
+                    YayinDosya.SaveAs(Server.MapPath("~/Content/Upload/Yayin/Dosya/" + yeniDosyaBilgisi));
+
+                    yayin.Yayin_Foto = yeniFotoBilgisi;
+                    yayin.Yayin_Dosya = yeniDosyaBilgisi;
+
+                    db.Yayin.Add(yayin);
+                    db.SaveChanges();
+                    return RedirectToAction("YayinIndex");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Lütfen yayın için düzgün veri girin.");
+                    return View(yayin);
+                }
             }
 
             ViewBag.YayinTip_ID = new SelectList(db.YayinTip, "YayinTip_ID", "YayinTip_Adi", yayin.YayinTip_ID);
@@ -94,13 +115,13 @@ namespace PESA.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult YayinEdit([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,Yazar_ID,Etiket_ID,Yayin_Dosya,Yayin_Tarih,Slider_Baslik,Slider_Ozet")] Yayin yayin)
+        public ActionResult YayinEdit([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,Yazar_ID,YayinEtiket_ID,Yayin_Dosya,Yayin_Tarih,Slider_Baslik,Slider_Ozet")] Yayin yayin)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(yayin).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("YayinIndex");
+                return RedirectToAction("Index");
             }
             ViewBag.YayinTip_ID = new SelectList(db.YayinTip, "YayinTip_ID", "YayinTip_Adi", yayin.YayinTip_ID);
             ViewBag.Yazar_ID = new SelectList(db.Yazar, "Yazar_ID", "Yazar_Adi", yayin.Yazar_ID);
@@ -164,47 +185,42 @@ namespace PESA.Controllers
             return View();
         }
 
-        // POST: Duyuru/Create
+        // POST: Duyurus/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult DuyuruCreate([Bind(Include = "Duyuru_ID,Duyuru_Baslik,Duyuru_Icerik,Duyuru_Foto,Duyuru_Dosya, Duyuru_Tarih")] Duyuru duyuru, HttpPostedFileBase DuyuruFoto, HttpPostedFileBase DuyuruDosya)
         {
-            //,Duyuru_Tarih
             if (ModelState.IsValid)
             {
-                try
+                if (DuyuruFoto.FileName != null && DuyuruDosya.FileName != null)
                 {
-                    if (DuyuruFoto.FileName != null && DuyuruDosya.FileName != null)
-                    {
-                        FileInfo fotoBilgisi = new FileInfo(DuyuruFoto.FileName);
-                        string yeniFotoBilgisi = Guid.NewGuid().ToString("N") + fotoBilgisi.Extension;
+                    FileInfo fotoBilgisi = new FileInfo(DuyuruFoto.FileName);
+                    string yeniFotoBilgisi = Guid.NewGuid().ToString("N") + fotoBilgisi.Extension;
 
-                        FileInfo dosyaBilgisi = new FileInfo(DuyuruDosya.FileName);
-                        string yeniDosyaBilgisi = Guid.NewGuid().ToString("N") + dosyaBilgisi.Extension;
+                    FileInfo dosyaBilgisi = new FileInfo(DuyuruDosya.FileName);
+                    string yeniDosyaBilgisi = Guid.NewGuid().ToString("N") + dosyaBilgisi.Extension;
 
-                        DuyuruFoto.SaveAs(Server.MapPath("~/Content/Upload/Duyuru/Foto/" + yeniFotoBilgisi));
-                        DuyuruDosya.SaveAs(Server.MapPath("~/Content/Upload/Duyuru/Dosya/" + yeniDosyaBilgisi));
+                    DuyuruFoto.SaveAs(Server.MapPath("~/Content/Upload/Duyuru/Foto/" + yeniFotoBilgisi));
+                    DuyuruDosya.SaveAs(Server.MapPath("~/Content/Upload/Duyuru/Dosya/" + yeniDosyaBilgisi));
 
-                        duyuru.Duyuru_Foto = yeniFotoBilgisi;
-                        duyuru.Duyuru_Dosya = yeniDosyaBilgisi;
+                    duyuru.Duyuru_Foto = yeniFotoBilgisi;
+                    duyuru.Duyuru_Dosya = yeniDosyaBilgisi;
 
-                        db.Duyuru.Add(duyuru);
-                        db.SaveChanges();
-                        return RedirectToAction("DuyuruIndex");
-                    }
-
+                    db.Duyuru.Add(duyuru);
+                    db.SaveChanges();
+                    return RedirectToAction("DuyuruIndex");
                 }
-                catch (Exception)
+                else
                 {
-                    return Content("<script language='javascript' type='text/javascript'>alert('Hello world!');</script>");
-                    
+                    ModelState.AddModelError("", "Lütfen duyuru için düzgün veri girin.");
+                    return View(duyuru);
                 }
-              
             }
 
-            return View();
+            return View(duyuru);
         }
 
         // GET: Duyuru/Edit/5
@@ -227,6 +243,7 @@ namespace PESA.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult DuyuruEdit([Bind(Include = "Duyuru_ID,Duyuru_Baslik,Duyuru_Icerik,Duyuru_Foto,Duyuru_Dosya,Duyuru_Tarih")] Duyuru duyuru)
         {
             if (ModelState.IsValid)

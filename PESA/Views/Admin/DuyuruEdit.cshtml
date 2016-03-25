@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>DuyuruEdit</h2>
+<h2>Duyuru Düzenle</h2>
 
 
 @using (Html.BeginForm())
@@ -13,13 +13,13 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Duyuru</h4>
+        @*<h4>Duyuru</h4>*@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Duyuru_ID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Duyuru_Baslik, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2">Duyuru Başlığı</div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Duyuru_Baslik, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Duyuru_Baslik, "", new { @class = "text-danger" })
@@ -27,7 +27,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Duyuru_Icerik, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2">Duyuru İçeriği</div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Duyuru_Icerik, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Duyuru_Icerik, "", new { @class = "text-danger" })
@@ -35,23 +35,23 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Duyuru_Foto, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2">Duyuru Fotoğrafı</div>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Duyuru_Foto, new { htmlAttributes = new { @class = "form-control" } })
+                <input type="file" id="DuyuruFoto" name="DuyuruFoto" accept=".jpg, .jpeg, .png, .gif, .bmp" />
                 @Html.ValidationMessageFor(model => model.Duyuru_Foto, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Duyuru_Dosya, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2">Duyuru Dosyası</div>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Duyuru_Dosya, new { htmlAttributes = new { @class = "form-control" } })
+                <input type="file" id="DuyuruDosya" name="DuyuruDosya" />
                 @Html.ValidationMessageFor(model => model.Duyuru_Dosya, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Duyuru_Tarih, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2">Duyuru Tarihi</div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Duyuru_Tarih, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Duyuru_Tarih, "", new { @class = "text-danger" })
@@ -60,16 +60,30 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                @Html.ActionLink("Duyurulara Geri Dön", "DuyuruIndex", null, new { @class = "btn btn-default" })
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+@*<div>
+    @Html.ActionLink("Duyurulara Geri Dön", "DuyuruIndex")
+</div>*@
+
 
 @section Scripts {
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckfinder/ckfinder.js"></script>
+    <script type="text/javascript">
+        var editor = CKEDITOR.instances['Duyuru_Icerik'];
+        if (editor) { editor.destroy(true); }
+        CKEDITOR.replace('Duyuru_Icerik', {
+            enterMode: CKEDITOR.ENTER_BR,
+        });
+        CKFinder.SetupCKEditor(null, '@Url.Content("~/Content/ckfinder/")');
+    </script>
 }

@@ -5,14 +5,13 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>DuyuruDetails</h2>
+<h2>Duyuru Detayları</h2>
 
 <div>
-    <h4>Duyuru</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Duyuru_Baslik)
+            Duyuru Başlığı
         </dt>
 
         <dd>
@@ -20,31 +19,31 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Duyuru_Icerik)
+            Duyuru İçeriği
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Duyuru_Icerik)
+            @Html.Raw(Model.Duyuru_Icerik)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Duyuru_Foto)
+            Duyuru Fotoğrafı
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Duyuru_Foto)
+            <img class="img-responsive" src="~/Content/Upload/Duyuru/Foto/@Model.Duyuru_Foto" height="100" />
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Duyuru_Dosya)
+            Duyuru Dosyası
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Duyuru_Dosya)
+            <a href="~/Content/Upload/Duyuru/Dosya/@Model.Duyuru_Dosya">@Model.Duyuru_Dosya</a>
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Duyuru_Tarih)
+            Duyuru Tarihi
         </dt>
 
         <dd>
@@ -54,6 +53,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Duyuru_ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Düzenle", "DuyuruEdit", new { id = Model.Duyuru_ID }) |
+    @Html.ActionLink("Duyurulara Geri Dön", "DuyuruIndex")
 </p>

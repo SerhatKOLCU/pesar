@@ -1,17 +1,17 @@
 ﻿@model PESA.Models.Duyuru
 
 @{
-    ViewBag.Title = "DuyuruCreate";
+    ViewBag.Title = "Duyuru Ekle";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>DuyuruCreate</h2>
 
 
-@using (Html.BeginForm("DuyuruCreate", "Admin", FormMethod.Post, new { enctype="multipart/form-data" }))
+@using (Html.BeginForm("DuyuruCreate", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Duyuru</h4>
         <hr />
@@ -27,7 +27,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Duyuru_Icerik, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-6">
-                @Html.EditorFor(model => model.Duyuru_Icerik, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.Duyuru_Icerik)
+                @*@Html.EditorFor(model => model.Duyuru_Icerik, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.Duyuru_Icerik, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -44,7 +45,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Duyuru_Dosya, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-6">
-                <input type="file" id="DuyuruDosya" name="DuyuruDosya" />
+                <input type="file" id="DuyuruDosya" name="DuyuruDosya" accept=".pdf, .doc, .docx, .xls"/>
                 @*@Html.EditorFor(model => model.Duyuru_Dosya, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.Duyuru_Dosya, "", new { @class = "text-danger" })
             </div>
@@ -67,9 +68,22 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Duyurulara Geri Dön", "DuyuruIndex")
 </div>
 
+
 @section Scripts {
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckfinder/ckfinder.js"></script>
+    <script type="text/javascript">
+        var editor = CKEDITOR.instances['Duyuru_Icerik'];
+        if (editor) { editor.destroy(true); }
+        CKEDITOR.replace('Duyuru_Icerik', {
+            enterMode: CKEDITOR.ENTER_BR,
+        });
+        CKFinder.SetupCKEditor(null, '@Url.Content("~/Content/ckfinder/")');
+    </script>
 }

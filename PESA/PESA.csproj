@@ -1643,6 +1643,31 @@
     <Content Include="Content\TempImages\rapor\rapor7.png" />
     <Content Include="Content\TempImages\rapor\rapor8.png" />
     <Content Include="Content\TempImages\rapor\rapor9.png" />
+    <Content Include="Content\Upload\Duyuru\Foto\069ca9536f07403a8ab87798f1c7661f.png" />
+    <Content Include="Content\Upload\Duyuru\Foto\114b9a3d12414ac1b5c4e8a9826da4cd.png" />
+    <Content Include="Content\Upload\Duyuru\Foto\542401ec19604fad80e3cd828df1dd12.png" />
+    <Content Include="Content\Upload\Duyuru\Foto\7f265c0376ab4c7c900eb94bf01b33d7.png" />
+    <Content Include="Content\Upload\Duyuru\Foto\b0086be884404888bb8a1144d9b9a820.png" />
+    <Content Include="Content\Upload\Duyuru\Foto\c8243c6197a6498cb502bf16d5a79c29.PNG" />
+    <Content Include="Content\Upload\Duyuru\Foto\cadbedb2e67f42878515aa79a4af7add.png" />
+    <Content Include="Content\Upload\Duyuru\Foto\e33f2f67a3a74f9a90e2143929b59d85.PNG" />
+    <Content Include="Content\Upload\Duyuru\Foto\ef0b6f43e4194c79979130b772c7a82c.PNG" />
+    <Content Include="DreamAdmin\assets\css\bootstrap.css" />
+    <Content Include="DreamAdmin\assets\css\custom-styles.css" />
+    <Content Include="DreamAdmin\assets\css\font-awesome.css" />
+    <Content Include="DreamAdmin\assets\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="DreamAdmin\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="DreamAdmin\assets\js\bootstrap.min.js" />
+    <Content Include="DreamAdmin\assets\js\custom-scripts.js" />
+    <Content Include="DreamAdmin\assets\js\custom.js" />
+    <Content Include="DreamAdmin\assets\js\dataTables\dataTables.bootstrap.css" />
+    <Content Include="DreamAdmin\assets\js\dataTables\dataTables.bootstrap.js" />
+    <Content Include="DreamAdmin\assets\js\dataTables\jquery.dataTables.js" />
+    <Content Include="DreamAdmin\assets\js\jquery-1.10.2.js" />
+    <Content Include="DreamAdmin\assets\js\jquery.metisMenu.js" />
+    <Content Include="DreamAdmin\assets\js\morris\morris-0.4.3.min.css" />
+    <Content Include="DreamAdmin\assets\js\morris\morris.js" />
+    <Content Include="DreamAdmin\assets\js\morris\raphael-2.1.0.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -1661,43 +1686,6 @@
       <DependentUpon>PesaDb.edmx</DependentUpon>
       <LastGenOutput>PesaDb.cs</LastGenOutput>
     </Content>
-    <Content Include="ModernAdmin\css\bootstrap.min.css" />
-    <Content Include="ModernAdmin\css\clndr.css" />
-    <Content Include="ModernAdmin\css\custom.css" />
-    <Content Include="ModernAdmin\css\font-awesome.css" />
-    <Content Include="ModernAdmin\css\jqvmap.css" />
-    <Content Include="ModernAdmin\css\lines.css" />
-    <Content Include="ModernAdmin\css\style.css" />
-    <Content Include="ModernAdmin\fonts\fontawesome-webfont.svg" />
-    <Content Include="ModernAdmin\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="ModernAdmin\images\1.png" />
-    <Content Include="ModernAdmin\images\2.png" />
-    <Content Include="ModernAdmin\images\3.png" />
-    <Content Include="ModernAdmin\images\4.png" />
-    <Content Include="ModernAdmin\images\5.png" />
-    <Content Include="ModernAdmin\images\arrow-left.png" />
-    <Content Include="ModernAdmin\images\arrow-right.png" />
-    <Content Include="ModernAdmin\images\bg.jpg" />
-    <Content Include="ModernAdmin\images\cloud.png" />
-    <Content Include="ModernAdmin\images\logo.png" />
-    <Content Include="ModernAdmin\images\pic1.png" />
-    <Content Include="ModernAdmin\images\pic2.png" />
-    <Content Include="ModernAdmin\images\pic3.jpg" />
-    <Content Include="ModernAdmin\images\pic4.jpg" />
-    <Content Include="ModernAdmin\js\bootstrap.min.js" />
-    <Content Include="ModernAdmin\js\Chart.js" />
-    <Content Include="ModernAdmin\js\clndr.js" />
-    <Content Include="ModernAdmin\js\custom.js" />
-    <Content Include="ModernAdmin\js\d3.v3.js" />
-    <Content Include="ModernAdmin\js\jquery.min.js" />
-    <Content Include="ModernAdmin\js\jquery.vmap.js" />
-    <Content Include="ModernAdmin\js\jquery.vmap.sampledata.js" />
-    <Content Include="ModernAdmin\js\jquery.vmap.world.js" />
-    <Content Include="ModernAdmin\js\metisMenu.min.js" />
-    <Content Include="ModernAdmin\js\moment-2.2.1.js" />
-    <Content Include="ModernAdmin\js\rickshaw.js" />
-    <Content Include="ModernAdmin\js\site.js" />
-    <Content Include="ModernAdmin\js\underscore-min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\php\sky-forms-pro\demo-comment-process.php" />
@@ -1812,15 +1800,6 @@
     <Content Include="assets\plugins\slick\slick-theme.scss" />
     <Content Include="assets\plugins\slick\slick.less" />
     <Content Include="assets\plugins\slick\slick.scss" />
-    <Content Include="ModernAdmin\fonts\fontawesome-webfont.eot" />
-    <Content Include="ModernAdmin\fonts\fontawesome-webfont.ttf" />
-    <Content Include="ModernAdmin\fonts\fontawesome-webfont.woff" />
-    <Content Include="ModernAdmin\fonts\fontawesome-webfont.woff2" />
-    <Content Include="ModernAdmin\fonts\FontAwesome.otf" />
-    <Content Include="ModernAdmin\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="ModernAdmin\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="ModernAdmin\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="ModernAdmin\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\ckeditor\CHANGES.md" />
     <Content Include="Content\ckeditor\LICENSE.md" />
     <Content Include="Content\ckeditor\README.md" />
@@ -1838,6 +1817,27 @@
     <Content Include="Content\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\ckfinder\userfiles\.htaccess" />
+    <Content Include="bin\PESA.dll.config" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="Content\Upload\Duyuru\Dosya\2555f8d42059433ab848ba7dd7d235d6.pdf" />
+    <Content Include="Content\Upload\Duyuru\Dosya\4b16d2748fcf4e1ca7f4b136b9018df5.pdf" />
+    <Content Include="Content\Upload\Duyuru\Dosya\5377eb275f6a4b189a9e13e27cff374f.pdf" />
+    <Content Include="Content\Upload\Duyuru\Dosya\38f329b326a74940ab0f5dd5b9e7717b.pdf" />
+    <Content Include="Content\Upload\Duyuru\Dosya\6bd4905b5d4d4ded929713b5ca1875df.pdf" />
+    <Content Include="Content\Upload\Duyuru\Dosya\6cc247ddad204cfb9972e2ccc93b3025.pdf" />
+    <Content Include="Content\Upload\Duyuru\Dosya\a9d0dd86fe6f4a97b49f1b07c021623f.pdf" />
+    <Content Include="Content\Upload\Duyuru\Dosya\b2bf0228b4cb4e8187a21c769ffa117c.pdf" />
+    <Content Include="Content\Upload\Duyuru\Dosya\caab8ec1bb044b1985e5f39f5d977659.pdf" />
+    <Content Include="DreamAdmin\assets\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="DreamAdmin\assets\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="DreamAdmin\assets\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="DreamAdmin\assets\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="DreamAdmin\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="DreamAdmin\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="DreamAdmin\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="DreamAdmin\assets\fonts\glyphicons-halflings-regulard41d.eot" />
     <EntityDeploy Include="Models\PesaDb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PesaDb.Designer.cs</LastGenOutput>
@@ -1845,10 +1845,6 @@
     <Content Include="Models\PesaDb.edmx.diagram">
       <DependentUpon>PesaDb.edmx</DependentUpon>
     </Content>
-    <Content Include="bin\PESA.dll.config" />
-    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
-    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <None Include="Properties\PublishProfiles\pup.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -1978,23 +1974,12 @@
     <Content Include="Views\Temp\Bulten2.cshtml" />
     <Content Include="Views\Temp\Bulten1.cshtml" />
     <None Include="Views\Temp\Raporlar.cshtml" />
-    <Content Include="Views\Yayin\Create.cshtml" />
-    <Content Include="Views\Yayin\Delete.cshtml" />
-    <Content Include="Views\Yayin\Details.cshtml" />
-    <Content Include="Views\Yayin\Edit.cshtml" />
-    <Content Include="Views\Yayin\Index.cshtml" />
-    <Content Include="Views\Yayins\Create.cshtml" />
-    <Content Include="Views\Yayins\Delete.cshtml" />
-    <Content Include="Views\Yayins\Details.cshtml" />
-    <Content Include="Views\Yayins\Edit.cshtml" />
-    <Content Include="Views\Yayins\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Upload\Duyuru\Dosya\" />
-    <Folder Include="Content\Upload\Duyuru\Foto\" />
     <Folder Include="Content\Upload\Yayin\Dosya\" />
     <Folder Include="Content\Upload\Yayin\Foto\" />
+    <Folder Include="DreamAdmin\assets\img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

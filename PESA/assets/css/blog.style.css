@@ -404,6 +404,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .blog-slider .blog-slider-title h2 a {
 	color: #fff;
+    -webkit-text-stroke: 2px black;
 }
 
 .blog-slider .blog-slider-title span.blog-slider-posted {

@@ -41,15 +41,15 @@
           <Property Name="Yayin_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="YayinTip_ID" Type="int" Nullable="false" />
           <Property Name="Yayin_Baslik" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Yayin_Foto" Type="image" Nullable="false" />
+          <Property Name="Yayin_Foto" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Yayin_Icerik" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Yayin_Ozet" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Yazar_ID" Type="int" Nullable="false" />
           <Property Name="YayinEtiket_ID" Type="int" Nullable="false" />
           <Property Name="Yayin_Dosya" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Yayin_Tarih" Type="nvarchar" MaxLength="11" Nullable="false" />
-          <Property Name="Slider_Baslik" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Slider_Ozet" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Slider_Baslik" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Slider_Ozet" Type="nvarchar" MaxLength="250" Nullable="false" />
         </EntityType>
         <EntityType Name="YayinTip">
           <Key>
@@ -146,15 +146,15 @@
           <Property Name="Yayin_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="YayinTip_ID" Type="Int32" Nullable="false" />
           <Property Name="Yayin_Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Yayin_Foto" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Yayin_Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Yayin_Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Yayin_Ozet" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Yazar_ID" Type="Int32" Nullable="false" />
           <Property Name="YayinEtiket_ID" Type="Int32" Nullable="false" />
           <Property Name="Yayin_Dosya" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Yayin_Tarih" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Slider_Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Slider_Ozet" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Slider_Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Slider_Ozet" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="YayinTip" Relationship="Self.FK_Yayin_YayinTip" FromRole="Yayin" ToRole="YayinTip" />
           <NavigationProperty Name="Yazar" Relationship="Self.FK_Yayin_Yazar" FromRole="Yayin" ToRole="Yazar" />
         </EntityType>

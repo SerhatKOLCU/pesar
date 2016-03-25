@@ -77,22 +77,32 @@ namespace PESA
             /******      ADMIN      *******/
             ////// CSS //////
             bundles.Add(new StyleBundle("~/before/css").Include(
-                    "~/ModernAdmin/css/bootstrap.min.css",
-                    "~/ModernAdmin/css/style.css",
-                    "~/ModernAdmin/css/lines.css",
-                    "~/ModernAdmin/css/fontawesome.css",
-                    "~/ModernAdmin/css/custom.css"
+                    //"~/ModernAdmin/css/bootstrap.min.css",
+                    //"~/ModernAdmin/css/style.css",
+                    //"~/ModernAdmin/css/lines.css",
+                    //"~/ModernAdmin/css/fontawesome.css",
+                    //"~/ModernAdmin/css/custom.css"
+                    "~/DreamAdmin/assets/css/bootstrap.css",
+                    "~/DreamAdmin/assets/css/font-awesome.css",
+                    "~/DreamAdmin/assets/js/morris/morris-0.4.3.min.css",
+                    "~/DreamAdmin/assets/css/custom-styles.css"
                 ));
             ////// JavaScript /////
-            bundles.Add(new ScriptBundle("~/before/js").Include(
-                    "~/ModernAdmin/js/jquery.min.js",
-                    "~/ModernAdmin/js/metisMenu.min.js",
-                    "~/ModernAdmin/js/custom.js",
-                    "~/ModernAdmin/js/d3.v3.js",
-                    "~/ModernAdmin/js/rickshaw.js"
-                ));
+            //bundles.Add(new ScriptBundle("~/before/js").Include(
+            //        //"~/ModernAdmin/js/jquery.min.js",
+            //        //"~/ModernAdmin/js/metisMenu.min.js",
+            //        //"~/ModernAdmin/js/custom.js",
+            //        //"~/ModernAdmin/js/d3.v3.js",
+            //        //"~/ModernAdmin/js/rickshaw.js"
+            //    ));
             bundles.Add(new ScriptBundle("~/after/js").Include(
-                    "~/ModernAdmin/js/bootstrap.min.js"
+                    //"~/ModernAdmin/js/bootstrap.min.js"
+                    "~/DreamAdmin/assets/js/jquery-1.10.2.js",
+                    "~/DreamAdmin/assets/js/bootstrap.min.js",
+                    "~/DreamAdmin/assets/js/jquery.metisMenu.js",
+                    "~/DreamAdmin/assets/js/morris/raphael-2.1.0.min.js",
+                    "~/DreamAdmin/assets/js/morris/morris.js",
+                    "~/DreamAdmin/assets/js/custom-scripts.js"
                 ));
         }
     }
