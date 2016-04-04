@@ -1643,6 +1643,7 @@
     <Content Include="Content\TempImages\gorus\gorus42.png" />
     <Content Include="Content\TempImages\gorus\gorus43.png" />
     <Content Include="Content\TempImages\analiz\analiz22.PNG" />
+    <Content Include="Content\TempImages\gorus\gorus44.jpg" />
     <Content Include="Content\TempImages\rapor\rapor10.png" />
     <Content Include="Content\TempImages\rapor\rapor4.png" />
     <Content Include="Content\TempImages\rapor\rapor5.png" />
@@ -1858,6 +1859,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\iis.pubxml" />
+    <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Properties\PublishProfiles\update.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.1.js" />
@@ -1990,6 +1992,7 @@
     <Content Include="Views\Temp\Bulten3.cshtml" />
     <Content Include="Views\Temp\Bulten2.cshtml" />
     <Content Include="Views\Temp\Bulten1.cshtml" />
+    <Content Include="Views\Temp\Gorus44.cshtml" />
     <None Include="Views\Temp\Raporlar.cshtml" />
   </ItemGroup>
   <ItemGroup>

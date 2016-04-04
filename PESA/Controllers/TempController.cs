@@ -141,6 +141,11 @@ namespace PESA.Controllers
             return View();
         }
 
+        public ActionResult Gorus44()
+        {
+            return View();
+        }
+
         public ActionResult Gorus43()
         {
             return View();

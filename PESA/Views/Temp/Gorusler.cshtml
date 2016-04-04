@@ -1,5 +1,5 @@
-﻿@{
-    ViewBag.Title = "gorus";
+﻿﻿@{
+    ViewBag.Title = "Görüşler";
 }
 @Styles.Render("~/assets/headerfooter")
 @Styles.Render("~/assets/theme")
@@ -8,6 +8,25 @@
 
 <div class="row">
     <!-- Blog Grid -->
+    <div class="row margin-bottom-50">
+        <div class="col-sm-4 sm-margin-bottom-20">
+            <img class="img-responsive" src="~/Content/TempImages/gorus/gorus44.jpg" alt="">
+        </div>
+        <div class="col-sm-6">
+            <div class="blog-grid">
+                <h3><a href="~/Temp/gorus44">Sosyal Adaletin Sağlanmasında İslami Yol ve Zekatın Abartılan Rolü</a></h3>
+
+                <p>
+                    Başlıktaki ifadeden zekâtın yoksulluğu azaltıcı ve gelir dağılımını düzeltici rolünün önemsenmediği sonucu çıkarılmamalıdır. Vurgu adil gelir dağılımında asıl mekanizmanın faiz yasağı olmasına rağmen tartışmalarda yeterli yeri bulamamasınadır. Tartışmalarda zekâta daha çok yer verilmesinin anlaşılabilir bir nedeni vardır. O da faizin uygulamada yasal olması ve hakim iktisadi paradigma tarafından vaz geçilmesi mümkün olmayan bir “pay” olarak görülmesidir. Ancak İslam Ekonomisine ilişkin bilimsel tartışmalarda faiz yasağının sosyal adaleti sağlamadaki önemine vurgu yapılması gerekir.
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            @Html.ActionLink("Devamını Oku", "gorus44", "Temp", null, new { @class = "btn-u btn-block rounded-4x btn-u-blue margin-bottom-10" })
+
+            <a class="btn-u btn-block rounded-4x btn-u-sea" href="~/temppdf/gorus44.pdf" target="_blank">PDF Olarak İndir</a>
+        </div>
+    </div>
     <div class="row margin-bottom-50">
         <div class="col-sm-4 sm-margin-bottom-20">
             <img class="img-responsive" src="~/Content/TempImages/gorus/gorus43.png" alt="">
@@ -24,7 +43,7 @@
         <div class="col-sm-2">
             @Html.ActionLink("Devamını Oku", "gorus43", "Temp", null, new { @class = "btn-u btn-block rounded-4x btn-u-blue margin-bottom-10" })
 
-            @*<a class="btn-u btn-block rounded-4x btn-u-sea" href="http://pesar.org/sites/default/files/uluslararasi_endeksler_isiginda_turkiye.pdf" target="_blank">PDF Olarak İndir</a>*@
+            @*<a class="btn-u btn-block rounded-4x btn-u-sea" href="~/temppdf/gorus43.pdf" target="_blank">PDF Olarak İndir</a>*@
         </div>
     </div>
     <!-- End Blog Grid -->
@@ -44,7 +63,7 @@
         <div class="col-sm-2">
             @Html.ActionLink("Devamını Oku", "gorus42", "Temp", null, new { @class = "btn-u btn-block rounded-4x btn-u-blue margin-bottom-10" })
 
-            @*<a class="btn-u btn-block rounded-4x btn-u-sea" href="http://pesar.org/sites/default/files/pesa_-_gorus_-_cevre_-_h.yavuz_.pdf" target="_blank">PDF Olarak İndir</a>*@
+            @*<a class="btn-u btn-block rounded-4x btn-u-sea" href="~/temppdf/gorus42.pdf" target="_blank">PDF Olarak İndir</a>*@
         </div>
     </div>
 
@@ -64,13 +83,14 @@
                     ile daha “insan” kalabilen âdemoğlu kitlesel ekonomi ile çevresine daha çok
                     hükmederken kendi dramını hazırladığını nereden bilsin! Bir tarafta tüketemeyen türü
                     diğer tarafta ise gittikçe daha çok tüketmesine rağmen mutluluğu ters orantılı olarak
-                    azalan türü ile âdemoğlu sahici mutluluğu iyice ıskalar olmuştur.                </p>
+                    azalan türü ile âdemoğlu sahici mutluluğu iyice ıskalar olmuştur.
+                </p>
             </div>
         </div>
         <div class="col-sm-2">
             @Html.ActionLink("Devamını Oku", "gorus41", "Temp", null, new { @class = "btn-u btn-block rounded-4x btn-u-blue margin-bottom-10" })
 
-            <a class="btn-u btn-block rounded-4x btn-u-sea" href="http://pesar.org/sites/default/files/pesa_gorus_asgarisi_devletten_savasan.pdf" target="_blank">PDF Olarak İndir</a>
+            <a class="btn-u btn-block rounded-4x btn-u-sea" href="~/temppdf/gorus41.pdf" target="_blank">PDF Olarak İndir</a>
         </div>
     </div>
 
@@ -90,13 +110,14 @@
                     çizgide yaşamaya sevk eder. Modern bakış açısından özgürlüğün kısıtlanması – mahalle
                     baskısı – olarak görülen bu durum, toplumsal düzen ve istikrar açısından ise ideal olmasa da
                     yeterli bir zemin sağlar. Sonuç toplumun bir düzeyde, bireyin özgürlüğü aleyhine olsa da,
-                    güven ortamı elde etmesidir.                </p>
+                    güven ortamı elde etmesidir.
+                </p>
             </div>
         </div>
         <div class="col-sm-2">
             @Html.ActionLink("Devamını Oku", "gorus40", "Temp", null, new { @class = "btn-u btn-block rounded-4x btn-u-blue margin-bottom-10" })
 
-            <a class="btn-u btn-block rounded-4x btn-u-sea" href="http://pesar.org/sites/default/files/pesa_gorus_kalkinma_ve_ahlak_kilinc.pdf" target="_blank">PDF Olarak İndir</a>
+            <a class="btn-u btn-block rounded-4x btn-u-sea" href="~/temppdf/gorus40.pdf" target="_blank">PDF Olarak İndir</a>
         </div>
     </div>
 
@@ -121,7 +142,7 @@
         <div class="col-sm-2">
             @Html.ActionLink("Devamını Oku", "gorus39", "Temp", null, new { @class = "btn-u btn-block rounded-4x btn-u-blue margin-bottom-10" })
 
-            <a class="btn-u btn-block rounded-4x btn-u-sea" href="http://pesar.org/sites/default/files/pesa_gorus_baskanlik.pdf" target="_blank">PDF Olarak İndir</a>
+            <a class="btn-u btn-block rounded-4x btn-u-sea" href="~/temppdf/gorus39.pdf" target="_blank">PDF Olarak İndir</a>
         </div>
     </div>
 
@@ -145,7 +166,7 @@
         <div class="col-sm-2">
             @Html.ActionLink("Devamını Oku", "gorus38", "Temp", null, new { @class = "btn-u btn-block rounded-4x btn-u-blue margin-bottom-10" })
 
-            <a class="btn-u btn-block rounded-4x btn-u-sea" href="http://pesar.org/sites/default/files/pesa_gorus_taksim_kabe_.pdf" target="_blank">PDF Olarak İndir</a>
+            <a class="btn-u btn-block rounded-4x btn-u-sea" href="~/temppdf/gorus38.pdf" target="_blank">PDF Olarak İndir</a>
         </div>
     </div>
 
@@ -158,14 +179,14 @@
                 <h3><a href="~/Temp/gorus37">Seçimlere Doğru Umudun Partiler Arası Dağılımı</a></h3>
 
                 <p>
-                    Hemen baÅŸta belirteyim: Umudun daÄŸÄ±lÄ±mÄ± parÃ§alÄ± bulutlu. SeÃ§imlere bir buÃ§uk ay kaldÄ±. Partiler seÃ§im beyannamelerini aÃ§Ä±kladÄ±lar ve meydanlara yeni indiler. Yani seÃ§im sonuÃ§larÄ± iÃ§in konuÅŸmak henÃ¼z erken. Ancak seÃ§ime doÄŸru Ã¶nemli deÄŸiÅŸimler olabilir rezervini koyarak genel bazÄ± tespitlerde bulunmamÄ±z mÃ¼mkÃ¼n. 
+                    Hemen baÅŸta belirteyim: Umudun daÄŸÄ±lÄ±mÄ± parÃ§alÄ± bulutlu. SeÃ§imlere bir buÃ§uk ay kaldÄ±. Partiler seÃ§im beyannamelerini aÃ§Ä±kladÄ±lar ve meydanlara yeni indiler. Yani seÃ§im sonuÃ§larÄ± iÃ§in konuÅŸmak henÃ¼z erken. Ancak seÃ§ime doÄŸru Ã¶nemli deÄŸiÅŸimler olabilir rezervini koyarak genel bazÄ± tespitlerde bulunmamÄ±z mÃ¼mkÃ¼n.
                 </p>
             </div>
         </div>
         <div class="col-sm-2">
             @Html.ActionLink("Devamını Oku", "gorus37", "Temp", null, new { @class = "btn-u btn-block rounded-4x btn-u-blue margin-bottom-10" })
 
-            <a class="btn-u btn-block rounded-4x btn-u-sea" href="http://pesar.org/sites/default/files/pesa_gorus_secimlere_dogru_umudun_partiler_arasi_dagilimi_savasan.docx" target="_blank">PDF Olarak İndir</a>
+            <a class="btn-u btn-block rounded-4x btn-u-sea" href="~/temppdf/gorus37.docx" target="_blank">PDF Olarak İndir</a>
         </div>
     </div>
 
@@ -189,7 +210,7 @@
         <div class="col-sm-2">
             @Html.ActionLink("Devamını Oku", "gorus36", "Temp", null, new { @class = "btn-u btn-block rounded-4x btn-u-blue margin-bottom-10" })
 
-            <a class="btn-u btn-block rounded-4x btn-u-sea" href="http://pesar.org/sites/default/files/pesa_gorus_musait_kelimesi_uzerine_gulec.pdf" target="_blank">PDF Olarak İndir</a>
+            <a class="btn-u btn-block rounded-4x btn-u-sea" href="~/temppdf/gorus36.pdf" target="_blank">PDF Olarak İndir</a>
         </div>
     </div>
     <div class="row margin-bottom-50">
@@ -198,8 +219,11 @@
         </div>
         <div class="col-sm-6">
             <div class="blog-grid">
-                <h3><a href="~/Temp/gorus35">TÜRKİYE’DEKİ SURİYELİLERDEN TÜRKİYELİ SURİYELİLERE MÜLTECİ EKONOMİSİ
-</a></h3>
+                <h3>
+                    <a href="~/Temp/gorus35">
+                        TÜRKİYE’DEKİ SURİYELİLERDEN TÜRKİYELİ SURİYELİLERE MÜLTECİ EKONOMİSİ
+                    </a>
+                </h3>
 
                 <p>
                     15 Mart 2011’in üzerinden dört yıl geçti. Suriye nüfusunun yaklaşık beşte biri mülteci
@@ -218,7 +242,7 @@
         <div class="col-sm-2">
             @Html.ActionLink("Devamını Oku", "gorus35", "Temp", null, new { @class = "btn-u btn-block rounded-4x btn-u-blue margin-bottom-10" })
 
-            <a class="btn-u btn-block rounded-4x btn-u-sea" href="http://pesar.org/sites/default/files/pesa_gorus_multeci_ekonomisi_savasan.pdf" target="_blank">PDF Olarak İndir</a>
+            <a class="btn-u btn-block rounded-4x btn-u-sea" href="~/temppdf/gorus35.pdf" target="_blank">PDF Olarak İndir</a>
         </div>
     </div>
     <div class="row margin-bottom-50">
@@ -242,7 +266,7 @@
         <div class="col-sm-2">
             @Html.ActionLink("Devamını Oku", "gorus34", "Temp", null, new { @class = "btn-u btn-block rounded-4x btn-u-blue margin-bottom-10" })
 
-            <a class="btn-u btn-block rounded-4x btn-u-sea" href="http://pesar.org/sites/default/files/pesa_gorus_secim_oncesi_turkiye_ekonomisi_ozdemir.docx.pdf" target="_blank">PDF Olarak İndir</a>
+            <a class="btn-u btn-block rounded-4x btn-u-sea" href="~/temppdf/gorus34.pdf" target="_blank">PDF Olarak İndir</a>
         </div>
     </div>
 </div>
