@@ -1603,6 +1603,11 @@
     <Content Include="Content\ckfinder\_samples\standalone_v1.html" />
     <Content Include="Content\font-awesome\font-awesome.css" />
     <Content Include="Content\font-awesome\font-awesome.min.css" />
+    <Content Include="Content\TempImages\gorus\gorus46.jpg" />
+    <Content Include="Content\TempImages\gorus\gorus49.jpg" />
+    <Content Include="Content\TempImages\gorus\gorus48.jpg" />
+    <Content Include="Content\TempImages\gorus\gorus47.jpg" />
+    <Content Include="Content\TempImages\gorus\gorus45.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\TempImages\analiz\analiz1.png" />
     <Content Include="Content\TempImages\analiz\analiz10.png" />
@@ -1993,6 +1998,10 @@
     <Content Include="Views\Temp\Bulten2.cshtml" />
     <Content Include="Views\Temp\Bulten1.cshtml" />
     <Content Include="Views\Temp\Gorus44.cshtml" />
+    <Content Include="Views\Temp\Gorus45.cshtml" />
+    <Content Include="Views\Temp\Gorus47.cshtml" />
+    <Content Include="Views\Temp\Gorus46.cshtml" />
+    <Content Include="Views\Temp\Gorus48.cshtml" />
     <None Include="Views\Temp\Raporlar.cshtml" />
   </ItemGroup>
   <ItemGroup>

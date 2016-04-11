@@ -1,20 +1,48 @@
 ﻿@{
     ViewBag.Title = "Asgarisi Devletten, İnsanisi İşverenden, Azamisi Piyasadan";
 }
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/tr_TR/sdk.js#xfbml=1&version=v2.5&appId=312266332132599";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 <div class="row">
     <!-- Blog Grid -->
     <div class="blog-grid margin-bottom-30">
         <h2 class="blog-grid-title-lg">Asgarisi Devletten, İnsanisi İşverenden, Azamisi Piyasadan</h2>
         <div class="overflow-h margin-bottom-10">
             <div class="pull-right">
-                <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <div class="addthis_sharing_toolbox"></div>
             </div>
         </div>
         <img class="col-md-7 img-responsive" src="~/Content/TempImages/gorus/gorus41.png" alt="">
     </div>
     <!-- End Blog Grid -->
     <div class="row"></div>
+
+
+    <table>
+        <tr>
+            <th>
+                <a class="btn-u btn-u-xs rounded btn-u-sea" href="~/temppdf/gorus41.pdf" target="_blank">PDF Olarak İndir</a>
+                &nbsp;
+            </th>
+            <th>
+                <div class="fb-share-button" data-href="window.location.href" data-layout="button"></div>
+                &nbsp;
+            </th>
+            <th>
+
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="pesaarastirma" data-hashtags="pesar">Tweet</a>
+            </th>
+
+        </tr>
+    </table>
+    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+
     <hr class="hr-xs" />
     <div class="clear-right">
         <p>
@@ -24,10 +52,4 @@
         </p><br>
     </div>
     <hr class="hr-xs" />
-    <div class="container">
-        <a class="btn-u btn-u-xs rounded-4x btn-u-sea" href="http://pesar.org/sites/default/files/pesa_gorus_asgarisi_devletten_savasan.pdf" target="_blank">PDF Olarak İndir</a>
-        
-
-        <hr class="hr-md" />
-    </div>
 </div>
