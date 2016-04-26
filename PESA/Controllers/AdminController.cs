@@ -13,24 +13,25 @@ namespace PESA.Controllers
 {
     public class AdminController : Controller
     {
+        private PesaDbEntities db = new PesaDbEntities();
+
         // GET: Admin
         public ActionResult Index()
         {
             return View();
         }
 
-        private PesaDbEntities db = new PesaDbEntities();
 
         #region YAYIN
 
-        // GET: Yayin
+        // GET: Yayins
         public ActionResult YayinIndex()
         {
-            var yayin = db.Yayin.Include(y => y.YayinTip).Include(y => y.Yazar);
+            var yayin = db.Yayin.Include(y => y.YayinTip);
             return View(yayin.ToList());
         }
 
-        // GET: Yayin/Details/5
+        // GET: Yayins/Details/5
         public ActionResult YayinDetails(int? id)
         {
             if (id == null)
@@ -45,21 +46,19 @@ namespace PESA.Controllers
             return View(yayin);
         }
 
-        // GET: Yayin/Create
+        // GET: Yayins/Create
         public ActionResult YayinCreate()
         {
             ViewBag.YayinTip_ID = new SelectList(db.YayinTip, "YayinTip_ID", "YayinTip_Adi");
-            ViewBag.Yazar_ID = new SelectList(db.Yazar, "Yazar_ID", "Yazar_Adi");
             return View();
         }
 
-        // POST: Yayin/Create
+        // POST: Yayins/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [ValidateInput(false)]
-        public ActionResult YayinCreate([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,Yazar_ID,YayinEtiket_ID,Yayin_Dosya,Yayin_Tarih,Slider_Baslik,Slider_Ozet")] Yayin yayin, HttpPostedFileBase YayinFoto, HttpPostedFileBase YayinDosya)
+        public ActionResult YayinCreate([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,YayinEtiket,Yayin_Dosya,Yayin_Tarih")] Yayin yayin, HttpPostedFileBase YayinFoto, HttpPostedFileBase YayinDosya)
         {
             if (ModelState.IsValid)
             {
@@ -71,8 +70,8 @@ namespace PESA.Controllers
                     FileInfo dosyaBilgisi = new FileInfo(YayinDosya.FileName);
                     string yeniDosyaBilgisi = Guid.NewGuid().ToString("N") + dosyaBilgisi.Extension;
 
-                    YayinFoto.SaveAs(Server.MapPath("~/Content/Upload/Yayin/Foto/" + yeniFotoBilgisi));
-                    YayinDosya.SaveAs(Server.MapPath("~/Content/Upload/Yayin/Dosya/" + yeniDosyaBilgisi));
+                    YayinFoto.SaveAs(Server.MapPath("~/Content/Upload/Duyuru/Foto/" + yeniFotoBilgisi));
+                    YayinDosya.SaveAs(Server.MapPath("~/Content/Upload/Duyuru/Dosya/" + yeniDosyaBilgisi));
 
                     yayin.Yayin_Foto = yeniFotoBilgisi;
                     yayin.Yayin_Dosya = yeniDosyaBilgisi;
@@ -83,17 +82,17 @@ namespace PESA.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Lütfen yayın için düzgün veri girin.");
+                    ModelState.AddModelError("", "Lütfen yayin için düzgün veri girin.");
                     return View(yayin);
                 }
+
             }
 
             ViewBag.YayinTip_ID = new SelectList(db.YayinTip, "YayinTip_ID", "YayinTip_Adi", yayin.YayinTip_ID);
-            ViewBag.Yazar_ID = new SelectList(db.Yazar, "Yazar_ID", "Yazar_Adi", yayin.Yazar_ID);
             return View(yayin);
         }
 
-        // GET: Yayin/Edit/5
+        // GET: Yayins/Edit/5
         public ActionResult YayinEdit(int? id)
         {
             if (id == null)
@@ -106,16 +105,15 @@ namespace PESA.Controllers
                 return HttpNotFound();
             }
             ViewBag.YayinTip_ID = new SelectList(db.YayinTip, "YayinTip_ID", "YayinTip_Adi", yayin.YayinTip_ID);
-            ViewBag.Yazar_ID = new SelectList(db.Yazar, "Yazar_ID", "Yazar_Adi", yayin.Yazar_ID);
             return View(yayin);
         }
 
-        // POST: Yayin/Edit/5
+        // POST: Yayins/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult YayinEdit([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,Yazar_ID,YayinEtiket_ID,Yayin_Dosya,Yayin_Tarih,Slider_Baslik,Slider_Ozet")] Yayin yayin)
+        public ActionResult YayinEdit([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,YayinEtiket,Yayin_Dosya,Yayin_Tarih")] Yayin yayin)
         {
             if (ModelState.IsValid)
             {
@@ -124,11 +122,10 @@ namespace PESA.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.YayinTip_ID = new SelectList(db.YayinTip, "YayinTip_ID", "YayinTip_Adi", yayin.YayinTip_ID);
-            ViewBag.Yazar_ID = new SelectList(db.Yazar, "Yazar_ID", "Yazar_Adi", yayin.Yazar_ID);
             return View(yayin);
         }
 
-        // GET: Yayin/Delete/5
+        // GET: Yayins/Delete/5
         public ActionResult YayinDelete(int? id)
         {
             if (id == null)
@@ -143,7 +140,7 @@ namespace PESA.Controllers
             return View(yayin);
         }
 
-        // POST: Yayin/Delete/5
+        // POST: Yayins/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult YayinDeleteConfirmed(int id)
@@ -151,7 +148,7 @@ namespace PESA.Controllers
             Yayin yayin = db.Yayin.Find(id);
             db.Yayin.Remove(yayin);
             db.SaveChanges();
-            return RedirectToAction("YayinIndex");
+            return RedirectToAction("Index");
         }
 
         #endregion
@@ -291,5 +288,6 @@ namespace PESA.Controllers
             }
             base.Dispose(disposing);
         }
+        
     }
 }

@@ -4,15 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dc25077f3da94a16bd9cdd0509d6fe77" Name="Diagram1">
-        <EntityTypeShape EntityType="PesaDbModel.Duyuru" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PesaDbModel.Kullanici" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PesaDbModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PesaDbModel.Yayin" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="PesaDbModel.YayinTip" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PesaDbModel.Yazar" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
-        <AssociationConnector Association="PesaDbModel.FK_Yayin_YayinTip" ManuallyRouted="false" />
-        <AssociationConnector Association="PesaDbModel.FK_Yayin_Yazar" ManuallyRouted="false" />
+      <Diagram DiagramId="dedae97b5c8a4cebab4268c1bcb7c6a9" Name="Diagram1">
+        <EntityTypeShape EntityType="PesaDb.Duyuru" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PesaDb.Kullanici" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PesaDb.sysdiagrams" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PesaDb.Yayin" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PesaDb.YayinTip" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="PesaDb.FK_Yayin_YayinTip" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

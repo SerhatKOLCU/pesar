@@ -30,6 +30,5 @@ namespace PESA.Models
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Yayin> Yayin { get; set; }
         public virtual DbSet<YayinTip> YayinTip { get; set; }
-        public virtual DbSet<Yazar> Yazar { get; set; }
     }
 }

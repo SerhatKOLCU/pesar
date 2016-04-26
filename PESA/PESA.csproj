@@ -200,10 +200,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DuyurusController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TempController.cs" />
     <Compile Include="Controllers\YayinlarController.cs" />
+    <Compile Include="Controllers\YayinsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -238,9 +240,6 @@
       <DependentUpon>PesaDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\YayinTip.cs">
-      <DependentUpon>PesaDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Yazar.cs">
       <DependentUpon>PesaDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1848,13 +1847,6 @@
     <Content Include="DreamAdmin\assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="DreamAdmin\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="DreamAdmin\assets\fonts\glyphicons-halflings-regulard41d.eot" />
-    <EntityDeploy Include="Models\PesaDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PesaDb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\PesaDb.edmx.diagram">
-      <DependentUpon>PesaDb.edmx</DependentUpon>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -1863,6 +1855,13 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="Models\PesaDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PesaDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PesaDb.edmx.diagram">
+      <DependentUpon>PesaDb.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\iis.pubxml" />
     <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Properties\PublishProfiles\update.pubxml" />
@@ -1948,17 +1947,17 @@
     <Content Include="Views\Temp\Analiz3.cshtml" />
     <Content Include="Views\Temp\Analizler.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\Admin\DuyuruIndex.cshtml" />
-    <Content Include="Views\Admin\DuyuruDetails.cshtml" />
-    <Content Include="Views\Admin\DuyuruCreate.cshtml" />
-    <Content Include="Views\Admin\DuyuruEdit.cshtml" />
-    <Content Include="Views\Admin\DuyuruDelete.cshtml" />
-    <Content Include="Views\Admin\YayinIndex.cshtml" />
-    <Content Include="Views\Admin\YayinDetails.cshtml" />
-    <Content Include="Views\Admin\YayinCreate.cshtml" />
-    <Content Include="Views\Admin\YayinEdit.cshtml" />
-    <Content Include="Views\Admin\YayinDelete.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\DuyuruIndex.cshtml" />
+    <Content Include="Views\Admin\DuyuruCreate.cshtml" />
+    <Content Include="Views\Admin\DuyuruDelete.cshtml" />
+    <Content Include="Views\Admin\DuyuruDetails.cshtml" />
+    <Content Include="Views\Admin\DuyuruEdit.cshtml" />
+    <Content Include="Views\Admin\YayinIndex.cshtml" />
+    <Content Include="Views\Admin\YayinCreate.cshtml" />
+    <Content Include="Views\Admin\YayinDelete.cshtml" />
+    <Content Include="Views\Admin\YayinDetails.cshtml" />
+    <Content Include="Views\Admin\YayinEdit.cshtml" />
     <None Include="Views\Temp\Analiz1.cshtml" />
     <Content Include="Views\Temp\Gorus40.cshtml" />
     <Content Include="Views\Temp\Gorus39.cshtml" />

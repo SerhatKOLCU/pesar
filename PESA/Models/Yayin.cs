@@ -20,14 +20,10 @@ namespace PESA.Models
         public string Yayin_Foto { get; set; }
         public string Yayin_Icerik { get; set; }
         public string Yayin_Ozet { get; set; }
-        public int Yazar_ID { get; set; }
-        public int YayinEtiket_ID { get; set; }
+        public string YayinEtiket { get; set; }
         public string Yayin_Dosya { get; set; }
         public string Yayin_Tarih { get; set; }
-        public string Slider_Baslik { get; set; }
-        public string Slider_Ozet { get; set; }
     
         public virtual YayinTip YayinTip { get; set; }
-        public virtual Yazar Yazar { get; set; }
     }
 }

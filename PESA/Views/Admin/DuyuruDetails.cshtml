@@ -1,58 +1,65 @@
 ﻿@model PESA.Models.Duyuru
 
 @{
-    ViewBag.Title = "DuyuruDetails";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";}
 
-<h2>Duyuru Detayları</h2>
+<!DOCTYPE html>
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Duyuru Başlığı
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Duyuru_Baslik)
-        </dd>
-
-        <dt>
-            Duyuru İçeriği
-        </dt>
-
-        <dd>
-            @Html.Raw(Model.Duyuru_Icerik)
-        </dd>
-
-        <dt>
-            Duyuru Fotoğrafı
-        </dt>
-
-        <dd>
-            <img class="img-responsive" src="~/Content/Upload/Duyuru/Foto/@Model.Duyuru_Foto" height="100" />
-        </dd>
-
-        <dt>
-            Duyuru Dosyası
-        </dt>
-
-        <dd>
-            <a href="~/Content/Upload/Duyuru/Dosya/@Model.Duyuru_Dosya">@Model.Duyuru_Dosya</a>
-        </dd>
-
-        <dt>
-            Duyuru Tarihi
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Duyuru_Tarih)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Düzenle", "DuyuruEdit", new { id = Model.Duyuru_ID }) |
-    @Html.ActionLink("Duyurulara Geri Dön", "DuyuruIndex")
-</p>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Duyuru</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Duyuru_Baslik)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Duyuru_Baslik)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Duyuru_Icerik)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Duyuru_Icerik)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Duyuru_Foto)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Duyuru_Foto)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Duyuru_Dosya)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Duyuru_Dosya)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Duyuru_Tarih)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Duyuru_Tarih)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Duyuru_ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
