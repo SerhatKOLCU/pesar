@@ -1,44 +1,39 @@
 ﻿@model IEnumerable<PESA.Models.Yayin>
 
 @{
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";}
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
 
-<!DOCTYPE html>
+<h2>Yayın Oluştur</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Yayin_Baslik)
+                Başlık
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Yayin_Foto)
+                Fotoğraf
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Yayin_Icerik)
+                İçerik
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Yayin_Ozet)
+                Özet
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.YayinEtiket)
+                Etiket
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Yayin_Dosya)
+                Dosya
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Yayin_Tarih)
+                Tarih
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.YayinTip.YayinTip_Adi)
+                Yayın Tipi
             </th>
             <th></th>
         </tr>
@@ -49,10 +44,12 @@
                 @Html.DisplayFor(modelItem => item.Yayin_Baslik)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Yayin_Foto)
+                <img src="~/Content/Upload/Yayin/Foto/@item.Yayin_Foto" width="180" height="100" alt="" />
+                @*@Html.DisplayFor(modelItem => item.Yayin_Foto)*@
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Yayin_Icerik)
+                @Html.Raw(item.Yayin_Icerik)
+                @*@Html.DisplayFor(modelItem => item.Yayin_Icerik)*@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Yayin_Ozet)
@@ -61,7 +58,8 @@
                 @Html.DisplayFor(modelItem => item.YayinEtiket)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Yayin_Dosya)
+                <a href="~/Content/Upload/Yayin/Dosya/@item.Yayin_Dosya">@item.Yayin_Dosya</a>
+                @*@Html.DisplayFor(modelItem => item.Yayin_Dosya)*@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Yayin_Tarih)
@@ -70,13 +68,11 @@
                 @Html.DisplayFor(modelItem => item.YayinTip.YayinTip_Adi)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Yayin_ID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Yayin_ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Yayin_ID })
+                @Html.ActionLink("Düzenle", "Edit", new { id=item.Yayin_ID }) |
+                @Html.ActionLink("Detaylar", "Details", new { id=item.Yayin_ID }) |
+                @Html.ActionLink("Sil", "Delete", new { id=item.Yayin_ID })
             </td>
         </tr>
     }
     
     </table>
-</body>
-</html>

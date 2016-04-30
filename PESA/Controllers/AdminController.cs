@@ -58,6 +58,7 @@ namespace PESA.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult YayinCreate([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,YayinEtiket,Yayin_Dosya,Yayin_Tarih")] Yayin yayin, HttpPostedFileBase YayinFoto, HttpPostedFileBase YayinDosya)
         {
             if (ModelState.IsValid)

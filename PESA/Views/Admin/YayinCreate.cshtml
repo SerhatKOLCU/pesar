@@ -8,8 +8,8 @@
 
 
 
-    @using (Html.BeginForm()) 
-    {
+@using (Html.BeginForm("YayinCreate", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
         @Html.AntiForgeryToken()
         
         <div class="form-horizontal">

@@ -1,64 +1,62 @@
 ﻿@model IEnumerable<PESA.Models.Duyuru>
 
 @{
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";}
+    ViewBag.Title = "DuyuruIndex";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
 
-<!DOCTYPE html>
+<h2>Duyuru Oluştur</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Duyuru_Baslik)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Duyuru_Icerik)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Duyuru_Foto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Duyuru_Dosya)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Duyuru_Tarih)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
+<p>
+    @Html.ActionLink("Yeni Duyuru Ekle", "DuyuruCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Duyuru Başlığı
+        </th>
+        <th>
+            Duyuru İçeriği
+        </th>
+        <th>
+            Duyuru Fotoğrafı
+        </th>
+        <th>
+            Duyuru Dosyası
+        </th>
+        <th>
+            Duyuru Tarihi
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Duyuru_Baslik)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Duyuru_Icerik)
+                @Html.Raw(item.Duyuru_Icerik)
+                @*@Html.DisplayFor(modelItem => item.Duyuru_Icerik)*@
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Duyuru_Foto)
+                <img src="~/Content/Upload/Duyuru/Foto/@item.Duyuru_Foto" width="180" height="100" alt="" />
+                @*@Html.DisplayFor(modelItem => item.Duyuru_Foto)*@
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Duyuru_Dosya)
+                <a href="~/Content/Upload/Duyuru/Dosya/@item.Duyuru_Dosya">@item.Duyuru_Dosya</a>
+                @*@Html.DisplayFor(modelItem => item.Duyuru_Dosya)*@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Duyuru_Tarih)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Duyuru_ID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Duyuru_ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Duyuru_ID })
+                @Html.ActionLink("Düzenle", "DuyuruEdit", new { id = item.Duyuru_ID }) |
+                @Html.ActionLink("Detaylar", "DuyuruDetails", new { id = item.Duyuru_ID }) |
+                @Html.ActionLink("Sil", "DuyuruDelete", new { id = item.Duyuru_ID })
             </td>
         </tr>
     }
-    
-    </table>
-</body>
-</html>
+
+</table>

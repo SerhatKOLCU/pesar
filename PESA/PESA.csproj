@@ -1664,6 +1664,7 @@
     <Content Include="Content\Upload\Duyuru\Foto\cadbedb2e67f42878515aa79a4af7add.png" />
     <Content Include="Content\Upload\Duyuru\Foto\e33f2f67a3a74f9a90e2143929b59d85.PNG" />
     <Content Include="Content\Upload\Duyuru\Foto\ef0b6f43e4194c79979130b772c7a82c.PNG" />
+    <Content Include="Content\Upload\Yayin\Foto\a7bf021914ef4dbbbfd1a412d665801a.png" />
     <Content Include="DreamAdmin\assets\css\bootstrap.css" />
     <Content Include="DreamAdmin\assets\css\custom-styles.css" />
     <Content Include="DreamAdmin\assets\css\font-awesome.css" />
@@ -1862,6 +1863,7 @@
     <Content Include="Models\PesaDb.edmx.diagram">
       <DependentUpon>PesaDb.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\Upload\Yayin\Dosya\fb680f3c771646ee8e0a5a59e6f51395.pdf" />
     <None Include="Properties\PublishProfiles\iis.pubxml" />
     <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Properties\PublishProfiles\update.pubxml" />
@@ -2005,8 +2007,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Upload\Yayin\Dosya\" />
-    <Folder Include="Content\Upload\Yayin\Foto\" />
     <Folder Include="DreamAdmin\assets\img\" />
   </ItemGroup>
   <ItemGroup>
