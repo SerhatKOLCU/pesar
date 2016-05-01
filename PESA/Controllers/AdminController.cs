@@ -18,6 +18,7 @@ namespace PESA.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+
             return View();
         }
 
@@ -25,8 +26,9 @@ namespace PESA.Controllers
         #region YAYIN
 
         // GET: Yayins
-        public ActionResult YayinIndex()
+        public ActionResult YayinIndex(string ID)
         {
+            ViewBag.Message = ID;
             var yayin = db.Yayin.Include(y => y.YayinTip);
             return View(yayin.ToList());
         }

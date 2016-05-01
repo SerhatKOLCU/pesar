@@ -39,6 +39,8 @@
         </tr>
     
     @foreach (var item in Model) {
+        if (item.YayinTip_ID == Convert.ToInt32(ViewBag.Message)||ViewBag.Message==null)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Yayin_Baslik)
@@ -69,11 +71,12 @@
                 @Html.DisplayFor(modelItem => item.YayinTip.YayinTip_Adi)
             </td>
             <td>    
-                @Html.ActionLink("Düzenle", "YayinEdit", new { id=item.Yayin_ID }) |
-                @Html.ActionLink("Detaylar", "YayinDetails", new { id=item.Yayin_ID }) |
-                @Html.ActionLink("Sil", "YayinDelete", new { id=item.Yayin_ID })
+                @Html.ActionLink("Düzenle", "YayinEdit", new { id = item.Yayin_ID }) |
+                @Html.ActionLink("Detaylar", "YayinDetails", new { id = item.Yayin_ID }) |
+                @Html.ActionLink("Sil", "YayinDelete", new { id = item.Yayin_ID })
             </td>
         </tr>
+        }
     }
     
     </table>
