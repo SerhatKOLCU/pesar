@@ -17,9 +17,9 @@
             <th>
                 Fotoğraf
             </th>
-            <th>
+            @*<th>
                 İçerik
-            </th>
+            </th>*@
             <th>
                 Özet
             </th>
@@ -49,10 +49,9 @@
                 <img src="~/Content/Upload/Yayin/Foto/@item.Yayin_Foto" width="180" height="100" alt="" />
                 @*@Html.DisplayFor(modelItem => item.Yayin_Foto)*@
             </td>
-            <td>
+            @*<td>
                 @Html.Raw(item.Yayin_Icerik)
-                @*@Html.DisplayFor(modelItem => item.Yayin_Icerik)*@
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Yayin_Ozet)
 

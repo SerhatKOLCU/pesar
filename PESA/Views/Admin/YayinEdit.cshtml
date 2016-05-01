@@ -3,8 +3,7 @@
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";}
 
-
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("YayinEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
         

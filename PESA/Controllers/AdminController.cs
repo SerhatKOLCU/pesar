@@ -125,13 +125,42 @@ namespace PESA.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult YayinEdit([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,YayinEtiket,Yayin_Dosya,Yayin_Tarih")] Yayin yayin)
+        [ValidateInput(false)]
+        public ActionResult YayinEdit([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,YayinEtiket,Yayin_Dosya,Yayin_Tarih")] Yayin yayin, HttpPostedFileBase YayinFoto, HttpPostedFileBase YayinDosya)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(yayin).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (YayinFoto.FileName != null && YayinDosya.FileName != null)
+                {
+
+
+                    FileInfo fotoBilgisi = new FileInfo(YayinFoto.FileName);
+                    string yeniFotoBilgisi = Guid.NewGuid().ToString("n") + fotoBilgisi.Extension;
+
+
+
+                    FileInfo dosyaBilgisi = new FileInfo(YayinDosya.FileName);
+                    string yeniDosyaBilgisi = Guid.NewGuid().ToString("n") + dosyaBilgisi.Extension;
+
+                    YayinFoto.SaveAs(Server.MapPath("~/Content/Upload/Yayin/Foto/" + yeniFotoBilgisi));
+                    YayinDosya.SaveAs(Server.MapPath("~/Content/Upload/Yayin/Dosya/" + yeniDosyaBilgisi));
+
+                    yayin.Yayin_Foto = yeniFotoBilgisi;
+                    yayin.Yayin_Dosya = yeniDosyaBilgisi;
+
+
+                    db.Entry(yayin).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Lütfen yayin için düzgün veri girin.");
+                    return View(yayin);
+                }
+                //db.Entry(yayin).State = EntityState.Modified;
+                //db.SaveChanges();
+                //return RedirectToAction("Index");
             }
             ViewBag.YayinTip_ID = new SelectList(db.YayinTip, "YayinTip_ID", "YayinTip_Adi", yayin.YayinTip_ID);
             return View(yayin);
@@ -155,6 +184,7 @@ namespace PESA.Controllers
         // POST: Yayins/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult YayinDeleteConfirmed(int id)
         {
             Yayin yayin = db.Yayin.Find(id);
