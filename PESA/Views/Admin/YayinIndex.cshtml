@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<PESA.Models.Yayin>
-
+@using System.Data
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
     }
@@ -38,7 +38,7 @@
             <th></th>
         </tr>
     
-    @foreach (var item in Model) {
+    @foreach (var item in Model.OrderByDescending(c => c.Yayin_Tarih.AsDateTime())) {
         if (item.YayinTip_ID == Convert.ToInt32(ViewBag.Message)||ViewBag.Message==null)
         {
         <tr>
