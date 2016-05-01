@@ -7,7 +7,7 @@
 <h2>Yayın Oluştur</h2>
 
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Yeni Yayın Ekle", "YayinCreate")
     </p>
     <table class="table">
         <tr>
@@ -53,6 +53,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Yayin_Ozet)
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.YayinEtiket)
@@ -67,10 +68,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.YayinTip.YayinTip_Adi)
             </td>
-            <td>
-                @Html.ActionLink("Düzenle", "Edit", new { id=item.Yayin_ID }) |
-                @Html.ActionLink("Detaylar", "Details", new { id=item.Yayin_ID }) |
-                @Html.ActionLink("Sil", "Delete", new { id=item.Yayin_ID })
+            <td>    
+                @Html.ActionLink("Düzenle", "YayinEdit", new { id=item.Yayin_ID }) |
+                @Html.ActionLink("Detaylar", "YayinDetails", new { id=item.Yayin_ID }) |
+                @Html.ActionLink("Sil", "YayinDelete", new { id=item.Yayin_ID })
             </td>
         </tr>
     }

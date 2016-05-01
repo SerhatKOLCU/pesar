@@ -47,52 +47,22 @@
                         <a class="active-menu" href="@Url.Action("Index", "Admin")"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
+                        <a class="nav nav-second-level" href="@Url.Action("YayinCreate", "Admin")"><i class="fa fa-pencil"></i> Yayın Oluştur</a>
+                    </li>
+                    <li>
                         <a href="#"><i class="fa fa-sitemap"></i> Yayın Yönetimi<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">Analiz Yönetimi<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Analiz Listesi</a>
-                                    </li>
-                                    <li>
-                                        @*@Html.ActionLink("Yeni Analiz Ekle", "YayinCreate", "Admin", new { YayinTip_ID=3 }, null)*@
-                                        <a href="@Url.Action("YayinCreate", "Admin")">Yeni Analiz Ekle</a>
-                                    </li>
-                                </ul>
+                                <a href="@Url.Action("YayinIndex", "Admin")">Analiz Yönetimi</a>
                             </li>
                             <li>
-                                <a href="#">Görüş Yönetimi<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Görüş Listesi</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Yeni Görüş Ekle</a>
-                                    </li>
-                                </ul>
+                                <a href="@Url.Action("YayinIndex", "Admin")">Görüş Yönetimi</a>
                             </li>
                             <li>
-                                <a href="#">Rapor Yönetimi<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Rapor Listesi</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Yeni Rapor Ekle</a>
-                                    </li>
-                                </ul>
+                                <a href="@Url.Action("YayinIndex", "Admin")">Rapor Yönetimi</a>
                             </li>
                             <li>
-                                <a href="#">Bülten Yönetimi<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Bülten Listesi</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Yeni Ekonomi Bülteni Ekle</a>
-                                    </li>
-                                </ul>
+                                <a href="@Url.Action("YayinIndex", "Admin")">Bülten Yönetimi</a>
                             </li>
                         </ul>
                     </li>

@@ -31,6 +31,7 @@ namespace PESA.Controllers
             return View(yayin.ToList());
         }
 
+
         // GET: Yayins/Details/5
         public ActionResult YayinDetails(int? id)
         {
@@ -61,21 +62,28 @@ namespace PESA.Controllers
         [ValidateInput(false)]
         public ActionResult YayinCreate([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,YayinEtiket,Yayin_Dosya,Yayin_Tarih")] Yayin yayin, HttpPostedFileBase YayinFoto, HttpPostedFileBase YayinDosya)
         {
+
             if (ModelState.IsValid)
             {
+
                 if (YayinFoto.FileName != null && YayinDosya.FileName != null)
                 {
+
+
                     FileInfo fotoBilgisi = new FileInfo(YayinFoto.FileName);
-                    string yeniFotoBilgisi = Guid.NewGuid().ToString("N") + fotoBilgisi.Extension;
+                    string yeniFotoBilgisi = Guid.NewGuid().ToString("n") + fotoBilgisi.Extension;
+
+
 
                     FileInfo dosyaBilgisi = new FileInfo(YayinDosya.FileName);
-                    string yeniDosyaBilgisi = Guid.NewGuid().ToString("N") + dosyaBilgisi.Extension;
+                    string yeniDosyaBilgisi = Guid.NewGuid().ToString("n") + dosyaBilgisi.Extension;
 
-                    YayinFoto.SaveAs(Server.MapPath("~/Content/Upload/Duyuru/Foto/" + yeniFotoBilgisi));
-                    YayinDosya.SaveAs(Server.MapPath("~/Content/Upload/Duyuru/Dosya/" + yeniDosyaBilgisi));
+                    YayinFoto.SaveAs(Server.MapPath("~/Content/Upload/Yayin/Foto/" + yeniFotoBilgisi));
+                    YayinDosya.SaveAs(Server.MapPath("~/Content/Upload/Yayin/Dosya/" + yeniDosyaBilgisi));
 
                     yayin.Yayin_Foto = yeniFotoBilgisi;
                     yayin.Yayin_Dosya = yeniDosyaBilgisi;
+                    
 
                     db.Yayin.Add(yayin);
                     db.SaveChanges();
@@ -89,7 +97,8 @@ namespace PESA.Controllers
 
             }
 
-            ViewBag.YayinTip_ID = new SelectList(db.YayinTip, "YayinTip_ID", "YayinTip_Adi", yayin.YayinTip_ID);
+            ViewBag.YayinTip_ID = new SelectList(db.YayinTip,(Request.QueryString["YayinTip_ID"].ToString()), "YayinTip_Adi", yayin.YayinTip_ID);
+
             return View(yayin);
         }
 
