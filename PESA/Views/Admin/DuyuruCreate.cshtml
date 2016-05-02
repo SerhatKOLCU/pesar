@@ -18,7 +18,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Duyuru_Baslik, "Başlık", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Duyuru_Baslik, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Duyuru_Baslik, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                     @Html.ValidationMessageFor(model => model.Duyuru_Baslik, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -35,7 +35,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Duyuru_Foto, "Fotoğraf", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    <input type="file" id="DuyuruFoto" name="DuyuruFoto" accept=".jpg, .jpeg, .png, .gif, .bmp" />
+                    <input type="file" id="DuyuruFoto" name="DuyuruFoto" accept=".jpg, .jpeg, .png, .gif, .bmp" required />
                     @*@Html.EditorFor(model => model.Duyuru_Foto, new { htmlAttributes = new { @class = "form-control" } })*@
                     @Html.ValidationMessageFor(model => model.Duyuru_Foto, "", new { @class = "text-danger" })
                 </div>
@@ -44,7 +44,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Duyuru_Dosya, "Dosya", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    <input type="file" id="DuyuruDosya" name="DuyuruDosya" accept=".pdf, .doc, .docx, .xls" />
+                    <input type="file" id="DuyuruDosya" name="DuyuruDosya" accept=".pdf, .doc, .docx, .xls" required />
                     @*@Html.EditorFor(model => model.Duyuru_Dosya, new { htmlAttributes = new { @class = "form-control" } })*@
                     @Html.ValidationMessageFor(model => model.Duyuru_Dosya, "", new { @class = "text-danger" })
                 </div>
@@ -53,7 +53,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Duyuru_Tarih, "Tarih", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Duyuru_Tarih, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Duyuru_Tarih, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                     @Html.ValidationMessageFor(model => model.Duyuru_Tarih, "", new { @class = "text-danger" })
                 </div>
             </div>
