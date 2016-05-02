@@ -4,7 +4,8 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
     }
 
-<h2>Yayın Oluştur</h2>
+<div class="row col-md-10">
+    <h2>Yayınlar</h2>
 
     <p>
         @Html.ActionLink("Yeni Yayın Ekle", "YayinCreate")
@@ -18,8 +19,8 @@
                 Fotoğraf
             </th>
             @*<th>
-                İçerik
-            </th>*@
+                    İçerik
+                </th>*@
             <th>
                 Özet
             </th>
@@ -37,45 +38,47 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model.OrderByDescending(c => c.Yayin_Tarih.AsDateTime())) {
-        if (item.YayinTip_ID == Convert.ToInt32(ViewBag.Message)||ViewBag.Message==null)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Yayin_Baslik)
-            </td>
-            <td>
-                <img src="~/Content/Upload/Yayin/Foto/@item.Yayin_Foto" width="180" height="100" alt="" />
-                @*@Html.DisplayFor(modelItem => item.Yayin_Foto)*@
-            </td>
-            @*<td>
-                @Html.Raw(item.Yayin_Icerik)
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.Yayin_Ozet)
 
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.YayinEtiket)
-            </td>
-            <td>
-                <a href="~/Content/Upload/Yayin/Dosya/@item.Yayin_Dosya">@item.Yayin_Dosya</a>
-                @*@Html.DisplayFor(modelItem => item.Yayin_Dosya)*@
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Yayin_Tarih)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.YayinTip.YayinTip_Adi)
-            </td>
-            <td>    
-                @Html.ActionLink("Düzenle", "YayinEdit", new { id = item.Yayin_ID }) |
-                @Html.ActionLink("Detaylar", "YayinDetails", new { id = item.Yayin_ID }) |
-                @Html.ActionLink("Sil", "YayinDelete", new { id = item.Yayin_ID })
-            </td>
-        </tr>
+        @foreach (var item in Model.OrderByDescending(c => c.Yayin_Tarih.AsDateTime()))
+        {
+            if (item.YayinTip_ID == Convert.ToInt32(ViewBag.Message) || ViewBag.Message == null)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Yayin_Baslik)
+                    </td>
+                    <td>
+                        <img src="~/Content/Upload/Yayin/Foto/@item.Yayin_Foto" width="180" height="100" alt="" />
+                        @*@Html.DisplayFor(modelItem => item.Yayin_Foto)*@
+                    </td>
+                    @*<td>
+                            @Html.Raw(item.Yayin_Icerik)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Yayin_Ozet)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.YayinEtiket)
+                    </td>
+                    <td>
+                        <a href="~/Content/Upload/Yayin/Dosya/@item.Yayin_Dosya">@item.Yayin_Dosya</a>
+                        @*@Html.DisplayFor(modelItem => item.Yayin_Dosya)*@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Yayin_Tarih)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.YayinTip.YayinTip_Adi)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Düzenle", "YayinEdit", new { id = item.Yayin_ID }) |
+                        @Html.ActionLink("Detaylar", "YayinDetails", new { id = item.Yayin_ID }) |
+                        @Html.ActionLink("Sil", "YayinDelete", new { id = item.Yayin_ID })
+                    </td>
+                </tr>
+            }
         }
-    }
-    
+
     </table>
+</div>

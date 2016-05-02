@@ -3,77 +3,77 @@
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";}
 
-
+<div class="row col-md-10">
     <div>
-        <h4>Yayin</h4>
+        <h4>Yayın</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
                 Başlık
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Yayin_Baslik)
             </dd>
-    
+
             <dt>
                 Fotoğraf
             </dt>
-    
+
             <dd>
                 <img src="~/Content/Upload/Yayin/Foto/@Model.Yayin_Foto" width="180" height="100" alt="" />
             </dd>
-    
+
             <dt>
                 İçerik
             </dt>
-    
+
             <dd>
-                @Html.Raw(Model.Yayin_Icerik);
+                @Html.Raw(Model.Yayin_Icerik)
                 @*@Html.DisplayFor(model => model.Yayin_Icerik)*@
             </dd>
-    
+
             <dt>
                 Özet
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Yayin_Ozet)
             </dd>
-    
+
             <dt>
                 Etiket
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.YayinEtiket)
             </dd>
-    
+
             <dt>
                 Dosya
             </dt>
-    
+
             <dd>
                 <a href="~/Content/Upload/Yayin/Dosya/@Model.Yayin_Dosya">@Model.Yayin_Dosya</a>
                 @*@Html.DisplayFor(model => model.Yayin_Dosya)*@
             </dd>
-    
+
             <dt>
                 Tarih
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Yayin_Tarih)
             </dd>
-    
+
             <dt>
                 Yayın Tİpi
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.YayinTip.YayinTip_Adi)
             </dd>
-    
+
         </dl>
     </div>
     <p>
@@ -81,3 +81,4 @@
         @Html.ActionLink("Geri Dön", "Index")
     </p>
 
+</div>

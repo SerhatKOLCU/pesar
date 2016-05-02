@@ -283,13 +283,33 @@ namespace PESA.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult DuyuruEdit([Bind(Include = "Duyuru_ID,Duyuru_Baslik,Duyuru_Icerik,Duyuru_Foto,Duyuru_Dosya,Duyuru_Tarih")] Duyuru duyuru)
+        public ActionResult DuyuruEdit([Bind(Include = "Duyuru_ID,Duyuru_Baslik,Duyuru_Icerik,Duyuru_Foto,Duyuru_Dosya,Duyuru_Tarih")] Duyuru duyuru, HttpPostedFileBase DuyuruFoto, HttpPostedFileBase DuyuruDosya)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(duyuru).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("DuyuruIndex");
+                if (DuyuruFoto.FileName != null && DuyuruDosya.FileName != null)
+                {
+                    FileInfo fotoBilgisi = new FileInfo(DuyuruFoto.FileName);
+                    string yeniFotoBilgisi = Guid.NewGuid().ToString("N") + fotoBilgisi.Extension;
+
+                    FileInfo dosyaBilgisi = new FileInfo(DuyuruDosya.FileName);
+                    string yeniDosyaBilgisi = Guid.NewGuid().ToString("N") + dosyaBilgisi.Extension;
+
+                    DuyuruFoto.SaveAs(Server.MapPath("~/Content/Upload/Duyuru/Foto/" + yeniFotoBilgisi));
+                    DuyuruDosya.SaveAs(Server.MapPath("~/Content/Upload/Duyuru/Dosya/" + yeniDosyaBilgisi));
+
+                    duyuru.Duyuru_Foto = yeniFotoBilgisi;
+                    duyuru.Duyuru_Dosya = yeniDosyaBilgisi;
+
+                    db.Entry(duyuru).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("DuyuruIndex");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Lütfen duyuru için düzgün veri girin.");
+                    return View(duyuru);
+                }
             }
             return View(duyuru);
         }

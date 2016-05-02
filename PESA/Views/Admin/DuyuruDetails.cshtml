@@ -3,63 +3,57 @@
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";}
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
+<div class="row col-md-10">
     <div>
         <h4>Duyuru</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.Duyuru_Baslik)
+                Başlık
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Duyuru_Baslik)
             </dd>
-    
+
             <dt>
-                @Html.DisplayNameFor(model => model.Duyuru_Icerik)
+                İçerik
             </dt>
-    
+
             <dd>
-                @Html.DisplayFor(model => model.Duyuru_Icerik)
+                @Html.Raw(Model.Duyuru_Icerik)
             </dd>
-    
+
             <dt>
-                @Html.DisplayNameFor(model => model.Duyuru_Foto)
+                Fotoğraf
             </dt>
-    
+
             <dd>
-                @Html.DisplayFor(model => model.Duyuru_Foto)
+                <img src="~/Content/Upload/Duyuru/Foto/@Model.Duyuru_Foto" width="180" height="100" alt="" />
+                @*@Html.DisplayFor(model => model.Duyuru_Foto)*@
             </dd>
-    
+
             <dt>
-                @Html.DisplayNameFor(model => model.Duyuru_Dosya)
+                Dosya
             </dt>
-    
+
             <dd>
-                @Html.DisplayFor(model => model.Duyuru_Dosya)
+                <a href="~/Content/Upload/Duyuru/Dosya/@Model.Duyuru_Dosya">@Model.Duyuru_Dosya</a>
+                @*@Html.DisplayFor(model => model.Duyuru_Dosya)*@
             </dd>
-    
+
             <dt>
-                @Html.DisplayNameFor(model => model.Duyuru_Tarih)
+                Tarih
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Duyuru_Tarih)
             </dd>
-    
+
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Duyuru_ID }) |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Düzenle", "DuyuruEdit", new { id = Model.Duyuru_ID }) |
+        @Html.ActionLink("Geri Dön", "Index")
     </p>
-</body>
-</html>
+</div>

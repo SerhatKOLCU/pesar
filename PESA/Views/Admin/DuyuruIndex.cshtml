@@ -5,58 +5,58 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Duyuru Oluştur</h2>
+<div class="row col-md-10">
 
-<p>
-    @Html.ActionLink("Yeni Duyuru Ekle", "DuyuruCreate")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            Duyuru Başlığı
-        </th>
-        <th>
-            Duyuru İçeriği
-        </th>
-        <th>
-            Duyuru Fotoğrafı
-        </th>
-        <th>
-            Duyuru Dosyası
-        </th>
-        <th>
-            Duyuru Tarihi
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+    <p>
+        @Html.ActionLink("Yeni Duyuru Ekle", "DuyuruCreate")
+    </p>
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Duyuru_Baslik)
-            </td>
-            <td>
-                @Html.Raw(item.Duyuru_Icerik)
-                @*@Html.DisplayFor(modelItem => item.Duyuru_Icerik)*@
-            </td>
-            <td>
-                <img src="~/Content/Upload/Duyuru/Foto/@item.Duyuru_Foto" width="180" height="100" alt="" />
-                @*@Html.DisplayFor(modelItem => item.Duyuru_Foto)*@
-            </td>
-            <td>
-                <a href="~/Content/Upload/Duyuru/Dosya/@item.Duyuru_Dosya">@item.Duyuru_Dosya</a>
-                @*@Html.DisplayFor(modelItem => item.Duyuru_Dosya)*@
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Duyuru_Tarih)
-            </td>
-            <td>
-                @Html.ActionLink("Düzenle", "DuyuruEdit", new { id = item.Duyuru_ID }) |
-                @Html.ActionLink("Detaylar", "DuyuruDetails", new { id = item.Duyuru_ID }) |
-                @Html.ActionLink("Sil", "DuyuruDelete", new { id = item.Duyuru_ID })
-            </td>
+            <th>
+                Başlık
+            </th>
+            @*<th>
+                    Duyuru İçeriği
+                </th>*@
+            <th>
+                Fotoğraf
+            </th>
+            <th>
+                Dosya
+            </th>
+            <th>
+                Tarih
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duyuru_Baslik)
+                </td>
+                @*<td>
+                        @Html.Raw(item.Duyuru_Icerik)
+                    </td>*@
+                <td>
+                    <img src="~/Content/Upload/Duyuru/Foto/@item.Duyuru_Foto" width="180" height="100" alt="" />
+                    @*@Html.DisplayFor(modelItem => item.Duyuru_Foto)*@
+                </td>
+                <td>
+                    <a href="~/Content/Upload/Duyuru/Dosya/@item.Duyuru_Dosya">@item.Duyuru_Dosya</a>
+                    @*@Html.DisplayFor(modelItem => item.Duyuru_Dosya)*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duyuru_Tarih)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "DuyuruEdit", new { id = item.Duyuru_ID }) |
+                    @Html.ActionLink("Detaylar", "DuyuruDetails", new { id = item.Duyuru_ID }) |
+                    @Html.ActionLink("Sil", "DuyuruDelete", new { id = item.Duyuru_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
