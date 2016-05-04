@@ -10,7 +10,7 @@
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.Yayin_Baslik)
+                Başlık
             </dt>
     
             <dd>
@@ -18,23 +18,23 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.Yayin_Foto)
+                Fotoğraf
             </dt>
     
             <dd>
-                @Html.DisplayFor(model => model.Yayin_Foto)
+                <img src="~/Content/Upload/Yayin/Foto/@Model.Yayin_Foto" width="180" height="100" alt="" />
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.Yayin_Icerik)
+                İçerik
             </dt>
     
             <dd>
-                @Html.DisplayFor(model => model.Yayin_Icerik)
+                @Html.Raw(Model.Yayin_Icerik)
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.Yayin_Ozet)
+                Özet
             </dt>
     
             <dd>
@@ -42,23 +42,31 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.YayinEtiket)
+                Etiket
             </dt>
     
             <dd>
                 @Html.DisplayFor(model => model.YayinEtiket)
             </dd>
-    
+
             <dt>
-                @Html.DisplayNameFor(model => model.Yayin_Dosya)
+                Yazar
             </dt>
-    
+
             <dd>
-                @Html.DisplayFor(model => model.Yayin_Dosya)
+                @Html.DisplayFor(model => model.Yayin_Yazar)
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.Yayin_Tarih)
+                Dosya
+            </dt>
+    
+            <dd>
+                <a href="~/Content/Upload/Yayin/Dosya/@Model.Yayin_Dosya">@Model.Yayin_Dosya</a>
+            </dd>
+    
+            <dt>
+                Tarih
             </dt>
     
             <dd>
@@ -66,7 +74,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.YayinTip.YayinTip_Adi)
+                Yayın Tipi
             </dt>
     
             <dd>

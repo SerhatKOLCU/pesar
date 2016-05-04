@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PesaDb.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="PesaDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Duyuru">
           <Key>
             <PropertyRef Name="Duyuru_ID" />
@@ -44,7 +44,8 @@
           <Property Name="Yayin_Foto" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Yayin_Icerik" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Yayin_Ozet" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="YayinEtiket" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="YayinEtiket" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Yayin_Yazar" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Yayin_Dosya" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Yayin_Tarih" Type="nvarchar" MaxLength="11" Nullable="false" />
         </EntityType>
@@ -67,7 +68,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="PesaDbStoreContainer">
+        <EntityContainer Name="PesaDbModelStoreContainer">
           <EntitySet Name="Duyuru" EntityType="Self.Duyuru" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -82,7 +83,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="PesaDb" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="PesaDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Duyuru">
           <Key>
             <PropertyRef Name="Duyuru_ID" />
@@ -122,7 +123,8 @@
           <Property Name="Yayin_Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Yayin_Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Yayin_Ozet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="YayinEtiket" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="YayinEtiket" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Yayin_Yazar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Yayin_Dosya" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Yayin_Tarih" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="YayinTip" Relationship="Self.FK_Yayin_YayinTip" FromRole="Yayin" ToRole="YayinTip" />
@@ -163,9 +165,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PesaDbStoreContainer" CdmEntityContainer="PesaDbEntities">
+        <EntityContainerMapping StorageEntityContainer="PesaDbModelStoreContainer" CdmEntityContainer="PesaDbEntities">
           <EntitySetMapping Name="Duyuru">
-            <EntityTypeMapping TypeName="PesaDb.Duyuru">
+            <EntityTypeMapping TypeName="PesaDbModel.Duyuru">
               <MappingFragment StoreEntitySet="Duyuru">
                 <ScalarProperty Name="Duyuru_ID" ColumnName="Duyuru_ID" />
                 <ScalarProperty Name="Duyuru_Baslik" ColumnName="Duyuru_Baslik" />
@@ -177,7 +179,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Kullanici">
-            <EntityTypeMapping TypeName="PesaDb.Kullanici">
+            <EntityTypeMapping TypeName="PesaDbModel.Kullanici">
               <MappingFragment StoreEntitySet="Kullanici">
                 <ScalarProperty Name="Kullanici_ID" ColumnName="Kullanici_ID" />
                 <ScalarProperty Name="Kullanici_Adli" ColumnName="Kullanici_Adli" />
@@ -186,7 +188,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="PesaDb.sysdiagrams">
+            <EntityTypeMapping TypeName="PesaDbModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -197,7 +199,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Yayin">
-            <EntityTypeMapping TypeName="PesaDb.Yayin">
+            <EntityTypeMapping TypeName="PesaDbModel.Yayin">
               <MappingFragment StoreEntitySet="Yayin">
                 <ScalarProperty Name="Yayin_ID" ColumnName="Yayin_ID" />
                 <ScalarProperty Name="YayinTip_ID" ColumnName="YayinTip_ID" />
@@ -206,13 +208,14 @@
                 <ScalarProperty Name="Yayin_Icerik" ColumnName="Yayin_Icerik" />
                 <ScalarProperty Name="Yayin_Ozet" ColumnName="Yayin_Ozet" />
                 <ScalarProperty Name="YayinEtiket" ColumnName="YayinEtiket" />
+                <ScalarProperty Name="Yayin_Yazar" ColumnName="Yayin_Yazar" />
                 <ScalarProperty Name="Yayin_Dosya" ColumnName="Yayin_Dosya" />
                 <ScalarProperty Name="Yayin_Tarih" ColumnName="Yayin_Tarih" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="YayinTip">
-            <EntityTypeMapping TypeName="PesaDb.YayinTip">
+            <EntityTypeMapping TypeName="PesaDbModel.YayinTip">
               <MappingFragment StoreEntitySet="YayinTip">
                 <ScalarProperty Name="YayinTip_ID" ColumnName="YayinTip_ID" />
                 <ScalarProperty Name="YayinTip_Adi" ColumnName="YayinTip_Adi" />

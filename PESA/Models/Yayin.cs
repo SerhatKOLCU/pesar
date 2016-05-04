@@ -21,6 +21,7 @@ namespace PESA.Models
         public string Yayin_Icerik { get; set; }
         public string Yayin_Ozet { get; set; }
         public string YayinEtiket { get; set; }
+        public string Yayin_Yazar { get; set; }
         public string Yayin_Dosya { get; set; }
         public string Yayin_Tarih { get; set; }
     

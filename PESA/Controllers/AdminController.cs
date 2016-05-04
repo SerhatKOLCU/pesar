@@ -62,7 +62,7 @@ namespace PESA.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult YayinCreate([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,YayinEtiket,Yayin_Dosya,Yayin_Tarih")] Yayin yayin, HttpPostedFileBase YayinFoto, HttpPostedFileBase YayinDosya)
+        public ActionResult YayinCreate([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,YayinEtiket,Yayin_Yazar,Yayin_Dosya,Yayin_Tarih")] Yayin yayin, HttpPostedFileBase YayinFoto, HttpPostedFileBase YayinDosya)
         {
 
             if (ModelState.IsValid)
@@ -126,7 +126,7 @@ namespace PESA.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult YayinEdit([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,YayinEtiket,Yayin_Dosya,Yayin_Tarih")] Yayin yayin, HttpPostedFileBase YayinFoto, HttpPostedFileBase YayinDosya)
+        public ActionResult YayinEdit([Bind(Include = "Yayin_ID,YayinTip_ID,Yayin_Baslik,Yayin_Foto,Yayin_Icerik,Yayin_Ozet,YayinEtiket,Yayin_Yazar,Yayin_Dosya,Yayin_Tarih")] Yayin yayin, HttpPostedFileBase YayinFoto, HttpPostedFileBase YayinDosya)
         {
             if (ModelState.IsValid)
             {
@@ -182,7 +182,7 @@ namespace PESA.Controllers
         }
 
         // POST: Yayins/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("YayinDelete")]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
         public ActionResult YayinDeleteConfirmed(int id)
@@ -330,7 +330,7 @@ namespace PESA.Controllers
         }
 
         // POST: Duyuru/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("DuyuruDelete")]
         [ValidateAntiForgeryToken]
         public ActionResult DuyuruDeleteConfirmed(int id)
         {
