@@ -40,7 +40,7 @@
           </Key>
           <Property Name="Yayin_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="YayinTip_ID" Type="int" Nullable="false" />
-          <Property Name="Yayin_Baslik" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Yayin_Baslik" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Yayin_Foto" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Yayin_Icerik" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Yayin_Ozet" Type="nvarchar(max)" Nullable="false" />
@@ -119,7 +119,7 @@
           </Key>
           <Property Name="Yayin_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="YayinTip_ID" Type="Int32" Nullable="false" />
-          <Property Name="Yayin_Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Yayin_Baslik" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Yayin_Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Yayin_Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Yayin_Ozet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
