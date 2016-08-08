@@ -5,7 +5,21 @@
     }
 
 <div class="row col-md-10">
-    <h2>Yayınlar</h2>
+    @{
+        int sc = Convert.ToInt32(ViewBag.Message);
+        switch (sc)
+        {
+            case 1:<h2>Analizler</h2>
+                break;
+            case 2:<h2>Görüşler</h2>
+                break;
+            case 3:<h2>Raporlar</h2>
+                break;
+            case 4:<h2>Bültenler</h2>
+                break;
+            default:<h2>Yayınlar</h2>
+                    break;
+        } }
 
     <p>
         @Html.ActionLink("Yeni Yayın Ekle", "YayinCreate")
@@ -21,9 +35,9 @@
             @*<th>
                     İçerik
                 </th>*@
-            <th>
+            @*<th>
                 Özet
-            </th>
+            </th>*@
             <th>
                 Etiket
             </th>
@@ -54,10 +68,10 @@
                     @*<td>
                             @Html.Raw(item.Yayin_Icerik)
                         </td>*@
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.Yayin_Ozet)
 
-                    </td>
+                    </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.YayinEtiket)
                     </td>

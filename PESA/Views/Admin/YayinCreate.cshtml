@@ -90,7 +90,7 @@
                     <input type="button" value="Seçimi Uygula" onclick="etiketFunc()" />
 
 
-                    @Html.EditorFor(model => model.YayinEtiket, new { htmlAttributes = new { @class = "form-control", required = "required", @disabled ="true", @placeholder = "Yukarıdan etiket seçip 'Seçimi Uygula' butonuna tıklayınız" } })
+                    @Html.EditorFor(model => model.YayinEtiket, new { htmlAttributes = new { @class = "form-control", required = "required", @readonly = "readonly", @placeholder = "Yukarıdan etiket seçip 'Seçimi Uygula' butonuna tıklayınız" } })
                     @Html.ValidationMessageFor(model => model.YayinEtiket, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -110,7 +110,7 @@
                     <input type="button" value="Seçimi Uygula" onclick="yazarFunc()" />
 
 
-                    @Html.EditorFor(model => model.Yayin_Yazar, new { htmlAttributes = new { @class = "form-control", required = "required", @disabled="true", @placeholder = "Yukarıdan yazar seçip 'Seçimi Uygula' butonuna tıklayınız" } })
+                    @Html.EditorFor(model => model.Yayin_Yazar, new { htmlAttributes = new { @class = "form-control", required = "required", @readonly = "readonly", @placeholder = "Yukarıdan yazar seçip 'Seçimi Uygula' butonuna tıklayınız" } })
                     @Html.ValidationMessageFor(model => model.Yayin_Yazar, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -135,6 +135,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Yayin_Tarih, "Tarih", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
+                    
                     @Html.EditorFor(model => model.Yayin_Tarih, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                     @Html.ValidationMessageFor(model => model.Yayin_Tarih, "", new { @class = "text-danger" })
                 </div>
@@ -156,10 +157,17 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/assets/pagejs")
 
     <script src="~/Content/ckeditor/ckeditor.js"></script>
     <script src="~/Content/ckfinder/ckfinder.js"></script>
     <script type="text/javascript">
+
+        jQuery(document).ready(function () {
+            App.init();
+            Datepicker.initDatepicker();
+        });
+
         var editor = CKEDITOR.instances['Yayin_Icerik'];
         if (editor) { editor.destroy(true); }
         CKEDITOR.replace('Yayin_Icerik', {

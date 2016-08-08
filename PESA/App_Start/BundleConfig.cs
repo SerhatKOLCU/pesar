@@ -71,7 +71,8 @@ namespace PESA
                     "~/assets/js/plugins/owl-carousel.js",
                     "~/assets/js/plugins/master-slider-showcase4.js",
                     "~/assets/js/plugins/style-switcher.js",
-                    "~/assets/js/plugins/jquery.slimscroll.min.js"
+                    "~/assets/js/plugins/jquery.slimscroll.min.js",
+                    "~/assets/js/plugins/datepicker.js"
                     ));
 
             /******      ADMIN      *******/

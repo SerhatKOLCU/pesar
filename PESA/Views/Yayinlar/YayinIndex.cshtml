@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PESA.Models.Yayin>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+
+
+    @foreach (var item in Model.OrderByDescending(c => c.Yayin_Tarih.AsDateTime()))
+    {
+        if (item.YayinTip_ID == Convert.ToInt32(ViewBag.Message))
+        {
+            string baslik = item.Yayin_Baslik;
+
+            <div class="row margin-bottom-50">
+                <div class="col-sm-4 sm-margin-bottom-20">
+                    <img class="img-responsive" src="~/Content/Upload/Yayin/Foto/@item.Yayin_Foto" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <div class="blog-grid">
+                        <h3>@Html.ActionLink(item.Yayin_Baslik, "YayinDetails", new { id = item.Yayin_ID })
+                        
+      @*                  <a href="blog_single.html">@Html.DisplayFor(modelItem => item.Yayin_Baslik)</a>*@</h3>
+
+                        <p>@Html.DisplayFor(modelItem => item.Yayin_Ozet)</p>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    
+                    @Html.ActionLink("Devamını Oku", "YayinDetails", new { id = item.Yayin_ID }, new { @class = "btn-u btn-block rounded-4x btn-u-blue margin-bottom-10" })
+                   
+
+                    @Html.ActionLink("PDF Olarak İndir", "Index", "Home", null, new { @class = "btn-u btn-block rounded-4x btn-u-sea" })
+                </div>
+            </div>
+
+        }
+    }
+</div>
