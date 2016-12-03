@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";}
 
 
-<div class="row col-md-10">
+<div class="row">
 
     @using (Html.BeginForm("YayinEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
@@ -70,7 +70,7 @@
                 @Html.LabelFor(model => model.YayinEtiket, "Etiket", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
 
-                    <input type="checkbox" name="etiket" value="Egitim">Eğitim |
+                    <input type="checkbox" name="etiket" value="Eğitim">Eğitim |
                     <input type="checkbox" name="etiket" value="Ekonomi">Ekonomi |
                     <input type="checkbox" name="etiket" value="Finans">Finans |
                     <input type="checkbox" name="etiket" value="Maliye">Maliye |
@@ -81,7 +81,7 @@
                     <input type="button" value="Seçimi Uygula" onclick="etiketFunc()" />
 
 
-                    @Html.EditorFor(model => model.YayinEtiket, new { htmlAttributes = new { @class = "form-control", required = "required", @disabled="true" } })
+                    @Html.EditorFor(model => model.YayinEtiket, new { htmlAttributes = new { @class = "form-control", @required = "required", @readonly = "readonly", @placeholder = "Yukarıdan etiket seçip 'Seçimi Uygula' butonuna tıklayınız" } })
                     @Html.ValidationMessageFor(model => model.YayinEtiket, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -90,18 +90,25 @@
                 @Html.LabelFor(model => model.Yayin_Yazar, "Yazar", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
 
-                    <input type="checkbox" name="etiket" value="Egitim">Eğitim |
-                    <input type="checkbox" name="etiket" value="Ekonomi">Ekonomi |
-                    <input type="checkbox" name="etiket" value="Finans">Finans |
-                    <input type="checkbox" name="etiket" value="Maliye">Maliye |
-                    <input type="checkbox" name="etiket" value="Politika">Politika |
-                    <input type="checkbox" name="etiket" value="Tarih">Tarih |
-                    <input type="checkbox" name="etiket" value="Egitim">Toplum |
+                    <input type="checkbox" name="yazar" value="Fatih SAVAŞAN">Fatih SAVAŞAN |
+                    <input type="checkbox" name="yazar" value="Fatih YARDIMCIOĞLU">Fatih YARDIMCIOĞLU |
+                    <input type="checkbox" name="yazar" value="Şakir GÖRMÜŞ">Şakir GÖRMÜŞ |
+                    <input type="checkbox" name="yazar" value="Temel GÜRDAL">Temel GÜRDAL |
+                    <br />
+                    <input type="checkbox" name="yazar" value="Furkan BEŞEL">Furkan BEŞEL |
+                    <input type="checkbox" name="yazar" value="Bünyamin BEZCİ">Bünyamin BEZCİ |
+                    <input type="checkbox" name="yazar" value="Mehmet Emin ALTUNDEMİR">Mehmet Emin ALTUNDEMİR |
+                    <input type="checkbox" name="yazar" value="Hakkı BAĞCI">Hakkı BAĞCI |
+                    <br />
+                    <input type="checkbox" name="yazar" value="İsmail GÜLEÇ">İsmail GÜLEÇ |
+                    <input type="checkbox" name="yazar" value="Harun KILIÇASLAN">Harun KILIÇASLAN|
+                    <input type="checkbox" name="yazar" value="Hakan YAVUZ">Hakan YAVUZ |
+                    <input type="checkbox" name="yazar" value="Ahmet GÜLMEZ">Ahmet GÜLMEZ |
 
                     <input type="button" value="Seçimi Uygula" onclick="yazarFunc()" />
 
 
-                    @Html.EditorFor(model => model.Yayin_Yazar, new { htmlAttributes = new { @class = "form-control", required = "required", @disabled="true" } })
+                    @Html.EditorFor(model => model.Yayin_Yazar, new { htmlAttributes = new { @class = "form-control", required = "required", @readonly = "readonly", @placeholder = "Yukarıdan yazar seçip 'Seçimi Uygula' butonuna tıklayınız" } })
                     @Html.ValidationMessageFor(model => model.Yayin_Yazar, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -151,7 +158,7 @@
         CKFinder.SetupCKEditor(null, '@Url.Content("~/Content/ckfinder/")');
 
         function etiketFunc() {
-            var etiket = document.forms[0];
+            var etiket = document.getElementsByName("etiket");
             var txtEtiket = "";
             var i;
             for (i = 0; i < etiket.length; i++) {
@@ -163,7 +170,7 @@
         }
 
         function yazarFunc() {
-            var yazar = document.forms[0];
+            var yazar = document.getElementsByName("yazar");
             var txtYazar = "";
             var i;
             for (i = 0; i < yazar.length; i++) {
@@ -171,7 +178,7 @@
                     txtYazar = txtYazar + yazar[i].value + " ";
                 }
             }
-            document.getElementById("Yayin_Yazar").value = txtEtiket;
+            document.getElementById("Yayin_Yazar").value = txtYazar;
         }
     </script>
 }

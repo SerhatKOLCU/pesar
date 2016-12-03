@@ -1,0 +1,13 @@
+﻿@model IEnumerable<PESA.Models.Duyuru>
+<div class="posts margin-bottom-40">
+    @foreach (var item in Model.OrderByDescending(c => c.Duyuru_Tarih.AsDateTime()).Take(20))
+    {
+        <dl class="dl-horizontal">
+            <dt><img src="~/Content/Upload/Duyuru/Foto/@item.Duyuru_Foto" alt="" /></dt>
+            <dd>
+                <p>@Html.ActionLink(item.Duyuru_Baslik, "DuyuruDetails", "Yayinlar", new { id = item.Duyuru_ID }, null)</p>
+            </dd>
+        </dl>
+    }
+
+</div>

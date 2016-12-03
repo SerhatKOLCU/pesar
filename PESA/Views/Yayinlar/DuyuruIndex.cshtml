@@ -1,0 +1,40 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<PESA.Models.Duyuru>
+@{
+    ViewBag.Title = "Duyurular";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="headline headline-md"><h1>Duyurular</h1></div>
+    @foreach (var item in Model.OrderByDescending(c => c.Duyuru_Tarih.AsDateTime()))
+    {
+
+            <div class="row margin-bottom-50">
+                <div class="col-sm-4 sm-margin-bottom-20">
+                    <img class="img-responsive" src="~/Content/Upload/Duyuru/Foto/@item.Duyuru_Foto" alt="">
+                </div>
+                <div class="col-sm-5">
+                    <div class="blog-grid">
+                        <h3>
+                            @Html.ActionLink(item.Duyuru_Baslik, "DuyuruDetails", new { id = item.Duyuru_ID })
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-2">
+
+                    <button class="btn-u btn-brd btn-brd-hover btn-block rounded btn-u-blue btn-u-lg" onclick="location.href='@Url.Action("DuyuruDetails", "Yayinlar", new { id= item.Duyuru_ID})'"><i class="icon-eyeglasses"></i> Devamını Oku</button>
+
+                    <a href="~/Content/Upload/Duyuru/Dosya/@item.Duyuru_Dosya" target="_blank" class="btn-u btn-brd btn-brd-hover btn-block rounded btn-u-dark btn-u-lg" ><i class="icon-doc"></i> PDF Olarak İndir</a>
+                    
+                </div>
+
+            </div>
+        
+    }
+    <div class="row text-center">
+        @Html.PagedListPager(Model, _sayfaNo => Url.Action("DuyuruIndex", "Yayinlar", new { sayfaNo = _sayfaNo }))
+    </div>
+</div>
+

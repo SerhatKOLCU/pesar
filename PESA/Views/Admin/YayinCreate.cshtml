@@ -3,10 +3,13 @@
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";}
 
+<link rel="stylesheet" href="~/assets/plugins/animate.css">
+<link rel="stylesheet" href="~/assets/plugins/line-icons/line-icons.css">
+<link rel="stylesheet" href="~/assets/plugins/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="~/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+<link rel="stylesheet" href="~/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
 
-
-
-<div class="row col-md-10">
+<div class="row">
 
     @using (Html.BeginForm("YayinCreate", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
@@ -27,13 +30,13 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Yayin_Baslik, "Başlık", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Yayin_Baslik, new { htmlAttributes = new { @class = "form-control", required="required" } })
+                    @Html.EditorFor(model => model.Yayin_Baslik, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                     @Html.ValidationMessageFor(model => model.Yayin_Baslik, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Yayin_Foto, "Fotoğraf", htmlAttributes: new { @class = "control-label col-md-2"})
+                @Html.LabelFor(model => model.Yayin_Foto, "Fotoğraf [973*615]", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     <input type="file" id="YayinFoto" name="YayinFoto" accept=".jpg, .jpeg, .png, .gif, .bmp" required />
                     @*@Html.EditorFor(model => model.Yayin_Foto, new { htmlAttributes = new { @class = "form-control" } })*@
@@ -41,13 +44,6 @@
                 </div>
             </div>
 
-            @*<div class="form-group">
-                    @Html.LabelFor(model => model.Yayin_Foto, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Yayin_Foto, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Yayin_Foto, "", new { @class = "text-danger" })
-                    </div>
-                </div>*@
 
 
             <div class="form-group">
@@ -59,13 +55,6 @@
                 </div>
             </div>
 
-            @*<div class="form-group">
-                    @Html.LabelFor(model => model.Yayin_Icerik, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Yayin_Icerik, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Yayin_Icerik, "", new { @class = "text-danger" })
-                    </div>
-                </div>*@
 
             <div class="form-group">
                 @Html.LabelFor(model => model.Yayin_Ozet, "Özet", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -78,19 +67,18 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.YayinEtiket, "Etiket", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    
-                    <input type="checkbox" name="etiket" value="Egitim">Eğitim |
-                    <input type="checkbox" name="etiket" value="Ekonomi">Ekonomi |
-                    <input type="checkbox" name="etiket" value="Finans">Finans |
-                    <input type="checkbox" name="etiket" value="Maliye">Maliye |
-                    <input type="checkbox" name="etiket" value="Politika">Politika |
-                    <input type="checkbox" name="etiket" value="Tarih">Tarih |
-                    <input type="checkbox" name="etiket" value="Toplum">Toplum |
-                    
-                    <input type="button" value="Seçimi Uygula" onclick="etiketFunc()" />
+                    <label class="checkbox-inline"><input type="checkbox" name="etiket" value="Eğitim">Eğitim</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="etiket" value="Ekonomi">Ekonomi</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="etiket" value="Finans">Finans</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="etiket" value="Maliye">Maliye</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="etiket" value="Politika">Politika</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="etiket" value="Tarih">Tarih</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="etiket" value="Toplum">Toplum</label>
+
+                    <input type="button" class="btn btn-primary" value="Seçimi Uygula" onclick="etiketFunc()" />
 
 
-                    @Html.EditorFor(model => model.YayinEtiket, new { htmlAttributes = new { @class = "form-control", required = "required", @readonly = "readonly", @placeholder = "Yukarıdan etiket seçip 'Seçimi Uygula' butonuna tıklayınız" } })
+                    @Html.EditorFor(model => model.YayinEtiket, new { htmlAttributes = new { @class = "form-control", @required = "required", @readonly = "readonly", @placeholder = "Yukarıdan etiket seçip 'Seçimi Uygula' butonuna tıklayınız" } })
                     @Html.ValidationMessageFor(model => model.YayinEtiket, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -99,15 +87,23 @@
                 @Html.LabelFor(model => model.Yayin_Yazar, "Yazar", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
 
-                    <input type="checkbox" name="yazar" value="FatihSavasan">Fatih Savaşan |
-                    <input type="checkbox" name="yazar" value="FatihYardimcioglu">Fatih Yardımcıoğlu |
-                    @*<input type="checkbox" name="yazar" value="Finans">Finans |
-                    <input type="checkbox" name="yazar" value="Maliye">Maliye |
-                    <input type="checkbox" name="yazar" value="Politika">Politika |
-                    <input type="checkbox" name="yazar" value="Tarih">Tarih |
-                    <input type="checkbox" name="yazar" value="Toplum">Toplum |*@
+                    <label class="checkbox-inline"><input type="checkbox" name="yazar" value="Fatih SAVAŞAN">Fatih SAVAŞAN</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="yazar" value="Fatih YARDIMCIOĞLU">Fatih YARDIMCIOĞLU</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="yazar" value="Şakir GÖRMÜŞ">Şakir GÖRMÜŞ</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="yazar" value="Temel GÜRDAL">Temel GÜRDAL</label>
+                    <br />
+                    <label class="checkbox-inline"><input type="checkbox" name="yazar" value="Furkan BEŞEL">Furkan BEŞEL</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="yazar" value="Bünyamin BEZCİ">Bünyamin BEZCİ</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="yazar" value="Mehmet Emin ALTUNDEMİR">Mehmet Emin ALTUNDEMİR</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="yazar" value="Hakkı BAĞCI">Hakkı BAĞCI</label>
+                    <br />
+                    <label class="checkbox-inline"><input type="checkbox" name="yazar" value="İsmail GÜLEÇ">İsmail GÜLEÇ</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="yazar" value="Harun KILIÇASLAN">Harun KILIÇASLAN</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="yazar" value="Hakan YAVUZ">Hakan YAVUZ</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="yazar" value="Ahmet GÜLMEZ">Ahmet GÜLMEZ</label>
 
-                    <input type="button" value="Seçimi Uygula" onclick="yazarFunc()" />
+
+                    <input type="button" class="btn btn-primary" value="Seçimi Uygula" onclick="yazarFunc()" />
 
 
                     @Html.EditorFor(model => model.Yayin_Yazar, new { htmlAttributes = new { @class = "form-control", required = "required", @readonly = "readonly", @placeholder = "Yukarıdan yazar seçip 'Seçimi Uygula' butonuna tıklayınız" } })
@@ -124,26 +120,20 @@
                     @Html.ValidationMessageFor(model => model.Yayin_Dosya, "", new { @class = "text-danger" })
                 </div>
             </div>
-            @*<div class="form-group">
-                    @Html.LabelFor(model => model.Yayin_Dosya, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Yayin_Dosya, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Yayin_Dosya, "", new { @class = "text-danger" })
-                    </div>
-                </div>*@
 
             <div class="form-group">
                 @Html.LabelFor(model => model.Yayin_Tarih, "Tarih", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    
-                    @Html.EditorFor(model => model.Yayin_Tarih, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+
+                    @Html.EditorFor(model => model.Yayin_Tarih, new { htmlAttributes = new { @class = "form-control", required = "required", name = "date", id = "date" } })
                     @Html.ValidationMessageFor(model => model.Yayin_Tarih, "", new { @class = "text-danger" })
+
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Kaydet" class="btn btn-default" />
+                    <input type="submit" value="Kaydet" class="btn btn-default" onclick="validate()" />
                 </div>
             </div>
         </div>
@@ -153,7 +143,7 @@
         @Html.ActionLink("Geri Dön", "Index")
     </div>
 </div>
-    
+
 @section Scripts {
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
@@ -161,6 +151,24 @@
 
     <script src="~/Content/ckeditor/ckeditor.js"></script>
     <script src="~/Content/ckfinder/ckfinder.js"></script>
+    <!-- JS Global Compulsory -->
+    <script type="text/javascript" src="~/assets/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/back-to-top.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/smoothScroll.js"></script>
+    <script src="~/assets/plugins/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js"></script>
+    <script src="~/assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
+    <script src="~/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/custom.js"></script>
+    <script type="text/javascript" src="~/assets/js/app.js"></script>
+    <script type="text/javascript" src="~/assets/js/plugins/style-switcher.js"></script>
+    <script type="text/javascript" src="~/assets/js/plugins/masking.js"></script>
+    <script type="text/javascript" src="~/assets/js/plugins/datepicker.js"></script>
+    <script type="text/javascript" src="~/assets/js/plugins/validation.js"></script>
+    <script type="text/javascript" src="~/assets/js/plugins/style-switcher.js"></script>
+
+
     <script type="text/javascript">
 
         jQuery(document).ready(function () {
@@ -198,5 +206,6 @@
             }
             document.getElementById("Yayin_Yazar").value = txtYazar;
         }
+
     </script>
 }

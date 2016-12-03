@@ -1,0 +1,44 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<PESA.Models.Yayin>
+    @*@model IEnumerable<PESA.Models.Yayin>*@
+    @{
+        ViewBag.Title = ViewBag.Filtre;
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <div class="row">
+        <div class="headline headline-md"><h2>@ViewBag.Filtre</h2></div>
+        @foreach (var item in Model.OrderByDescending(c => c.Yayin_Tarih.AsDateTime()))
+        {
+
+            string baslik = item.Yayin_Baslik;
+
+            <div class="row margin-bottom-50">
+                <div class="col-md-4 col-sm-3 sm-margin-bottom-20">
+                    <img class="img-responsive" src="~/Content/Upload/Yayin/Foto/@item.Yayin_Foto" alt="">
+                </div>
+                <div class="col-md-5 col-sm-6">
+                    <div class="blog-grid">
+                        <h3>
+                            @Html.ActionLink(item.Yayin_Baslik, "YayinDetails", new { id = item.Yayin_ID })
+
+                            @*                  <a href="blog_single.html">@Html.DisplayFor(modelItem => item.Yayin_Baslik)</a>*@
+                        </h3>
+
+                        <p>@Html.DisplayFor(modelItem => item.Yayin_Ozet)</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+
+                    <button class="btn-u btn-brd btn-brd-hover btn-block rounded btn-u-blue btn-u-lg" onclick="location.href='@Url.Action("YayinDetails", "Yayinlar", new { id= item.Yayin_ID})'"><i class="icon-eyeglasses"></i> Devamını Oku</button>
+
+
+                    <a href="~/Content/Upload/Yayin/Dosya/@item.Yayin_Dosya" target="_blank" class="btn-u btn-brd btn-brd-hover btn-block rounded btn-u-dark btn-u-lg"><i class="icon-doc"></i> PDF Olarak İndir</a>
+                </div>
+
+            </div>
+
+        }
+        @Html.PagedListPager(Model, _sayfaNo => Url.Action("YayinFiltre", "Yayinlar", new { sayfaNo = _sayfaNo }))
+    </div>

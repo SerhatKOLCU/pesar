@@ -1,11 +1,13 @@
-﻿@model IEnumerable<PESA.Models.Duyuru>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<PESA.Models.Duyuru>
 
 @{
     ViewBag.Title = "DuyuruIndex";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<div class="row col-md-10">
+<div class="row">
 
     <p>
         @Html.ActionLink("Yeni Duyuru Ekle", "DuyuruCreate")
@@ -57,6 +59,8 @@
                 </td>
             </tr>
         }
-
     </table>
+    <div class="row text-center">
+        @Html.PagedListPager(Model, _sayfaNo => Url.Action("DuyuruIndex", "Admin", new { sayfaNo = _sayfaNo }))
     </div>
+</div>

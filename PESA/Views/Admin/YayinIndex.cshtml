@@ -1,10 +1,12 @@
-﻿@model IEnumerable<PESA.Models.Yayin>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<PESA.Models.Yayin>
 @using System.Data
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    }
+}
 
-<div class="row col-md-10">
+<div class="row">
     @{
         int sc = Convert.ToInt32(ViewBag.Message);
         switch (sc)
@@ -18,7 +20,7 @@
             case 4:<h2>Bültenler</h2>
                 break;
             default:<h2>Yayınlar</h2>
-                    break;
+                break;
         } }
 
     <p>
@@ -36,8 +38,8 @@
                     İçerik
                 </th>*@
             @*<th>
-                Özet
-            </th>*@
+                    Özet
+                </th>*@
             <th>
                 Etiket
             </th>
@@ -69,9 +71,9 @@
                             @Html.Raw(item.Yayin_Icerik)
                         </td>*@
                     @*<td>
-                        @Html.DisplayFor(modelItem => item.Yayin_Ozet)
+                            @Html.DisplayFor(modelItem => item.Yayin_Ozet)
 
-                    </td>*@
+                        </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.YayinEtiket)
                     </td>
@@ -95,4 +97,8 @@
         }
 
     </table>
+    <div class="row text-center">
+        @Html.PagedListPager(Model, _sayfaNo => Url.Action("DuyuruIndex", "Admin", new { sayfaNo = _sayfaNo }))
+    </div>
+
 </div>

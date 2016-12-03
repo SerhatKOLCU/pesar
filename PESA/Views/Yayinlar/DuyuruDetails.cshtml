@@ -1,0 +1,85 @@
+﻿@model PESA.Models.Duyuru
+@{
+    ViewBag.Title = (Model.Duyuru_Baslik);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs">
+        <div class="container">
+            <h1 class="pull-left">@Html.DisplayFor(model => model.Duyuru_Baslik)</h1>
+            <ul class="pull-right breadcrumb">
+                <li>@Html.ActionLink("PESA", "Index", "Home")</li>
+                <li class="active">
+                    @Html.ActionLink("Duyurular", "DuyuruIndex","Yayinlar")
+                </li>
+
+            </ul>
+        </div>
+    </div><!--/breadcrumbs-->
+
+    <div class="container content">
+        <div class="row blog-page blog-item">
+            <!-- Left Sidebar -->
+            <div class="col-md-9 md-margin-bottom-60">
+                <!--Blog Post-->
+                <div class="blog margin-bottom-40">
+                    <div class="blog-post-tags">
+                        <ul class="list-unstyled list-inline blog-info">
+                            <li><i class="fa fa-book"></i> <a href="~/Content/Upload/Duyuru/Dosya/@Model.Duyuru_Dosya" target="_blank">PDF Olarak İndir</a></li>
+                            <li><i class="fa fa-calendar"></i> @Html.DisplayFor(model => model.Duyuru_Tarih)</li>
+                        </ul>
+                    </div>
+                    <div class="blog-img">
+                        <img class="img-responsive" src="~/Content/Upload/Duyuru/Foto/@Model.Duyuru_Foto" alt="">
+                    </div>
+                    <br />
+                    <p>
+                        @Html.Raw(Model.Duyuru_Icerik)
+                    </p>
+                </div>
+                <!--End Blog Post-->
+                <hr>
+            </div>
+            <!-- End Left Sidebar -->
+            <!--------------------------------------------------------------------------------------->
+            <!-- Right Sidebar -->
+            <div class="col-md-3 magazine-page">
+                <!-- Yayın Etiketleri -->
+                <div class="headline headline-md"><h2>Yayınlarımız</h2></div>
+                <ul class="list-unstyled blog-tags margin-bottom-30">
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Eğitim", "YayinFiltre", "Yayinlar", new { filtre = "Eğitim" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Ekonomi", "YayinFiltre", "Yayinlar", new { filtre = "Ekonomi" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Finans", "YayinFiltre", "Yayinlar", new { filtre = "Finans" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Maliye", "YayinFiltre", "Yayinlar", new { filtre = "Maliye" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Politika", "YayinFiltre", "Yayinlar", new { filtre = "Politika" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Tarih", "YayinFiltre", "Yayinlar", new { filtre = "Tarih" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Toplum", "YayinFiltre", "Yayinlar", new { filtre = "Toplum" }, null)</li>
+                </ul>
+                <!-- End Yayın Etiketleri -->
+                <!-- Yazarlar -->
+                <div class="headline headline-md"><h2>Yazarlarımız</h2></div>
+                <ul class="list-unstyled blog-tags margin-bottom-30">
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Fatih SAVAŞAN", "YayinFiltre", "Yayinlar", new { filtre = "Fatih SAVAŞAN" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Fatih YARDIMCIOĞLU", "YayinFiltre", "Yayinlar", new { filtre = "Fatih YARDIMCIOĞLU" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Şakir GÖRMÜŞ", "YayinFiltre", "Yayinlar", new { filtre = "Şakir GÖRMÜŞ" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Temel GÜRDAL", "YayinFiltre", "Yayinlar", new { filtre = "Temel GÜRDAL" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Furkan BEŞEL", "YayinFiltre", "Yayinlar", new { filtre = "Furkan BEŞEL" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Bünyamin BEZCİ", "YayinFiltre", "Yayinlar", new { filtre = "Bünyamin BEZCİ" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Mehmet Emin ALTUNDEMİR", "YayinFiltre", "Yayinlar", new { filtre = "Mehmet Emin ALTUNDEMİR" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Hakkı BAĞCI", "YayinFiltre", "Yayinlar", new { filtre = "Hakkı BAĞCI" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("İsmail GÜLEÇ ", "YayinFiltre", "Yayinlar", new { filtre = "İsmail GÜLEÇ " }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Harun KILIÇASLAN", "YayinFiltre", "Yayinlar", new { filtre = "Harun KILIÇASLAN" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Hakan YAVUZ", "YayinFiltre", "Yayinlar", new { filtre = "Hakan YAVUZ" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Ahmet GÜLMEZ", "YayinFiltre", "Yayinlar", new { filtre = "Ahmet GÜLMEZ" }, null)</li>
+                </ul>
+                <!-- End Yazarlar -->
+
+            </div>
+            <!-- End Right Sidebar -->
+
+
+        </div>
+    </div>
+</div>

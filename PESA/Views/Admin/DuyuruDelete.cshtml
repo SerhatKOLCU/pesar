@@ -3,7 +3,7 @@
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";}
 
-<div class="row col-md-10">
+<div class="row">
     <h3>Are you sure you want to delete this?</h3>
     <div>
         <h4>Duyuru</h4>
@@ -22,7 +22,7 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Duyuru_Icerik)
+                @Html.Raw(Model.Duyuru_Icerik)
             </dd>
 
             <dt>
@@ -30,7 +30,7 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Duyuru_Foto)
+                <img src="~/Content/Upload/Duyuru/Foto/@Model.Duyuru_Foto" width="180" height="100" alt="" />
             </dd>
 
             <dt>
@@ -38,7 +38,7 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Duyuru_Dosya)
+                <a href="~/Content/Upload/Duyuru/Dosya/@Model.Duyuru_Dosya">@Model.Duyuru_Dosya</a>
             </dd>
 
             <dt>
@@ -56,8 +56,8 @@
             @Html.AntiForgeryToken()
 
             <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
+                <input type="submit" value="Sil" class="btn btn-danger" /> |
+                @Html.ActionLink("Geri Dön", "Index")
             </div>
         }
     </div>

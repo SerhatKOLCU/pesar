@@ -3,7 +3,7 @@
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";}
 
-<div class="row col-md-10">
+<div class="row">
     @using (Html.BeginForm("DuyuruEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()

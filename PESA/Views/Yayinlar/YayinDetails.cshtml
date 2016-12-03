@@ -2,62 +2,103 @@
 
 @{
     ViewBag.Title = (Model.Yayin_Baslik);
+    ViewBag.YayinYazar = (Model.Yayin_Yazar);
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div id="fb-root"></div>
-<script>
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/tr_TR/sdk.js#xfbml=1&version=v2.6&appId=479807352225396";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
 
 <div class="row">
-    <!-- Blog Grid -->
-    <div class="blog-grid margin-bottom-30">
-        <h2 class="blog-grid-title-lg">@Html.DisplayFor(model => model.Yayin_Baslik)</h2>
-        <div class="overflow-h margin-bottom-10">
-            <div class="pull-right">
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs">
+        <div class="container">
+            <h1 class="pull-left">@Html.DisplayFor(model => model.Yayin_Baslik)</h1>
+            <ul class="pull-right breadcrumb">
+                <li>@Html.ActionLink("PESA", "Index", "Home")</li>
+                <li><a href="#">Yayınlar</a></li>
+                <li class="active">
+                    @switch (Convert.ToInt32(Model.YayinTip_ID))
+                    {
+                        case 1:@Html.ActionLink("Analizler", "YayinIndex", new { ID = "1" })
+                            break;
+                        case 2:@Html.ActionLink("Görüşler", "YayinIndex", new { ID = "2" })
+                            break;
+                        case 3:@Html.ActionLink("Raporlar", "YayinIndex", new { ID = "3" })
+                            break;
+                        case 4:@Html.ActionLink("Ekonomi Bültenleri", "YayinIndex", new { ID = "4" })
+                            break;
+                    }
+                </li>
+
+            </ul>
+        </div>
+    </div><!--/breadcrumbs-->
+
+    <div class="container content">
+        <div class="row blog-page blog-item">
+            <!-- Left Sidebar -->
+            <div class="col-md-9 md-margin-bottom-60">
+                <!--Blog Post-->
+                <div class="blog margin-bottom-40">
+                    <div class="blog-post-tags">
+                        <ul class="list-unstyled list-inline blog-info">
+                            <li><i class="fa fa-book"></i> <a href="~/Content/Upload/Yayin/Dosya/@Model.Yayin_Dosya" target="_blank">PDF Olarak İndir</a></li>
+                            <li><i class="fa fa-calendar"></i> @Html.DisplayFor(model => model.Yayin_Tarih)</li>
+                            <li><i class="fa fa-pencil"></i> @Html.DisplayFor(model => model.Yayin_Yazar)</li>
+
+                        </ul>
+                        <ul class="list-unstyled list-inline blog-tags">
+                            <li><i class="fa fa-tags"></i> @Html.DisplayFor(model => model.YayinEtiket)</li>
+                        </ul>
+                    </div>
+                    <div class="blog-img">
+                        <img class="img-responsive" src="~/Content/Upload/Yayin/Foto/@Model.Yayin_Foto" alt="">
+                    </div>
+                    <br />
+                    <p>
+                        @Html.Raw(Model.Yayin_Icerik)
+                    </p>
+                </div>
+                <!--End Blog Post-->
+                <hr>
+            </div>
+            <!-- End Left Sidebar -->
+            <!-- Right Sidebar -->
+            <div class="col-md-3 magazine-page">
+
+                <!-- Yazarın Son Yayınları -->
+                @Html.Action("YazarSonYayinlar", "Yayinlar", new { yazar = Model.Yayin_Yazar })
+                <!-- End Yazarın Son Yayınları -->
+                <!-- Yayın Etiketleri -->
+                <div class="headline headline-md"><h2>Yayınlarımız</h2></div>
+                <ul class="list-unstyled blog-tags margin-bottom-30">
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Eğitim", "YayinFiltre", "Yayinlar", new { filtre = "Eğitim" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Ekonomi", "YayinFiltre", "Yayinlar", new { filtre = "Ekonomi" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Finans", "YayinFiltre", "Yayinlar", new { filtre = "Finans" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Maliye", "YayinFiltre", "Yayinlar", new { filtre = "Maliye" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Politika", "YayinFiltre", "Yayinlar", new { filtre = "Politika" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Tarih", "YayinFiltre", "Yayinlar", new { filtre = "Tarih" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Toplum", "YayinFiltre", "Yayinlar", new { filtre = "Toplum" }, null)</li>
+                </ul>
+                <!-- End Yayın Etiketleri -->
+                <!-- Yazarlar -->
+                <div class="headline headline-md"><h2>Yazarlarımız</h2></div>
+                <ul class="list-unstyled blog-tags margin-bottom-30">
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Fatih SAVAŞAN", "YayinFiltre", "Yayinlar", new { filtre = "Fatih SAVAŞAN" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Fatih YARDIMCIOĞLU", "YayinFiltre", "Yayinlar", new { filtre = "Fatih YARDIMCIOĞLU" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Şakir GÖRMÜŞ", "YayinFiltre", "Yayinlar", new { filtre = "Şakir GÖRMÜŞ" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Temel GÜRDAL", "YayinFiltre", "Yayinlar", new { filtre = "Temel GÜRDAL" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Furkan BEŞEL", "YayinFiltre", "Yayinlar", new { filtre = "Furkan BEŞEL" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Bünyamin BEZCİ", "YayinFiltre", "Yayinlar", new { filtre = "Bünyamin BEZCİ" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Mehmet Emin ALTUNDEMİR", "YayinFiltre", "Yayinlar", new { filtre = "Mehmet Emin ALTUNDEMİR" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Hakkı BAĞCI", "YayinFiltre", "Yayinlar", new { filtre = "Hakkı BAĞCI" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("İsmail GÜLEÇ ", "YayinFiltre", "Yayinlar", new { filtre = "İsmail GÜLEÇ " }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Harun KILIÇASLAN", "YayinFiltre", "Yayinlar", new { filtre = "Harun KILIÇASLAN" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Hakan YAVUZ", "YayinFiltre", "Yayinlar", new { filtre = "Hakan YAVUZ" }, null)</li>
+                    <li><i class="fa fa-tags"></i>@Html.ActionLink("Ahmet GÜLMEZ", "YayinFiltre", "Yayinlar", new { filtre = "Ahmet GÜLMEZ" }, null)</li>
+                </ul>
+                <!-- End Yazarlar -->
 
             </div>
+            <!-- End Right Sidebar -->
         </div>
-        <img class="col-md-7 img-responsive" src="~/Content/Upload/Yayin/Foto/@Model.Yayin_Foto" alt="" />
     </div>
-    <!-- End Blog Grid -->
-    <div class="row"></div>
-
-
-    <table>
-        <tr>
-            <th>
-                <a class="btn-u btn-u-xs rounded btn-u-sea" href="~/Content/Upload/Yayin/Dosya/@Model.Yayin_Dosya" target="_blank">PDF Olarak İndir</a>
-                &nbsp;
-            </th>
-            <th>
-                <div class="fb-share-button" data-layout="button"></div>
-                &nbsp;
-            </th>
-            <th>
-
-                <a href="https://twitter.com/share" class="twitter-share-button" data-via="pesaarastirma" data-hashtags="pesar">Tweet</a>
-            </th>
-
-        </tr>
-    </table>
-    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-
-    <hr class="hr-xs" />
-    <div class="clear-right">
-        <p>
-            @Html.Raw(Model.Yayin_Icerik)
-        </p>
-        <br>
-    </div>
-    <hr class="hr-xs" />
-
-
-    <!-- Blog Grid Tagds -->
-    <!-- End Blog Grid Tagds -->
 </div>

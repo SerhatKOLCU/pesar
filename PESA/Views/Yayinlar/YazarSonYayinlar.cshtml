@@ -1,0 +1,14 @@
+﻿@model IEnumerable<PESA.Models.Yayin>
+<div class="posts margin-bottom-40">
+    <div class="headline headline-md"><h2>Yazarın Son Yayınları</h2></div>
+@foreach (var item in Model.OrderByDescending(c => c.Yayin_Tarih.AsDateTime()).Take(10))
+{ 
+    <dl class="dl-horizontal">
+        <dt><img src="~/Content/Upload/Yayin/Foto/@item.Yayin_Foto" alt="" /></dt>
+        <dd>
+            <p>@Html.ActionLink(item.Yayin_Baslik, "YayinDetails", "Yayinlar", new { id = item.Yayin_ID }, null)</p>
+        </dd>
+    </dl>
+}  
+
+</div>

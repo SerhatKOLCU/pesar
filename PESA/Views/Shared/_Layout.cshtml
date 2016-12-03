@@ -8,6 +8,7 @@
     @*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>*@
     @Scripts.Render("~/bundles/jquery")
     @Styles.Render("~/Content/css")
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
 
 
@@ -35,7 +36,7 @@
                         </button>
                         <div class="navbar-brand">
                             <a href="~/Home/Index">
-                                <img src="~/assets/img/Nawbar/pesa_logo.png" alt="Logo">
+                                <img class="img-responsive" src="~/assets/img/Nawbar/pesa_logo.png" alt="Logo">
                             </a>
                         </div>
                     </div><!--/end responsive container-->
@@ -85,21 +86,22 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    @*<div class="row">
-                                                        <ul class="tags-v4 margin-bottom-10 text-center" >
-                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-default btn-u-xs" href="#"> Eğitim </button></li>
-                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-default btn-u-xs" href="#"> Ekonomi </button></li>
-                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-default btn-u-xs" href="#"> Finans </button></li>
-                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-default btn-u-xs" href="#"> Maliye </button></li>
-                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-default btn-u-xs" href="#"> Politika </button></li>
-                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-default btn-u-xs" href="#"> Tarih </button></li>
-                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-default btn-u-xs" href="#"> Toplum </button></li>
-                                                            </ul>
-                                                    </div>*@
+                                                    <div class="row">
+                                                        <ul class="tags-v4 margin-bottom-10 text-center">
+                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-aqua btn-u-xs" onclick="location.href='@Url.Action("YayinFiltre", "Yayinlar", new { filtre = "Eğitim" })'"><i class="fa fa-tags"></i>Eğitim</button></li>
+                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-aqua btn-u-xs" onclick="location.href='@Url.Action("YayinFiltre", "Yayinlar", new { filtre = "Ekonomi" })'"><i class="fa fa-tags"></i>Ekonomi</button></li>
+                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-aqua btn-u-xs" onclick="location.href='@Url.Action("YayinFiltre", "Yayinlar", new { filtre = "Finans" })'"><i class="fa fa-tags"></i>Finans</button></li>
+                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-aqua btn-u-xs" onclick="location.href='@Url.Action("YayinFiltre", "Yayinlar", new { filtre = "Maliye" })'"><i class="fa fa-tags"></i>Maliye</button></li>
+                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-aqua btn-u-xs" onclick="location.href='@Url.Action("YayinFiltre", "Yayinlar", new { filtre = "Politika" })'"><i class="fa fa-tags"></i>Politika</button></li>
+                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-aqua btn-u-xs" onclick="location.href='@Url.Action("YayinFiltre", "Yayinlar", new { filtre = "Tarih" })'"><i class="fa fa-tags"></i>Tarih</button></li>
+                                                            <li><button class="btn-u btn-brd btn-brd-hover rounded btn-u-aqua btn-u-xs" onclick="location.href='@Url.Action("YayinFiltre", "Yayinlar", new { filtre = "Toplum" })'"><i class="fa fa-tags"></i>Toplum</button></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </li>
                                     </ul>
+
                                 </li>
                                 <!-- End YAYINLAR -->
                                 <!-- PROJELER -->
@@ -178,7 +180,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 col-sm-6 column-one md-margin-bottom-10">
-                            <a href="Home/Index"><img class="img-responsive footer-logo" src="~/assets/img/Nawbar/pesa_logo.png" alt=""></a>
+                            <a href="/"><img class="img-responsive footer-logo" src="~/assets/img/Nawbar/pesa_logo_footer.png" alt=""></a>
                             <br />
 
                             <h4 style="color:white"><strong>Sosyal Medya</strong></h4>
@@ -213,19 +215,22 @@
                             <br />
 
                             <h4 style="color:white"><strong>Mail</strong></h4>
-                            <a style="color:white" href="esaarastirma@gmail.com">pesaarastirma@gmail.com</a>
+                            <a style="color:white" href="mailto:pesaarastirma@gmail.com">pesaarastirma@gmail.com</a>
                         </div>
 
                         <div class="col-md-4 col-sm-6">
                             <!-- Google Map -->
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7184.844560141985!2d30.39784364345451!3d40.787201421547984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409df62d7d84d37f%3A0x1ebfcb13fd76ac84!2sOcak+Sk.%2C+Sakarya%2C+54100+Adapazar%C4%B1%2FSakarya!5e0!3m2!1sen!2str!4v1457821839998" width="420" height="260" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <div id="map" class="map margin-bottom-50">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.4489787619777!2d30.37272381505965!3d40.77414257932529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ccb2c5ac6272fb%3A0xfae7286b805b3068!2sArabac%C4%B1alan%C4%B1%2C+Mustafa+Ocak+Sk.%2C+54050+Selahiye%2FSerdivan%2FSakarya%2C+T%C3%BCrkiye!5e0!3m2!1str!2str!4v1480718000728" frameborder="0" style="overflow:hidden;width:100%" height="250" allowfullscreen></iframe>
+                            </div>
+
                         </div><!---/map-->
                         <!-- End Google Map -->
 
                     </div><!--/end row-->
                 </div><!--/end container-->
             </footer>
-        
+
             <footer class="copyright">
                 <div class="container">
                     <ul class="list-inline terms-menu">
@@ -239,8 +244,13 @@
         <!--=== End Footer v8 ===-->
     </div><!--/wrapper-->
 
-
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            App.init();
+        });
+    </script>
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 

@@ -73,3 +73,13 @@
 .header-v8 .mega-menu .dropdown-menu.last {
     right: 1px;
 }
+
+#map {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    background: #58B;
+}
